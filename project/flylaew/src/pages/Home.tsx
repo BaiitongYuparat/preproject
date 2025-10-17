@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate('/hotels');
+  };
+
   return (
     <div>
       {/* Navbar */}
@@ -124,7 +132,10 @@ const Home = () => {
 
             {/* ปุ่มค้นหา */}
             <div className="col-span-full flex justify-center mt-3">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2">
+              <button
+                onClick={handleSearch}
+                className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2"
+              >
                 ค้นหา
               </button>
             </div>
