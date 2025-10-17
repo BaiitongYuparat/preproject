@@ -1,10 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [bookingType, setBookingType] = useState("hotels");
 
   const handleSearch = () => {
-    navigate('/hotels');
+    if (bookingType === "hotels") {
+      navigate("/hotels");
+    } else if (bookingType === "flights") {
+      navigate("/flights");
+    } else if (bookingType === "trains") {
+      navigate("/trains");
+    } else if (bookingType === "combo") {
+      navigate("/combo");
+    }
   };
 
   return (
@@ -53,12 +63,16 @@ const Home = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-3rem] bg-white w-11/12 md:w-4/5 shadow-lg rounded-2xl p-6 flex flex-col space-y-4 z-20 text-center">
           {/* แถว select */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <select className="bg-yellow-200 text-black px-4 py-2 rounded-t-md font-medium cursor-pointer focus:outline-none">
-              <option>เลือกที่จอง</option>
-              <option>โรงแรม</option>
-              <option>เที่ยวบิน</option>
-              <option>รถไฟ</option>
-              <option>โรงแรม + เที่ยวบิน</option>
+            <select
+              value={bookingType}
+              onChange={(e) => setBookingType(e.target.value)}
+              className="bg-yellow-200 text-black px-4 py-2 rounded-t-md font-medium cursor-pointer focus:outline-none"
+            >
+              <option value="">เลือกที่จอง</option>
+              <option value="hotels">โรงแรม</option>
+              <option value="flights">เที่ยวบิน</option>
+              <option value="trains">รถไฟ</option>
+              <option value="combo">โรงแรม + เที่ยวบิน</option>
             </select>
 
             <select className="bg-yellow-200 text-black px-4 py-2 rounded-t-md font-medium cursor-pointer focus:outline-none">
