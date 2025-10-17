@@ -63,28 +63,14 @@ const RoomHotels = () => {
                 </div>
             </div>
 
-            {/* รูปโรงแรม */}
-            <div className="bg-white w-[1300px] h-[800px] rounded-xl shadow-md m-6 flex items-start justify-between px-6 py-6">
-                <div className="flex flex-col">
-                    <div className="flex items-center">
-                        <h3 className="font-medium text-black text-[24px] ">
-                            VELA Dhi Udon Thani
-                        </h3>
-                        <p className="font-medium ml-3 text-yellow-400 ">
-                            ★★★★★
-                        </p>
-                    </div>
-                    <div className="flex items-center mt-1"> {/* mt-1 เพิ่มระยะห่างเล็กน้อย */}
-                        <p className="font-medium text-gray-500 text-[16px]">
-                            โรงแรมเวลาดี อุดรธานี
-                        </p>
-                    </div>
-                    <div className="flex items-center mt-3">
-                        <img src="https://ak-d.tripcdn.com/images/020151200093llyo7A833_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                        alt="ht1" 
-                        className="h-80 w-100 " />
-
-                    </div>
+            <div className="bg-white w-[1300px] h-[800px] rounded-xl shadow-md m-6 flex items-center justify-between px-6">
+                <div className="flex items-center  ">
+                    <h3 className="font-medium text-black text-[18px]">
+                        VELA Dhi Udon Thani
+                    </h3>
+                    {/* <p className="font-medium m-3 text-yellow-400 ">
+                        ★★★★ 
+                    </p> */}
                 </div>
             </div>
         </div>
