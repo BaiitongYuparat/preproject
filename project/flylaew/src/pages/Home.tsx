@@ -3,11 +3,12 @@ import { useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [bookingType, setBookingType] = useState("hotels");
+  const [bookingType, setBookingType] = useState('');
+
 
   const handleSearch = () => {
     if (bookingType === "hotels") {
-      navigate("/hotels");
+      navigate("/hotels") ;
     } else if (bookingType === "flights") {
       navigate("/flights");
     } else if (bookingType === "trains") {
@@ -16,6 +17,8 @@ const Home = () => {
       navigate("/combo");
     }
   };
+
+
 
   return (
     <div>

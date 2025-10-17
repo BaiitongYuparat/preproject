@@ -1,4 +1,9 @@
+
+
+
 const Hotel = () => {
+    
+
     return (
         <div className="bg-yellow-50 min-h-screen flex flex-col items-center">
             {/* Navbar */}
