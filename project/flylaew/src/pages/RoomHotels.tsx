@@ -68,9 +68,9 @@ const RoomHotels = () => {
                     <h3 className="font-medium text-black text-[18px]">
                         VELA Dhi Udon Thani
                     </h3>
-                    <p className="font-medium m-3 text-yellow-400 ">
-                        ★★★★★
-                    </p>
+                    {/* <p className="font-medium m-3 text-yellow-400 ">
+                        ★★★★ 
+                    </p> */}
                 </div>
             </div>
         </div>
