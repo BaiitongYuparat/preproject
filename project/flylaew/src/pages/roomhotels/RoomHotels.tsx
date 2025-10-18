@@ -62,12 +62,12 @@ const RoomHotels = () => {
                     </div>
                 </div>
             </div>
-            
-            <div className="bg-white w-[1300px] h-[800px] rounded-xl shadow-md m-6 flex items-start justify-between px-6 py-6">
-                <div className="flex flex-col"> 
-                    
+
+            <div className="bg-white w-[1300px] h-[1000px] rounded-xl shadow-md m-6 flex items-start justify-between  px-6 py-6">
+                <div className="flex flex-col">
+
                     {/* ชื่อโรงแรมภาษาอังกฤษและดาว */}
-                    <div className="flex items-center">
+                    <div className="flex items-center  mt-3">
                         <h3 className="font-medium text-black text-[24px] ">
                             VELA Dhi Udon Thani
                         </h3>
@@ -75,32 +75,38 @@ const RoomHotels = () => {
                             ★★★★★
                         </p>
                     </div>
-                    <div className="flex items-center mt-1"> 
+                    <div className="flex items-center mt-1">
                         <p className="font-medium text-gray-500 text-[16px]">
                             โรงแรมเวลาดี อุดรธานี
                         </p>
                     </div >
-                    <div className="flex items-center justify-normal mt-5">
-                        <img src="https://ak-d.tripcdn.com/images/020151200093llyo7A833_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                         alt="ht1" 
-                         className=" w-100 h-80   "/>
-                         <img src="https://ak-d.tripcdn.com/images/0200f120009dpjhapC05A_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                          alt="ht2" 
-                          className="w-80 h-50 m-2 "
-                          />
-                           <img src="https://ak-d.tripcdn.com/images/020331200093lsvj0832D_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                          alt="ht3" 
-                          className="w-80 h-50 m-2 "
-                          />
+                    <div className="flex items-start justify-normal p-16 ">
+                        {/* รูปใหญ่ทางซ้าย */}
+                        <img
+                            src="https://ak-d.tripcdn.com/images/020151200093llyo7A833_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                            alt="ht1"
+                            className="w-[700px] h-[517px] rounded-sm object-cover"
+                        />
 
+                        {/* กล่องรูปเล็กทางขวา */}
+                        <div className="flex flex-col ml-3">
+                            <img
+                                src="https://ak-d.tripcdn.com/images/0200f120009dpjhapC05A_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                                alt="ht2"
+                                className="w-[400px] h-[250px] mb-4 rounded-sm object-cover"
+                            />
+                            <img
+                                src="https://ak-d.tripcdn.com/images/020331200093lsvj0832D_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                                alt="ht3"
+                                className="w-[400px] h-[250px]  rounded-sm object-cover"
+                            />
+                        </div>
+                        
                     </div>
-
-                </div>
-              
-                    
                 </div>
             </div>
-        
+        </div>
+
     )
 }
 
