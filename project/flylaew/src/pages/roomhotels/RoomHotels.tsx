@@ -63,7 +63,7 @@ const RoomHotels = () => {
                 </div>
             </div>
 
-            <div className="bg-white w-[1300px] h-[1000px] rounded-xl shadow-md m-6 flex items-start justify-between  px-6 py-6">
+            <div className="bg-white w-[1300px] h-[850px] rounded-xl shadow-md m-6 flex items-start justify-between  px-6 py-6">
                 <div className="flex flex-col">
 
                     {/* ชื่อโรงแรมภาษาอังกฤษและดาว */}
@@ -80,12 +80,12 @@ const RoomHotels = () => {
                             โรงแรมเวลาดี อุดรธานี
                         </p>
                     </div >
-                    <div className="flex items-start justify-normal p-16 ">
+                    <div className="flex items-start justify-normal mt-3  ">
                         {/* รูปใหญ่ทางซ้าย */}
                         <img
                             src="https://ak-d.tripcdn.com/images/020151200093llyo7A833_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
                             alt="ht1"
-                            className="w-[700px] h-[517px] rounded-sm object-cover"
+                            className="w-[800px] h-[517px] rounded-sm object-cover"
                         />
 
                         {/* กล่องรูปเล็กทางขวา */}
@@ -93,16 +93,75 @@ const RoomHotels = () => {
                             <img
                                 src="https://ak-d.tripcdn.com/images/0200f120009dpjhapC05A_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
                                 alt="ht2"
-                                className="w-[400px] h-[250px] mb-4 rounded-sm object-cover"
+                                className="w-[500px] h-[250px] mb-4 rounded-sm object-cover"
                             />
                             <img
                                 src="https://ak-d.tripcdn.com/images/020331200093lsvj0832D_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
                                 alt="ht3"
-                                className="w-[400px] h-[250px]  rounded-sm object-cover"
+                                className="w-[500px] h-[250px]  rounded-sm object-cover"
                             />
                         </div>
-                        
                     </div>
+                    <div className="mt-3 text-left">
+                        <div className="flex items-center justify-normal m-3">
+                            <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
+                                alt="location"
+                                className="w-7 h-7" />
+                            <a
+                                href="https://maps.app.goo.gl/nMRYqGBbBFDwhWcUA"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium  text-blue-600 hover:underline text-[16px]"
+                            >
+                                471 Adulyadej Road, Mak Khaeng, Udon Thani, 41000 อุดรธานี, ไทย
+                            </a>
+                        </div>
+                    </div>
+                    <div className="mt-3 text-left">
+                        <div className="flex items-center justify-normal m-3">
+                            <h3 className="font-medium text-black underline text-[18px]">
+                                สิ่งอํานวยความสะดวก
+                            </h3>
+                        </div>
+                        <div className="flex items-center justify-normal m-3">
+                             <p className="font-medium text-gray-950 text-[16px]">
+                                 ห้องนวด
+                            </p>
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                                ที่จอดรถส่วนตัวฟรี
+                            </p>
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                                สถานีชาร์จรถยนต์ไฟฟ้า    
+                            </p>
+
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                                แผนกต้อนรับ 24 ชั่วโมง
+                            </p>
+                        </div>
+                        <div className="flex items-center justify-normal m-3">
+
+                            <p className="font-medium text-gray-950  text-[16px]">
+                                ที่เก็บสัมภาระ      
+                            </p>
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                                บาร์
+                            </p>
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                             ร้านอาหาร                        
+                            </p>
+
+
+                            <p className="font-medium text-gray-950 ml-20 text-[16px]">
+                                  บริการจองแท็กซี่                      
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
