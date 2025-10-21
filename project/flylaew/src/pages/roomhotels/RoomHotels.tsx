@@ -102,6 +102,8 @@ const RoomHotels = () => {
                             />
                         </div>
                     </div>
+
+                    {/** map */}
                     <div className="mt-3 text-left">
                         <div className="flex items-center justify-normal m-3">
                             <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
@@ -117,6 +119,8 @@ const RoomHotels = () => {
                             </a>
                         </div>
                     </div>
+
+                    {/** ข้อความสิ่งอำนวยสะดวกด้านบน */}
                     <div className="mt-3 text-left">
                         <div className="flex items-center justify-normal m-3">
                             <h3 className="font-medium text-black underline text-[18px]">
@@ -124,8 +128,8 @@ const RoomHotels = () => {
                             </h3>
                         </div>
                         <div className="flex items-center justify-normal m-3">
-                             <p className="font-medium text-gray-950 text-[16px]">
-                                 ห้องนวด
+                            <p className="font-medium text-gray-950 text-[16px]">
+                                ห้องนวด
                             </p>
 
                             <p className="font-medium text-gray-950 ml-20 text-[16px]">
@@ -133,7 +137,7 @@ const RoomHotels = () => {
                             </p>
 
                             <p className="font-medium text-gray-950 ml-20 text-[16px]">
-                                สถานีชาร์จรถยนต์ไฟฟ้า    
+                                สถานีชาร์จรถยนต์ไฟฟ้า
                             </p>
 
 
@@ -141,10 +145,12 @@ const RoomHotels = () => {
                                 แผนกต้อนรับ 24 ชั่วโมง
                             </p>
                         </div>
+
+                        {/** ข้อความสิ่งอำนวยสะดวกด้านล่าง */}
                         <div className="flex items-center justify-normal m-3">
 
                             <p className="font-medium text-gray-950  text-[16px]">
-                                ที่เก็บสัมภาระ      
+                                ที่เก็บสัมภาระ
                             </p>
 
                             <p className="font-medium text-gray-950 ml-20 text-[16px]">
@@ -152,17 +158,51 @@ const RoomHotels = () => {
                             </p>
 
                             <p className="font-medium text-gray-950 ml-20 text-[16px]">
-                             ร้านอาหาร                        
+                                ร้านอาหาร
                             </p>
 
 
                             <p className="font-medium text-gray-950 ml-20 text-[16px]">
-                                  บริการจองแท็กซี่                      
+                                บริการจองแท็กซี่
                             </p>
                         </div>
                     </div>
-
                 </div>
+            </div>
+            <div className="bg-white w-[1000px] h-[400px] rounded-xl shadow-md m-6 flex items-start justify-between px-6 py-6">
+                <div className="flex mt-3">
+                    {/* รูปใหญ่ทางซ้าย */}
+                    <img
+                        src="https://ak-d.tripcdn.com/images/0200l1200086p5zx526D3_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                        alt="room1"
+                        className="w-[500px] h-[330px] rounded-sm object-cover"
+                    />
+                    <div className="flex m-5 flex-col">
+                    {/* กล่องข้อความ */}
+                    <div className="flex items-center ">
+                        <h3 className="font-medium text-black m-3  text-[20px]">
+                            ห้องซูพีเรียร์ เตียงเดี่ยว 2 เตียง
+                        </h3>
+                    </div>
+                    <div className="flex items-center  mt-3">
+                        <p className="font-medium text-gray-600 m-1 text-[16px] leading-relaxed">
+                            เตียงเดี่ยว 2 เตียง (กว้าง 1.1 ม.)
+                        </p>
+                    </div>
+
+                    <div className="flex items-center  mt-3">
+                        <p className="font-medium text-red-300 m-1 text-[16px] leading-relaxed">
+                           ** ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน **
+                        </p>
+                    </div>
+                </div>
+                </div>
+                
+
+            </div>
+
+            <div className="bg-white w-[1000px] h-[400px] rounded-xl shadow-md m-1 flex items-start justify-between  px-6 py-6">
+
             </div>
         </div>
 
