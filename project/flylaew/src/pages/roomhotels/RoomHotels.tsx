@@ -169,40 +169,84 @@ const RoomHotels = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-white w-[1000px] h-[400px] rounded-xl shadow-md m-6 flex items-start justify-between px-6 py-6">
-                <div className="flex mt-3">
-                    {/* รูปใหญ่ทางซ้าย */}
-                    <img
-                        src="https://ak-d.tripcdn.com/images/0200l1200086p5zx526D3_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                        alt="room1"
-                        className="w-[500px] h-[330px] rounded-sm object-cover"
-                    />
-                    <div className="flex m-5 flex-col">
+            <div className="bg-white w-[1000px] h-[380px] rounded-xl shadow-md m-6 flex items-start justify-between px-6 py-6">
+
+                {/* รูปใหญ่ทางซ้าย */}
+                <img
+                    src="https://ak-d.tripcdn.com/images/0200l1200086p5zx526D3_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                    alt="room1"
+                    className="w-[500px] h-[330px] rounded-sm object-cover"
+                />
+                <div className="flex m-5  flex-col">
                     {/* กล่องข้อความ */}
-                    <div className="flex items-center ">
-                        <h3 className="font-medium text-black m-3  text-[20px]">
+                    <div className="flex items-center text-left mt-2 ">
+                        <h3 className="font-medium text-black m-1  text-[20px]">
                             ห้องซูพีเรียร์ เตียงเดี่ยว 2 เตียง
                         </h3>
                     </div>
-                    <div className="flex items-center  mt-3">
+                    <div className="flex items-center  mt-2">
                         <p className="font-medium text-gray-600 m-1 text-[16px] leading-relaxed">
                             เตียงเดี่ยว 2 เตียง (กว้าง 1.1 ม.)
                         </p>
                     </div>
 
-                    <div className="flex items-center  mt-3">
-                        <p className="font-medium text-red-300 m-1 text-[16px] leading-relaxed">
-                           ** ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน **
+                    <div className="flex items-center  ">
+                        <p className="font-medium text-red-400 m-1 underline  text-[14px] leading-relaxed">
+                            ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน
                         </p>
                     </div>
-                </div>
-                </div>
-                
 
+                    <div className="flex items-center m-5 mt-7 ">
+                        <p className="font-medium text-black  text-[20px] bg-white border border-black  px-3 py-2">
+                            ผู้ใหญ่ ฿ 600.00 ต่อคน/คืน
+                        </p>
+                    </div>
+                    <div className="flex items-center m-6 text-right justify-end">
+                        <button className="bg-yellow-400 hover:bg-yellow-500 text-white ">
+                            จอง
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div className="bg-white w-[1000px] h-[400px] rounded-xl shadow-md m-1 flex items-start justify-between  px-6 py-6">
 
+                {/* รูปใหญ่ทางซ้าย */}
+                <img
+                    src="https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+                    alt="room1"
+                    className="w-[500px] h-[330px] rounded-sm object-cover"
+                />
+                <div className="flex m-5  flex-col">
+                    {/* กล่องข้อความ */}
+                    <div className="flex items-center text-left mt-2 ">
+                        <h3 className="font-medium text-black m-1  text-[20px]">
+                            ห้องซูพีเรียร์ เตียงคิง
+                        </h3>
+                    </div>
+                    <div className="flex items-center  mt-2">
+                        <p className="font-medium text-gray-600 m-1 text-[16px] leading-relaxed">
+                            เตียงคิงไซส์ 1 เตียง(กว้าง 1.82ม.)
+                        </p>
+                    </div>
+
+                    <div className="flex items-center  ">
+                        <p className="font-medium text-red-400 m-1 underline  text-[14px] leading-relaxed">
+                            ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน
+                        </p>
+                    </div>
+
+                    <div className="flex items-center m-5 mt-7 ">
+                        <p className="font-medium text-black  text-[20px] bg-white border border-black  px-3 py-2">
+                            ผู้ใหญ่ ฿ 990.00 ต่อคน/คืน
+                        </p>
+                    </div>
+                    <div className="flex items-center m-6 text-right justify-end">
+                        <button className="bg-yellow-400 hover:bg-yellow-500 text-white ">
+                            จอง
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
