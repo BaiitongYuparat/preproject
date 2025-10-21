@@ -214,7 +214,7 @@ const RoomHotels = () => {
                 {/* รูปใหญ่ทางซ้าย */}
                 <img
                     src="https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                    alt="room1"
+                    alt="room2"
                     className="w-[500px] h-[330px] rounded-sm object-cover"
                 />
                 <div className="flex m-5  flex-col">
