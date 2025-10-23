@@ -1,28 +1,19 @@
-import { Routes, Route, } from 'react-router-dom';
-// import Home from './pages/Home';
-// import Hotel from './pages/Hotels';
-// import Flights from './pages/Flights';
-// import Trains from './pages/Trains';
-// import Combo from './pages/Combo';
-// import RoomHotels from './pages/roomhotels/RoomHotels';
-import './App.css';
-import Information from './pages/information/Information';
-
-
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import HotelPage from "./pages-client/HotelPage";
+import Home from "./pages-client/HomePage";
+import RoomHotels from "./pages-client/roomhotels/RoomHotels"; // ✅ import หน้า RoomHotels
 
 function App() {
-    return (
-        <div>
-            <Routes>
-                <Route path='/' element={<Information/>} />
-                {/* <Route path='/hotels' element={<Hotel />} /> */}
-                {/* <Route path='/flights' element={<Hotel />} /> */}
-                {/* <Route path='/flights' element={<Flights />} />
-                <Route path='/trains' element={<Trains />} />
-                <Route path='/combo' element={<Combo />} /> */}
-            </Routes>
-        </div>
-    )
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hotels" element={<HotelPage />} />
+        <Route path="/rooms" element={<RoomHotels />} /> {/* ✅ เพิ่ม Route */}
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

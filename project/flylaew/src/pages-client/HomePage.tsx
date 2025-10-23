@@ -1,50 +1,41 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const navigate = useNavigate();
   const [bookingType, setBookingType] = useState('');
-
+  const [form, setForm] = useState({
+    from: "",
+    to: "",
+    passengers: "",
+    rooms: "",
+    departDate: "",
+    returnDate: "",
+  });
 
   const handleSearch = () => {
+    if (!bookingType) return;
+
+    // ส่งค่า form ไปหน้าเป้าหมาย
     if (bookingType === "hotels") {
-      navigate("/hotels") ;
+      navigate("/hotels", { state: form });
     } else if (bookingType === "flights") {
-      navigate("/flights");
+      navigate("/flights", { state: form });
     } else if (bookingType === "trains") {
-      navigate("/trains");
+      navigate("/trains", { state: form });
     } else if (bookingType === "combo") {
-      navigate("/combo");
+      navigate("/combo", { state: form });
     }
   };
 
-
-
   return (
-    <div>
+    <div className="bg-yellow-50 min-h-screen flex flex-col items-center">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 w-full shadow-xl flex items-center justify-between bg-yellow-50 py-4 z-50">
-        {/* โลโก้ */}
-        <div className="flex items-center space-x-3 pl-6">
-          <img
-            src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
-            alt="logo"
-            className="w-40 h-auto object-contain"
-          />
-        </div>
-
-        {/* เมนูด้านขวา */}
-        <div className="flex items-center space-x-6 pr-6">
-          <p className="text-black hover:text-yellow-500 transition">ช่วยเหลือ</p>
-          <button className="text-white bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-md font-medium transition">
-            ลงทะเบียน / เข้าสู่ระบบ
-          </button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* ส่วนปก */}
       <div className="relative w-[1200px] h-[700px] flex items-center justify-center mx-auto mt-20">
-        {/* รูปพื้นหลัง */}
         <img
           src="https://i.pinimg.com/1200x/ef/3c/81/ef3c8175242b7cb1368be14fe7d619a1.jpg"
           alt="hero"
@@ -52,7 +43,6 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-30 rounded-md"></div>
 
-        {/* ข้อความบนภาพ */}
         <div className="absolute text-center text-white z-10">
           <h1 className="text-2xl md:text-4xl font-semibold drop-shadow-md">
             อุ่นใจทุกการเดินทางกับ FlyLaew
@@ -97,6 +87,8 @@ const Home = () => {
               <p className="text-gray-500 text-sm mb-1 text-left">ต้นทาง</p>
               <input
                 type="text"
+                value={form.from}
+                onChange={(e) => setForm({ ...form, from: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
@@ -106,6 +98,8 @@ const Home = () => {
               <p className="text-gray-500 text-sm mb-1 text-left">ปลายทาง</p>
               <input
                 type="text"
+                value={form.to}
+                onChange={(e) => setForm({ ...form, to: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
@@ -114,7 +108,9 @@ const Home = () => {
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนผู้โดยสาร</p>
               <input
-                type="text"
+                type="number"
+                value={form.passengers}
+                onChange={(e) => setForm({ ...form, passengers: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
@@ -123,8 +119,9 @@ const Home = () => {
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนห้อง</p>
               <input
-                type="text"
-                  
+                type="number"
+                value={form.rooms}
+                onChange={(e) => setForm({ ...form, rooms: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
@@ -134,6 +131,8 @@ const Home = () => {
               <p className="text-gray-500 text-sm mb-1 text-left">วันที่ไป</p>
               <input
                 type="date"
+                value={form.departDate}
+                onChange={(e) => setForm({ ...form, departDate: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
@@ -143,6 +142,8 @@ const Home = () => {
               <p className="text-gray-500 text-sm mb-1 text-left">วันที่กลับ</p>
               <input
                 type="date"
+                value={form.returnDate}
+                onChange={(e) => setForm({ ...form, returnDate: e.target.value })}
                 className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
               />
             </div>
