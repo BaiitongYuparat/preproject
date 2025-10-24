@@ -1,74 +1,111 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+// import { Link } from "react-router-dom";
+// import { useState } from "react";
 
 interface HotelCardProps {
-  name: string;
-  thaiName: string;
-  rating: string;
-  score: string;
-  comment: string;
-  location: string;
-  price: string;
-  total: string;
-  imageUrl: string;
+    imageUrl: string; // รูปโรงแรม
+    name: string; // ชื่อโรงแรมภาษาอังกฤษ
+    thaiName: string; // ชื่อโรงแรมภาษาไทย
+    location: string;  // ที่ตั้งโรงแรม
+    price: number; // ราคาโรงแรม
+    rating: string; // คะแนนโรงแรมแบบดาว
+    score: string; // คะแนนโรงแรมแบบตัวเลข
+    comments: string; // จํานวนความคิดเห็น
+    totaltax: number; // ราคารวมภาษี
 }
 
-export default function HotelCard({
-  name,
-  thaiName,
-  rating,
-  score,
-  comment,
-  location,
-  price,
-  total,
-  imageUrl,
-}: HotelCardProps) {
-  const navigate = useNavigate();
+const HotelCard: React.FC<HotelCardProps> = ({
+    imageUrl,
+    name,
+    thaiName,
+    location,
+    price,
+    rating,
+    score,
+    comments,
+    totaltax,
+}) => {
 
-  const handleViewRooms = () => {
-    // ส่งชื่อโรงแรมไป RoomHotels
-    navigate("/rooms", { state: { name } });
-  };
+    // const [hotelImage, sethotelImage] = useState(imageUrl);
 
-  return (
-    <div className="bg-white w-[1300px] h-[300px] rounded-xl shadow-md flex items-start px-6 py-6 mt-6 hover:shadow-lg transition-all duration-300">
-      {/* รูปโรงแรม */}
-      <img
-        src={imageUrl}
-        alt={name}
-        className="w-60 h-60 object-cover rounded-xl"
-      />
+    // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files?.[0];
+    //     if (file) {
+    //         sethotelImage(URL.createObjectURL(file));
+    //     }
 
-      {/* รายละเอียดโรงแรม */}
-      <div className="flex-1 md:ml-6 mt-4 text-left md:mt-0">
-        <div className="flex items-center">
-          <h3 className="font-medium text-black text-[18px]">{name}</h3>
-          <p className="font-medium m-3 text-yellow-400">{rating}</p>
-        </div>
-        <p className="font-medium text-gray-500">{thaiName}</p>
-        <div className="flex items-center">
-          <p className="font-medium text-white bg-yellow-400 px-2 rounded">{score}</p>
-          <p className="font-medium m-3 text-gray-500">{comment}</p>
-        </div>
-        <div className="flex items-center">
-          <img
-            src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
-            alt="location"
-            className="w-7 h-7"
-          />
-          <p className="font-medium text-gray-500">{location}</p>
-        </div>
-        <div className="flex flex-col items-end">
-          <h3 className="font-medium text-black text-[23px]">{price}</h3>
-          <p className="font-medium text-gray-500">{total}</p>
-          <button
-            onClick={handleViewRooms}
-            className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded-md mt-2"
-          >
-            ดูห้องว่าง
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    // }
+
+
+    return (
+
+        // <link to={`HotelPage`}>
+            <div className="bg-white w-full max-w-[1300px]  rounded-xl shadow-md flex mt-3 flex-col md:flex-row items-start md:items-center px-4 sm:p-6 py-6 pt-6 hover:shadow-lg justify-center transition-all duration-300">
+
+                {/* รายละเอียดรูปภาพ
+                <label className="cursor-pointer relative self-centermd:self-start">
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="hidden"
+                    /> */}
+                    <img
+                        src={imageUrl}
+                        alt="hotel"
+                        className="w-[250px] h-[250px] sm:h-[280px] sm:w-[280px] md:w-[260px] md:h-[260px] lg:w-[280px] lg:h-[280px] object-cover rounded-lg mx-auto"
+                    />
+
+                {/* </label> */}
+
+                {/* รายละเอียดโรงแรม */}
+                <div className=" flex-1  md:ml-6 mt-4 md:mt-0 w-full text-left">
+                    <div className="  flex  // md:mr-40 // flex-wrap items-center justify-between md:justify-start">
+                        <a
+                            href={`https://www.google.com/maps/search/${name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-black font-medium text-[20px] sm:text-[22px] hover:text-black hover:underline"
+                        >
+                            {name}
+                        </a>
+                        <p className=" text-yellow-300 ml-3 text-[18px] sm:text-[20px] md:ml-3 "> {rating}</p>
+                    </div>
+
+                    <p className="text-gray-600 text-left font-medium text-[18px] sm:text-[20px] "> {thaiName} </p>
+
+                    <div className="flex items-center mt-1">
+                        <p className="bg-yellow-400 text-white px-3 py-0.5 rounded  text-[15px] sm:text-[16px] ">{score}</p>
+                        <p className="text-gray-600 ml-3 font-medium text-[14 px] sm:text-[16px]">{comments}</p>
+                    </div>
+
+                    <div className="flex items-center mt-2">
+                        <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
+                            alt="location"
+                            className="w-7 h-7 sm:w-8 sm:h-8"
+                        />
+                        <p className="text-gray-600 ml-2 font-medium text-[14px] sm:text-[16px] ">{location}</p>
+                    </div>
+
+                    <div className="flex  items-end flex-col mt-4">
+                        <p className="font-medium text-black text-[22px] sm:text-[24px]">{price.toLocaleString()} </p>
+                    </div>
+                    <div className="flex items-center justify-end">
+                        <p className="font-medium text-gray-600 text-[14px] sm:text-[16px]"> ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax.toLocaleString()} </p>
+                    </div>
+
+                    <div className="flex items-center justify-end">
+                        <button className=" bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-md mt-3 font-medium text-[15px] sm:text-[17px]">
+                            ดูห้องว่าง
+                        </button>
+                    </div>
+                </div>
+            </div>
+        // </link>
+
+
+    )
 }
+
+export default HotelCard
+
