@@ -26,7 +26,7 @@ const FlightsCard: React.FC<FlightsCardProps> = ({
 
 
     return (
-        <div className="bg-white w-full max-w-[1300px] mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
+        <div className="bg-white w-full  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
 
             {/** รูปสายการบิน ชื่อสายการบิน flightID*/}
             <div className="flex items-center mb-4 md:gap-4 gap-3  sm:mb-0  md:mr-10 ">
@@ -42,13 +42,13 @@ const FlightsCard: React.FC<FlightsCardProps> = ({
             </div>
 
             {/* เวลา เครื่องขึ้นและลง */}
-            <div className="flex items-center sm:flex-row flex-col  text-center  md:mr-10  gap-2 sm:gap-6  mb-4 md:mb-0">
+            <div className="flex items-center sm:flex-row flex-col  text-center  md:mr-10   sm:gap-6  mb-4 md:mb-0 gap-3">
                 <div>
                     <p className="text-black font-medium text-[16px] sm:text-[18px]">{departuretime}</p>
                     <p className="text-gray-600 font-medium text-[14px] sm:text-[15px]">{flightfrom}</p>
                 </div>
 
-                <div className="hidden  w-[100px] sm:w-[120px] border-t border-gray-300  relative sm:block">
+                <div className="hidden  w-[100px] sm:w-[120px] border-t border-gray-300  relative ">
                     <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-gray-400 text-[12px] sm:text-[14px] bg-white px-2">
                         {flightduration}
                     </span>
