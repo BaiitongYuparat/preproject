@@ -35,7 +35,7 @@ const Home = () => {
       <Navbar />
 
       {/* ส่วนปก */}
-      <div className="relative w-[1200px] h-[700px] flex items-center justify-center mx-auto mt-20">
+      <div className="relative w-full max-w-[1200px] h-[700px] sm:h-[800px] md:h-[600px] lg:h-[700px] flex items-center justify-center mx-auto mt-24 px-4">
         <img
           src="https://i.pinimg.com/1200x/ef/3c/81/ef3c8175242b7cb1368be14fe7d619a1.jpg"
           alt="hero"
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
 
         {/* กล่องค้นหา */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-3rem] bg-white w-11/12 md:w-4/5 shadow-lg rounded-2xl p-6 flex flex-col space-y-4 z-20 text-center">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-3rem] bg-white md:w-4/5 shadow-lg w-[95%] rounded-2xl p-6 flex flex-col space-y-4 z-20 text-center">
           {/* แถว select */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <select
@@ -107,23 +107,21 @@ const Home = () => {
             {/* จำนวนผู้โดยสาร */}
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนผู้โดยสาร</p>
-              <input
-                type="number"
-                value={form.passengers}
-                onChange={(e) => setForm({ ...form, passengers: e.target.value })}
-                className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-              />
+              <select className="bg-yellow-200 text-black px-4 py-2 rounded-t-md font-medium cursor-pointer focus:outline-none">
+                {Array.from({ length: 100 }, (_, i) => (
+                  <option key={i + 1} value={i + 1}>{i + 1}</option>
+                ))}
+              </select>
             </div>
 
             {/* จำนวนห้อง */}
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนห้อง</p>
-              <input
-                type="number"
-                value={form.rooms}
-                onChange={(e) => setForm({ ...form, rooms: e.target.value })}
-                className="bg-yellow-200 text-gray-500 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-              />
+              <select className="bg-yellow-200 text-black px-4 py-2 rounded-t-md font-medium cursor-pointer focus:outline-none">
+                {Array.from({ length: 100 }, (_, i) => (
+                  <option key={i + 1} value={i + 1}>{i + 1}</option>
+                ))}
+              </select>
             </div>
 
             {/* วันที่ไป */}

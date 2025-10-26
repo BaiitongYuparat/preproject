@@ -1,6 +1,6 @@
 import React from "react";
 
-interface HaedRoomCardProps {
+interface HeadRoomCardProps {
   imageUrl: string; // รูปโรงแรม
   room1: string; // รูปโรงแรม
   room2: string; // รูปโรงแรม
@@ -13,7 +13,7 @@ interface HaedRoomCardProps {
 
 }
 
-const HaedRoomCard: React.FC<HaedRoomCardProps> = ({
+const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
   imageUrl,
   room1,
   room2,
@@ -105,4 +105,4 @@ const HaedRoomCard: React.FC<HaedRoomCardProps> = ({
 
 }
 
-export default HaedRoomCard
+export default HeadRoomCard

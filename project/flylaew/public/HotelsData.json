@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "VELA Dhi Udon Thani",
+        "thaiName": "โรงแรมเวลาดี อุดรธานี",
+        "rating": "★★★★★",
+        "score": "9.3/10",
+        "comments": "ดีมาก",
+        "location": "ใกล้ UDON Day & Night Bar Complex",
+        "price": "809",
+        "totaltax": "1,000",
+        "imageUrl": "https://ak-d.tripcdn.com/images/0202b1200086mc6owF222_R_600_600_R5_D.jpg_.webp"
+    },
+    {
+        "id": "2",
+        "name": "Centara Udon Thani",
+        "thaiName": "เซ็นทารา อุดรธานี",
+        "rating": "★★★★★",
+        "score": "9.3/10",
+        "comments": "ดีมาก",
+        "location": "ใกล้Centara Udon Thani ",
+        "price": "1201",
+        "totaltax": "1,454",
+        "imageUrl": "https://ak-d.tripcdn.com/images/0225k12000lr0iddyCBB5_R_600_600_R5_D.jpg_.webp"
+    },
+    {
+        "id": "3",
+        "name": "B2 Premier Hotel",
+        "thaiName": "โรงแรม บีทู อุดร พรีเมียร์",
+        "rating": "★★★★",
+        "score": "8.9/10",
+        "comments": "ดีมาก",
+        "location": "ใกล้ท่าอากาศยานนานาชาติอุดรธานี",
+        "price": "998",
+        "totaltax": "1,202",
+        "imageUrl": "https://ak-d.tripcdn.com/images/1mc3912000f1eubjv3C6A_R_600_600_R5_D.jpg_.webp"
+    },
+    {
+        "id": "4",
+        "name": "Thanburi Hotel",
+        "thaiName": "โรงแรมธารบุรี",
+        "rating": "★★★",
+        "score": "8.7/10",
+        "comments": "ดีมาก",
+        "location": "ใกล้ UDON Day & Night Bar Complex",
+        "price": "899",
+        "totaltax": "1,019",
+        "imageUrl": "https://ak-d.tripcdn.com/images/0200r120008hdepay240E_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+    }
+]

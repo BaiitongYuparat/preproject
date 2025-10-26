@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "imageUrl": "https://ak-d.tripcdn.com/images/0202b1200086mc6owF222_R_600_400_R5.jpg",
+        "room1": "https://ak-d.tripcdn.com/images/0206u120009dpjbic6DEE_Z_320_220_R5_D.jpg",
+        "room2": "https://ak-d.tripcdn.com/images/0205d120009dpd8w61DBA_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
+        "hotelname": "VELA Dhi Udon Thani",
+        "rating": "★★★★★",
+        "score": "9.3/10",
+        "comments": "ดีมาก",
+        "location": "471 ถ. อดุลยเดช ตำบลหมากแข้ง อำเภอเมือง, ตำบลหมากแข้ง, จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "ซาวน่า",
+            "ฟิตเนส",
+            "ร้านอาหาร",
+            "ที่จอดรถ",
+            "บริการรับที่สนามบินแบบด่วน",
+            "บาร์"
+        ]
+    },
+    {
+        "id": "2",
+        "imageUrl": "https://ak-d.tripcdn.com/images/0225k12000lr0iddyCBB5_R_600_400_R5.jpg",
+        "room1": "https://ak-d.tripcdn.com/images/0223h12000di74vfu60F0_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
+        "room2": "https://ak-d.tripcdn.com/images/0220d120009hgucvq6AD9_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
+        "hotelname": "Centara Udon Thani",
+        "rating": "★★★★★",
+        "score": "9.3/10",
+        "comments": "ดีมาก",
+        "location": "277/1 ถ.ประจักษ์ศิลปาคม อ.เมือง, ตำบลหมากแข้ง, จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "สระว่ายน้ำ",
+            "ฟิตเนส",
+            "ร้านอาหาร",
+            "ที่จอดรถ",
+            "สปา",
+            "ซาวน่า",
+            "ห้องนวด"
+        ]
+    },
+    {
+        "id": "3",
+        "imageUrl": "https://ak-d.tripcdn.com/images/1mc3912000f1eubjv3C6A_R_600_400_R5.jpg",
+        "room1": "https://ak-d.tripcdn.com/images/1mc2q12000f1euxsyFABD_R_600_400_R5.jpg",
+        "room2": "https://ak-d.tripcdn.com/images/1mc0x12000f1ev3ur3E2A_R_600_400_R5.jpg",
+        "hotelname": "B2 Premier Hotel",
+        "rating": "★★★★",
+        "score": "8.9/10",
+        "comments": "ดี",
+        "location": "44 บ้านดอนอีไข หมู่ 2 ต.นาดี อ.เมืองอุดรธานี จ.อุดรธานี, ตำบล เชียงพิณ, จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "ที่จอดรถสาธารณะ",
+            "สถานีชาร์จรถยนต์ไฟฟ้า",
+            "ห้ามสูบบุหรี่ในพื้นที่ส่วนกลาง",
+            "แผนกต้อนรับ 24 ชั่วโมง"
+        ]
+    },
+    {
+        "id": "4",
+        "imageUrl": "https://ak-d.tripcdn.com/images/1mc3p12000f1eubjv3C6A_R_600_400_R5.jpg",
+        "room1": "https://ak-d.tripcdn.com/images/1mc2q12000f1euxsyFABD_R_600_400_R5.jpg",
+        "room2": "https://ak-d.tripcdn.com/images/1mc0x12000f1ev3ur3E2A_R_600_400_R5.jpg",
+        "hotelname": "Thanburi Hotel",
+        "rating": "★★★",
+        "score": "8.7/10",
+        "comments": "ดี",
+        "location": "123 ถนน ถ. อดุลยเดช ตำบลหมากแข้ง อำเภอเมือง, ตำบลหมากแข้ง, จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "ที่จอดรถสาธารณะ",
+            "สถานีชาร์จรถยนต์ไฟฟ้า",
+            "บริการจองแท็กซี่",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "บริการรถรับส่ง",
+            "ฟิตเนส"
+        ]
+
+    }
+]

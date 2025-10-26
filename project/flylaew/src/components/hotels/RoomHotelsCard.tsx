@@ -1,10 +1,12 @@
 import React from "react";
 
 interface RoomHotelsCardProps {
+    
     imageUrl: string; //รูปห้อง
     nameroom: string; //ชื่อห้อง
     explanation: string; //คําอธิบาย
-    price: number; //ราคา
+    price: string; //ราคา
+
 }
 
 const RoomHotelsCard: React.FC<RoomHotelsCardProps> = ({
@@ -23,17 +25,17 @@ const RoomHotelsCard: React.FC<RoomHotelsCardProps> = ({
             />
 
             {/* รายละเอียดโรงแรม */}
-            <div className="flex-1 md:ml-6 mt-4 md:mt-0 w-full text-left">
-                <div className="flex flex-wrap items-center justify-between md:justify-start">
+            <div className="flex-1 md:ml-6 mt-4 md:mt-0 w-full  text-left">
+                <div className="flex flex-wrap items-center  justify-between md:justify-start">
                     <p className="text-black font-medium  text-[18px] sm:text-[20px] ">{nameroom}</p>
-                    <p className="text-gray-600 font-medium  text-[14px] sm:text-[15px]  ">{explanation}</p>
                 </div>
+                <p className="text-gray-600 font-medium  text-[12px] sm:text-[14px]  ">{explanation}</p>
             </div>
 
             {/* ราคา */}
             <div className="flex items-center md:gap-4 gap-3">
-                <p className="text-black font-medium ml-2 text-[18px] sm:text-[20px]   ">
-                    {price.toLocaleString()} ฿
+                <p className="text-black font-medium ml-8 text-[20px] sm:text-[22px]   ">
+                    {price}฿
                 </p>
                 <button className=" bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-md font-medium text-[14px] sm:text-[16px]">
                     เลือก
