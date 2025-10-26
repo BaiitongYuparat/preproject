@@ -59,7 +59,7 @@ const HotelCard: React.FC<HotelCardProps> = ({
             {/* </label> */}
 
             {/* รายละเอียดโรงแรม */}
-            <div className=" flex-1 md:ml-6 mt-4 md:mt-0 w-full text-left">
+            <div className=" flex-1 md:ml-6 mt-4 md:mt-0 w-full text-left ">
                 <div className="  flex  flex-wrap items-center justify-between md:justify-start">
                     <a
                         href={`https://www.google.com/maps/search/${name}`}

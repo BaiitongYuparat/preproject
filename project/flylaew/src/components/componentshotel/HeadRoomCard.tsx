@@ -2,8 +2,8 @@ import React from "react";
 
 interface HaedRoomCardProps {
   imageUrl: string; // รูปโรงแรม
-  room1: string; // รูปห้อง1
-  room2: string; // รูปห้อง2
+  room1: string; // รูปโรงแรม
+  room2: string; // รูปโรงแรม
   hotelname: string; // ชื่อโรงแรม
   rating: string; // คะแนนโรงแรมแบบดาว
   score: string; // คะแนนโรงแรมแบบตัวเลข
@@ -51,14 +51,14 @@ const HaedRoomCard: React.FC<HaedRoomCardProps> = ({
           className="w-full h-[300px] sm:h-[450px] object-cover rounded-md "
         />
         <div className="grid grid-cols-1 gap-4  mt-3 w-full lg:w-[40%]">
-          {/** รูปห้อง1 */}
+          {/** รูปโรงแรม */}
           <img
             src={room1}
             alt="room1"
             className="w-full h-[200px] sm:h-[220px]  object-cover rounded-md "
           />
 
-          {/** รูปห้อง2 */}
+          {/** รูปโรงแรม */}
           <img
             src={room2}
             alt="room2"

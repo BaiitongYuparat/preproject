@@ -1,31 +1,56 @@
-import HaedRoomCard from "./components/componentshotel/HeadRoomCard";
+// import HotelCard from "./components/HotelCard";
+// import FlightsCard from "./components/FlightsCard";
 import "./App.css";
+import TrainsCard from "./components/TrainsCard";
 
 const Hotel = () => {
   return (
-    
-      <div className="pt-28 w-full flex flex-col items-center">
-      <HaedRoomCard
-        imageUrl="https://ak-d.tripcdn.com/images/0581c12000inr0wu7252A_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-        room1="https://ak-d.tripcdn.com/images/0222z12000dju7m4oFF46_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-        room2="https://ak-d.tripcdn.com/images/0220712000di75j7a55AF_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-        hotelname="เซ็นทารา อุดรธานี"
-        rating="★★★★★"
-        score="9.3/10"
-        comments="ดีมาก"
-        location="277/1 ถ.ประจักษ์ศิลปาคม อ.เมือง, ตำบลหมากแข้ง, จังหวัดอุดรธานี, 41000"
-        facilities={[
-          "ห้องงมวดที่ทันสมัย",
-          "ที่จอดรถส่วนตัวฟรี",
-          "สถานีชาร์จรถยนต์ไฟฟ้า",
-          "แผนกต้อนรับ 24 ชั่วโมง",
-          "บาร์",
-          "ร้านอาหาร",
-          "บริการจองแท็กซี่",
-        ]}
+
+    <div className="pt-28 w-full flex flex-col items-center">
+      <TrainsCard
+        trainprice={2002}
+        trainduration="1 ชั่วโมง"
+        trainfrom="กรุงเทพ"
+        trainto="กรุงเทพ"
+        departuretime="10:00"
+        landingtime="12:00"
       />
-      </div>
-    
+      
+      
+      
+      
+      
+      {/* <FlightsCard
+
+        flightimgeurl="https://res.klook.com/klook-hotel/image/upload/fl_lossy.progressive,c_fill,f_auto,q_85/trip/020151200093llyo7A833_R_550_412_R5.jpg"
+        flightname="KLOOK HOTEL"
+        flightid="KLOOK HOTEL"
+        flightprice={2002}
+        flightduration="1 ชั่วโมง"
+        flightfrom="กรุงเทพ"
+        flightto="กรุงเทพ"
+        departuretime="10:00"
+        landingtime="12:00"
+
+
+      /> */}
+
+
+
+      {/* <HotelCard
+      name= "VELA Dhi Udon Thani"
+      thaiName= "โรงแรมเวลาดี อุดรธานี"
+      rating= "★★★★★"
+      score= "9.3/10"
+      comments= "ดีมาก"
+      location= "ใกล้ UDON Day & Night Bar Complex"
+      price= {2002}
+      totaltax= {12222}
+      imageUrl=
+        "https://res.klook.com/klook-hotel/image/upload/fl_lossy.progressive,c_fill,f_auto,w_750,q_85/trip/020151200093llyo7A833_R_550_412_R5.jpg"
+     /> */}
+    </div>
+
   );
 };
 
