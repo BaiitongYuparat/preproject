@@ -29,59 +29,68 @@ const HotelsCard: React.FC<HotelCardProps> = ({
 
 
     return (
-        <Link to={`/hotels/${id}`}>
-            <div className="bg-white w-[350px] h-full mt-3 rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-lg transition-all duration-300">
 
-                <img
-                    src={imageUrl || "/placeholder.jpg"}
-                    alt={name}
-                    className="w-[300px] h-[250px] sm:h-[280px] sm:w-[280px] object-cover rounded-md"
-                />
+        <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
 
 
-                {/* รายละเอียดโรงแรม */}
-                <div className=" flex-1 md:ml-1  mt-4 md:mt-0 w-full text-left  flex flex-col justify-between ">
-                    <div className="  flex  flex-wrap items-center justify-between mt-3 md:justify-start">
-                        <a
-                            href={`https://www.google.com/maps/search/${encodeURIComponent(name)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black font-medium text-[20px] sm:text-[22px] hover:text-black hover:underline"
+            <img
+                src={imageUrl || "/placeholder.jpg"}
+                alt={name}
+                className="w-[300px] h-[250px] sm:h-[280px] sm:w-[280px] object-cover rounded-md hover:scale-105 transition-transform duration-500"
+            />
+
+
+            {/* รายละเอียดโรงแรม */}
+            <div className=" flex-1 md:ml-1  mt-4 md:mt-0 w-full text-left  flex flex-col justify-between ">
+                <div className="  flex  flex-wrap items-center justify-between mt-3 md:justify-start">
+                    <a
+                        href={`https://www.google.com/maps/search/${encodeURIComponent(name)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-black font-medium text-[20px] sm:text-[22px] hover:text-black hover:underline"
+                    >
+                        {name}
+                    </a>
+                    <p className=" text-yellow-300 ml-3 text-[12px] sm:text-[14px] md:ml-3 "> {rating}</p>
+                </div>
+
+                <p className="text-gray-600 text-left font-medium text-[18px] sm:text-[20px] "> {thaiName} </p>
+
+                <div className="flex items-center mt-1">
+                    <p className="bg-yellow-400 text-white px-3 py-0.5 rounded-full  text-[15px] sm:text-[16px] ">{score}</p>
+                    <p className="text-gray-600 ml-3 font-medium text-[14px] sm:text-[16px]">{comments}</p>
+                </div>
+
+                <div className="flex items-center mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-black w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+
+
+                    <p className="text-gray-600 ml-2 font-medium text-[14px] sm:text-[16px] ">{location}</p>
+                </div>
+
+                {/* ส่วนล่าง (ราคา + ปุ่ม) */}
+                <div className="mt-4 text-right  items-center">
+                    <p className="text-xl font-semibold text-black">{price}฿ </p>
+                    <p className="text-gray-500 text-sm">
+                        ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax}฿
+                    </p>
+
+                    <Link to={`/hotels/${id}`}>
+                        <button
+                            className="w-full py-2 rounded-full mt-3 font-medium text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg"
                         >
-                            {name}
-                        </a>
-                        <p className=" text-yellow-300 ml-3 text-[12px] sm:text-[14px] md:ml-3 "> {rating}</p>
-                    </div>
-
-                    <p className="text-gray-600 text-left font-medium text-[18px] sm:text-[20px] "> {thaiName} </p>
-
-                    <div className="flex items-center mt-4">
-                        <p className="bg-yellow-400 text-white px-3 py-0.5 rounded  text-[15px] sm:text-[16px] ">{score}</p>
-                        <p className="text-gray-600 ml-3 font-medium text-[14px] sm:text-[16px]">{comments}</p>
-                    </div>
-
-                    <div className="flex items-center mt-2">
-                        <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
-                            alt="location"
-                            className="w-7 h-7 sm:w-8 sm:h-8"
-                        />
-                        <p className="text-gray-600 ml-2 font-medium text-[14px] sm:text-[16px] ">{location}</p>
-                    </div>
-
-                    {/* ส่วนล่าง (ราคา + ปุ่ม) */}
-                    <div className="mt-4 text-right  items-center">
-                        <p className="text-xl font-semibold text-black">{price}</p>
-                        <p className="text-gray-500 text-sm">
-                            ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax}
-                        </p>
-                        <button className="bg-yellow-400  hover:bg-yellow-500 text-white w-full py-2 rounded-md mt-3 font-medium">
                             ดูห้องว่าง
                         </button>
-                    </div>
+
+                    </Link>
                 </div>
             </div>
+        </div>
 
-        </Link>
+
 
 
     )

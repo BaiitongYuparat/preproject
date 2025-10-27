@@ -26,23 +26,23 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
 }) => {
 
   return (
-    <div className="bg-white w-full max-w-7xl mx-auto mt-6 rounded-md shadow-md flex  flex-col hover:shadow-xl transition-all duration-300 p-4 py-5 ">
-      
-        {/** รายละเอียดโรงแรม */}
-        <div className="flex flex-col sm:flex-row  justify-between items-start sm:items-start gap-3 ml-4 mt-4">
-          <div>
+    <div className="bg-gradient-to-t from-yellow-100 via-white  to-yellow-100 border  border-yellow-100 w-full max-w-7xl mx-auto mt-6 rounded-lg shadow-md flex  flex-col hover:shadow-xl transition-all duration-300 p-4 py-5 ">
+
+      {/** รายละเอียดโรงแรม */}
+      <div className="flex flex-col sm:flex-row  justify-between items-start sm:items-start gap-3 ml-4 mt-4">
+        <div>
           <div className="flex  items-center text-left gap-3 ">
-            <h1 className="text-black font-medium text-[20px] sm:text-[22px]  ">{hotelname}</h1>
+            <h1 className="text-black font-medium text-[20px] sm:text-[24px]  ">{hotelname}</h1>
             <p className=" text-yellow-300 ml-3 text-[18px] sm:text-[20px]  "> {rating}</p>
           </div>
           <div className="flex items-center gap-3 mt-1">
-            <p className="bg-yellow-400 text-white px-3 py-0.5 rounded-md font-medium text-[10px] sm:text-[12px]">{score}</p>
+            <p className="bg-yellow-400 text-white px-3 py-0.5 rounded-full font-medium text-[10px] sm:text-[12px]">{score}</p>
             <p className="text-gray-600 font-medium text-[10px] sm:text-[12px] ">{comments}</p>
           </div>
         </div>
-        </div>
+      </div>
 
-    
+
       {/** รูปโรงแรม */}
       <div className="flex flex-col lg:flex-row gap-5 items-center justify-center p-4 mb-4 ">
         <img
@@ -70,15 +70,16 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
       {/** ตําแหน่งโรงแรม */}
       <div className="flex items-center gap-2  ">
 
-        <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg"
-          alt="location"
-          className="w-7 h-7 sm:w-8 sm:h-8"
-        />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-black w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+        </svg>
+
         <a
           href={`https://www.google.com/maps/search/${encodeURIComponent(location)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 font-medium text-[14px] sm:text-[16px]  hover:underline"
+          className="text-blue-900 font-medium text-[14px] sm:text-[16px]  hover:underline"
         >
           {location}
         </a>

@@ -3,7 +3,7 @@ import React from "react";
 // import HeadRoomCard from "../components/hotels/HeadRoomCard";
 
 import Navbar from "../components/Navbar";
-import HotelsList from "../components/hotels/HotelsList";
+import HotelsList from "../components/hotels/HotelsCardList";
 
 const HotelPage: React.FC = () => {
   return (

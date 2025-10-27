@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 interface FlightsCardProps {
+    id: string;
     flightimgeurl: string; // รูปสายการบิน
     flightname: string; // ชื่อสายการบิน
     flightid: string; // flightIDสายการบิน
@@ -13,6 +16,7 @@ interface FlightsCardProps {
 }
 
 const FlightsCard: React.FC<FlightsCardProps> = ({
+    id,
     flightimgeurl,
     flightname,
     flightid,
@@ -65,10 +69,13 @@ const FlightsCard: React.FC<FlightsCardProps> = ({
                 <p className="text-black font-medium ml-2 text-[18px] sm:text-[20px]   ">
                     {flightprice.toLocaleString()} ฿
                 </p>
+                <Link to={`/flights/${id}`} >
                 <button className=" bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-md font-medium text-[14px] sm:text-[16px]">
                     เลือก
                 </button>
+                </Link>
             </div>
+
         </div>
     );
 }

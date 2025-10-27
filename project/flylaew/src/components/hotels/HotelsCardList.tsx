@@ -18,7 +18,7 @@ interface Hotels {
 
 const HotelsList: React.FC = () => {
 
-    const [hotels, setHotels] = useState<Hotels[]>([]); //เก็บข้อมูลจาก API
+    const [hotels, setHotels] = useState<Hotels[]>([]); 
     const [loading, setLoading] = useState(true); //สถานะการโหลดข้อมูล
 
     useEffect(() => {
