@@ -40,6 +40,7 @@ const RoomHotelsList: React.FC = () => {
             {roomhotels.map((roomhotel) => (
                 <RoomHotelsCard
                     key={roomhotel.id}
+                    id={roomhotel.id}
                     imageUrl={roomhotel.imageUrl}
                     nameroom={roomhotel.nameroom}
                     explanation={roomhotel.explanation}

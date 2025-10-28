@@ -7,7 +7,7 @@ interface FlightsCardProps {
     flightimgeurl: string; // รูปสายการบิน
     flightname: string; // ชื่อสายการบิน
     flightid: string; // flightIDสายการบิน
-    flightprice: number; // ราคาสายการบิน
+    flightprice: string; // ราคาสายการบิน
     flightduration: string; // ระยะเวลาการบิน
     flightfrom: string; // ต้นทาง
     flightto: string; // ปลายทาง
@@ -67,7 +67,7 @@ const FlightsCard: React.FC<FlightsCardProps> = ({
             {/* ราคา */}
             <div className="flex items-center md:gap-4 gap-3">
                 <p className="text-black font-medium ml-2 text-[18px] sm:text-[20px]   ">
-                    {flightprice.toLocaleString()} ฿
+                    {flightprice}฿
                 </p>
                 <Link to={`/flights/${id}`} >
                 <button className=" bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-md font-medium text-[14px] sm:text-[16px]">

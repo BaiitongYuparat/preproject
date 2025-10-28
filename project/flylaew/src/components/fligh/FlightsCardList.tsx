@@ -1,14 +1,14 @@
+// import React from "react";
+// import FlightsCard from "./FlightsCard";
+// import { useState, useEffect } from "react";
 // import axios from "axios";
-// import React, { useEffect, useState } from "react";
-// import HotelsCard from "./FlightsCard";
 
-
-// interface Flights {
+// interface FlightsCard {
 //     id: string;
 //     flightimgeurl: string; // รูปสายการบิน
 //     flightname: string; // ชื่อสายการบิน
 //     flightid: string; // flightIDสายการบิน
-//     flightprice: number; // ราคาสายการบิน
+//     flightprice: string; // ราคาสายการบิน
 //     flightduration: string; // ระยะเวลาการบิน
 //     flightfrom: string; // ต้นทาง
 //     flightto: string; // ปลายทาง
@@ -16,56 +16,49 @@
 //     landingtime: string; // เวลาเครื่องลง
 // }
 
-// const HotelsList: React.FC = () => {
-
-//     const [Flights, setFlights] = useState<Flights[]>([]); 
-//     const [loading, setLoading] = useState(true); //สถานะการโหลดข้อมูล
+// const FlightCardList: React.FC = () => {
+//     const [FlightCards, setFlightCards] = useState<FlightsCard[]>([]);
+//     const [loading, setLoading] = useState(true);
 
 //     useEffect(() => {
-//         const fetchHotels = async () => {
+//         const fetchFlights = async () => {
 //             try {
 //                 setLoading(true);
-//                 const response = await axios.get<Flights[]>("/FlightsData.json");
+//                 const response = await axios.get<FlightsCard[]>("/FlightsData.json");
 //                 console.log(response.data);
-//                 setFlights(response.data);
+//                 setFlightCards(response.data);
 //             }
 //             catch (error: unknown) {
-//                 console.log("Error fetching hotels:", error);
+//                 console.log("Error fetching Flights:", error);
 //             }
 //             finally {
 //                 setLoading(false);
 //             }
 //         };
-//         fetchHotels();
+
+//         fetchFlights();
 //     }, []);
 
-//     if (loading) {
-//         return (
-//             <div className="flex justify-center items-center min-h-screen">
-//                 <p className="text-gray-600 text-lg">กำลังโหลดข้อมูลเที่ยวบิน...</p>
-//             </div>
-//         );
-//     }
+//     if (loading) return <p>Loading...</p>;
 
 //     return (
-//     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-24 p-16 justify-items-center ">
-//         {Flights.map((flight) => ( 
-//             <HotelsCard
-//                 key={flight.id}
-//                 id={flight.id}  
-//                 flightimgeurl={flight.flightimgeurl}
-//                 flightname={flight.flightname}
-//                 flightid={flight.flightid}
-//                 flightprice={flight.flightprice}
-//                 flightduration={flight.flightduration}
-//                 flightfrom={flight.flightfrom}
-//                 flightto={flight.flightto}
-//                 departuretime={flight.departuretime}
-//                 landingtime={flight.landingtime}
-//             />
-//         ))}
-//     </div>
-// )
+//         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 justify-items-center">
+//             {FlightCards.map((flightCard) => (
+//                 <FlightsCard
+//                     key={flightCard.id}
+//                     flightimgeurl={flightCard.flightimgeurl}
+//                     flightname={flightCard.flightname}
+//                     flightid={flightCard.flightid}
+//                     flightprice={flightCard.flightprice}
+//                     flightduration={flightCard.flightduration}
+//                     flightfrom={flightCard.flightfrom}
+//                     flightto={flightCard.flightto}
+//                     departuretime={flightCard.departuretime}
+//                     landingtime={flightCard.landingtime}
+//                 />
+//             ))}
+//         </div>
+//     );
 
-// }
-// export default HotelsList
+// };
+// export default FlightCardList

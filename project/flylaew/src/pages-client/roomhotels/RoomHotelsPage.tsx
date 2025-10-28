@@ -1,96 +1,91 @@
-import HeadRoomCard from "../../components/hotels/HeadRoomCard";
-import RoomHotelsCard from "../../components/hotels/RoomHotelsCard";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
+import HeadRoomCard from "../../components/hotels/HeadRoomCard";
+import RoomHotelsCard from "../../components/hotels/RoomHotelsCard";
 
-interface HeadRoomCard {
-    id:string;
-    imageUrl: string;
-    room1: string;
-    room2: string;
-    hotelname: string;
-    rating: string;
-    score: string;
-    comments: string;
-    location: string;
-    facilities: string[];
+interface HeadRoomCardData {
+  id: string;
+  imageUrl: string;
+  room1: string;
+  room2: string;
+  hotelname: string;
+  rating: string;
+  score: string;
+  comments: string;
+  location: string;
+  facilities: string[];
 }
 
-interface RoomHotels {
-    id: number;
-    imageUrl: string;
-    nameroom: string;
-    explanation: string;
-    price: string;
+interface RoomHotelsData {
+  id: string;
+  imageUrl: string;
+  nameroom: string;
+  explanation: string;
+  price: string;
 }
-
-
 
 const RoomHotels: React.FC = () => {
-    const [headroomcard, setHeadRoomCards] = useState<HeadRoomCard | null>(null);
-    const [roomhotels, setroomHotels] = useState<RoomHotels[]>([]);
-     const { id } = useParams<{ id: string }>();
+  const [headroomcard, setHeadRoomCard] = useState<HeadRoomCardData | null>(null);
+  const [roomhotels, setRoomHotels] = useState<RoomHotelsData[]>([]);
+  const { id } = useParams<{ id: string }>();
 
-    useEffect(() => {
-        const fetchroomHotels = async () => {
-            try {
-                const response = await axios.get<HeadRoomCard[]>("/HeadRoomCardData.json");
-                const hotel = response.data.find(hotel => hotel.id ==(id)); 
-                setHeadRoomCards(hotel || null);
-            }
-            catch (error) {
-                console.log("Error fetching roomhotels:", error);
-            }
-        };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // โหลดข้อมูล 
+        const headResponse = await axios.get<HeadRoomCardData[]>("/HeadRoomCardData.json");
+        const hotel = headResponse.data.find((h) => h.id === id);
+        setHeadRoomCard(hotel || null);
 
-        const fetchRoomHotels = async () => {
-            try {
-                const response = await axios.get<RoomHotels[]>("/RoomHotelsData.json");
-                console.log(response.data);
-                setroomHotels(response.data);
-            }
-            catch (error: unknown) {
-                console.log("Error fetching roomhotels:", error);
-            }
-        };
+        // โหลดข้อมูล
+        const roomResponse = await axios.get<RoomHotelsData[]>("/RoomHotelsData.json");
+        setRoomHotels(roomResponse.data);
+      } catch (error) {
+        console.error("Error fetching hotel data:", error);
+      }
+    };
 
-        fetchroomHotels();
-        fetchRoomHotels();
-    }, [id]);
-    if (!headroomcard) {
-        return <p>Fail</p>;
-    }
-    return (
-        <div className="flex flex-col ">
-          
-                <HeadRoomCard
-                    key={headroomcard.imageUrl}
-                    imageUrl={headroomcard.imageUrl}
-                    room1={headroomcard.room1}
-                    room2={headroomcard.room2}
-                    hotelname={headroomcard.hotelname}
-                    rating={headroomcard.rating}
-                    score={headroomcard.score}
-                    comments={headroomcard.comments}
-                    location={headroomcard.location}
-                    facilities={headroomcard.facilities}
-                />
+    fetchData();
+  }, [id]);
 
-            {roomhotels.map((roomhotel) => (
-                <RoomHotelsCard
-                    key={roomhotel.id}
-                    imageUrl={roomhotel.imageUrl}
-                    nameroom={roomhotel.nameroom}
-                    explanation={roomhotel.explanation}
-                    price={roomhotel.price}
-                />
+  // กรณีโหลดไม่สำเร็จหรือยังไม่มีข้อมูล
+  if (!headroomcard) {
+    return <p className="text-center text-gray-500 mt-10">ไม่พบข้อมูลโรงแรม</p>;
+  }
 
-            ))}
+  return (
+    <div className="flex flex-col">
+      <HeadRoomCard
+        key={headroomcard.id}
+        imageUrl={headroomcard.imageUrl}
+        room1={headroomcard.room1}
+        room2={headroomcard.room2}
+        hotelname={headroomcard.hotelname}
+        rating={headroomcard.rating}
+        score={headroomcard.score}
+        comments={headroomcard.comments}
+        location={headroomcard.location}
+        facilities={headroomcard.facilities}
+      />
 
-        </div>
-    )
-}
+      {roomhotels.length > 0 ? (
+        roomhotels.map((room) => (
+          <RoomHotelsCard
+            key={room.id}
+            id={room.id}
+            imageUrl={room.imageUrl}
+            nameroom={room.nameroom}
+            explanation={room.explanation}
+            price={room.price}
+          />
+        ))
+      ) : (
+        <p className="text-center text-gray-500 mt-6">ไม่มีข้อมูลห้องพัก</p>
+      )}
+    </div>
+  );
+};
 
-export default RoomHotels
+export default RoomHotels;
