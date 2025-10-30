@@ -1,13 +1,44 @@
 [
-    {
-        "id": "1",
-        "imageUrl": "https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_R_600_400_R5.jpg",
-        "nameroom":"ห้องซูพีเรียร์ เตียงคิง",
-        "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "809"
-     }
-
-
-    
+  {
+    "id": "1-1",
+    "imageUrl": "/src/assets/2024-09-30.jpg",
+    "nameroom": "ห้องดีลักซ์ (Deluxe Room)",
+    "explanation": "ห้องพักขนาด 32 ตร.ม. พร้อมเตียงคิงไซซ์ ระเบียงชมวิวเมือง และห้องน้ำหินอ่อนสุดหรู",
+    "price": "3200"
+  },
+  {
+    "id": "1-2",
+    "imageUrl": "/src/assets/2024-09-354.jpg",
+    "nameroom": "ห้องสวีท (Executive Suite)",
+    "explanation": "ห้องสวีทขนาด 50 ตร.ม. มีพื้นที่นั่งเล่น แยกส่วนนอน พร้อมอ่างจากุซซี่ส่วนตัว",
+    "price": "4800"
+  },
+  {
+    "id": "2-1",
+    "imageUrl": "/images/room_chiangmai1.jpg",
+    "nameroom": "ห้องซูพีเรีย (Superior Room)",
+    "explanation": "ห้องตกแต่งสไตล์ล้านนา มีเตียงคู่หรือเตียงเดี่ยว พร้อมระเบียงมองเห็นวิวเมือง",
+    "price": "1800"
+  },
+  {
+    "id": "2-2",
+    "imageUrl": "/images/room_chiangmai2.jpg",
+    "nameroom": "ห้องดีลักซ์บูทีค (Deluxe Boutique)",
+    "explanation": "ห้องขนาดใหญ่พร้อมของตกแต่งพื้นเมือง ให้บรรยากาศอบอุ่นและเป็นกันเอง",
+    "price": "2400"
+  },
+  {
+    "id": "3-1",
+    "imageUrl": "/images/room_phuket1.jpg",
+    "nameroom": "ห้องซีวิว (Seaview Room)",
+    "explanation": "ชมวิวทะเลจากระเบียงส่วนตัว พร้อมสิ่งอำนวยความสะดวกครบครัน",
+    "price": "4200"
+  },
+  {
+    "id": "3-2",
+    "imageUrl": "/images/room_phuket2.jpg",
+    "nameroom": "ห้องพูลวิลล่า (Pool Villa)",
+    "explanation": "ห้องพักหรูพร้อมสระว่ายน้ำส่วนตัว และบริการอาหารเช้าที่ห้อง",
+    "price": "8900"
+  }
 ]
-

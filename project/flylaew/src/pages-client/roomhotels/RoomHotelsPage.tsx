@@ -19,7 +19,7 @@ interface HeadRoomCardData {
 }
 
 interface RoomHotelsData {
-  id: string;
+  id: string;         
   imageUrl: string;
   nameroom: string;
   explanation: string;
@@ -27,30 +27,59 @@ interface RoomHotelsData {
 }
 
 const RoomHotels: React.FC = () => {
+  const { id } = useParams(); 
   const [headroomcard, setHeadRoomCard] = useState<HeadRoomCardData | null>(null);
   const [roomhotels, setRoomHotels] = useState<RoomHotelsData[]>([]);
-  const { id } = useParams<{ id: string }>();
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState<string>("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // โหลดข้อมูล 
-        const headResponse = await axios.get<HeadRoomCardData[]>("/HeadRoomCardData.json");
-        const hotel = headResponse.data.find((h) => h.id === id);
-        setHeadRoomCard(hotel || null);
+    let cancelled = false;
 
-        // โหลดข้อมูล
-        const roomResponse = await axios.get<RoomHotelsData[]>("/RoomHotelsData.json");
-        setRoomHotels(roomResponse.data);
-      } catch (error) {
-        console.error("Error fetching hotel data:", error);
+    const fetchData = async () => {
+      setLoading(true);
+      setErr("");
+
+      try {
+        const headRes = await axios.get<HeadRoomCardData[]>("/HeadRoomCardData.json", {
+          headers: { "Cache-Control": "no-cache" },
+        });
+        const hotel =
+          (id ? headRes.data.find((h) => String(h.id) === String(id)) : headRes.data[0]) || null;
+        if (!cancelled) setHeadRoomCard(hotel);
+        const roomRes = await axios.get<RoomHotelsData[]>("/RoomHotelsData.json", {
+          headers: { "Cache-Control": "no-cache" },
+        });
+        let filteredRooms: RoomHotelsData[] = roomRes.data;
+        if (hotel?.id) {
+          const hotelId = String(hotel.id);
+          filteredRooms = roomRes.data.filter((r) => {
+            const roomHotelId = r.id.includes("-") ? r.id.split("-")[0] : r.id;
+            return String(roomHotelId) === hotelId;
+          });
+        }
+
+        if (!cancelled) setRoomHotels(filteredRooms);
+      } catch (e: any) {
+        if (!cancelled) setErr(e?.message || "โหลดข้อมูลล้มเหลว");
+      } finally {
+        if (!cancelled) setLoading(false);
       }
     };
 
     fetchData();
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
 
-  // กรณีโหลดไม่สำเร็จหรือยังไม่มีข้อมูล
+
+  if (loading) {
+    return <p className="text-center text-gray-500 mt-10">กำลังโหลดข้อมูล…</p>;
+  }
+  if (err) {
+    return <p className="text-center text-red-600 mt-10">เกิดข้อผิดพลาด: {err}</p>;
+  }
   if (!headroomcard) {
     return <p className="text-center text-gray-500 mt-10">ไม่พบข้อมูลโรงแรม</p>;
   }
