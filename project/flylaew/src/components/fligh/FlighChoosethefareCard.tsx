@@ -133,7 +133,7 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             <div className="flex justify-end items-center border-t border-yellow-300 pt-4 mt-4 gap-3">
                 <div>
                     <p className="text-sm text-gray-600">ไป - กลับ</p>
-                    <p className="text-2xl font-bold text-blue-700">{price} ฿</p>
+                    <p className="text-2xl font-bold text-blue-700">{price}฿</p>
                 </div>
 
                 <Link

@@ -53,7 +53,7 @@ const Home = () => {
       <Navbar />
 
       {/* ส่วนปก */}
-      <div className="relative w-full max-w-[1200px] h-[700px] sm:h-[800px] md:h-[600px] lg:h-[700px] flex items-center justify-center mx-auto mt-24 px-4">
+      <div className="relative w-full max-w-[1200px] h-[700px] sm:h-[800px] md:h-[600px] lg:h-[700px] flex items-center justify-center mx-auto mt-20 px-4">
         <img
           src="https://i.pinimg.com/1200x/cf/1d/b8/cf1db89fc8b650f69258258cb3423655.jpg"
           alt="hero"
