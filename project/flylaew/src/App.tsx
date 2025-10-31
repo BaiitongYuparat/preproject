@@ -5,17 +5,22 @@ import "./App.css";
 import HotelPage from "./pages-client/HotelPage";
 import RoomHotels from "./pages-client/roomhotels/RoomHotelsPage";
 import Flights from "./pages-client/Flights";
+import Login from "./pages-client/Login";
+import Trains from "./pages-client/Trains";
+import Combo from "./pages-client/Combo";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/hotels" element={<HotelPage />} />
         <Route path="/hotels/:id" element={<RoomHotels />} />
         <Route path="/flights" element={<Flights />} />
-        <Route path="/trains" element={<Flights />} />
-        <Route path="/combo" element={<Flights />} />
+        <Route path="/trains" element={<Trains />} />
+        <Route path="/combo" element={<Combo />} />
 
       </Routes>
 

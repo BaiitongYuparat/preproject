@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LuMapPin } from "react-icons/lu";
 
 interface HotelCardProps {
     id: string;
@@ -62,10 +63,7 @@ const HotelsCard: React.FC<HotelCardProps> = ({
                 </div>
 
                 <div className="flex items-center mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-black w-4 h-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
+                    <LuMapPin />
 
 
                     <p className="text-gray-600 ml-2 font-medium text-[14px] sm:text-[16px] ">{location}</p>

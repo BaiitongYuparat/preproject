@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { VscSearch } from "react-icons/vsc";
 // import { useEffect } from "react";
 
 const Home = () => {
@@ -172,9 +173,7 @@ const Home = () => {
                 onClick={handleSearch}
                 className=" h-[40px] bg-gradient-to-r from-yellow-400  via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-500 text-white px-8 py-5 rounded-full font-medium flex items-center justify-center gap-2 shadow-sm hover:shadow-lg transition-all duration-300 "
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
+                <VscSearch />
                 ค้นหา
               </button>
             </div>
