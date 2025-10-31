@@ -1,29 +1,28 @@
 // import { Routes, Route } from "react-router-dom";
-// import Home from "./pages-client/HomePage";
+import Home from "./pages-client/HomePage";
 import "./App.css";
 // import ChoosethefareCard from "./components/fligh/FlighChoosethefareCard";
 // import TrainsChoosethefareCard from "./components/trains/TrainsChoosethefareCard";
-// import HotelPage from "./pages-client/HotelPage";
+import HotelPage from "./pages-client/HotelPage";
 // import RoomHotels from "./pages-client/roomhotels/RoomHotelsPage";
 // import Flights from "./pages-client/Flights";
 import { Routes, Route } from "react-router-dom";
-import RoomHotels from "./pages-client/roomhotels/RoomHotelsPage";
 
 
 function App() {
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/hotels" element={<HotelPage />} />
-        <Route path="/hotels/:id" element={<RoomHotels />} />
-        <Route path="/flights/:id" element={<Flights />} />
-      </Routes> */}
+        {/* <Route path="/hotels" element={<HotelPage />} /> */}
+        {/* <Route path="/hotels/:id" element={<RoomHotels />} /> */}
+        {/* <Route path="/flights/:id" element={<Flights />} /> */}
+      </Routes>
 
-          <Routes>
+          {/* <Routes>
       <Route path="/roomhotels/:id" element={<RoomHotels />} />
-      {/* หน้าอื่น ๆ */}
-    </Routes>
+      หน้าอื่น ๆ */}
+    {/* </Routes> */}
   
 {/* 
       <TrainsChoosethefareCard
