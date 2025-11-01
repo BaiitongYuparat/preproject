@@ -31,7 +31,8 @@ const HotelsCard: React.FC<HotelCardProps> = ({
 
     return (
 
-        <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+       <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 mx-3  my-5  rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+
 
 
             <img
@@ -42,7 +43,7 @@ const HotelsCard: React.FC<HotelCardProps> = ({
 
 
             {/* รายละเอียดโรงแรม */}
-            <div className=" flex-1 md:ml-1  mt-4 md:mt-0 w-full text-left  flex flex-col justify-between ">
+            <div className=" flex-1 md:ml-1  mt-4 md:mt-0 w-full text-left   flex flex-col justify-between ">
                 <div className="  flex  flex-wrap items-center justify-between mt-3 md:justify-start">
                     <a
                         href={`https://www.google.com/maps/search/${encodeURIComponent(name)}`}

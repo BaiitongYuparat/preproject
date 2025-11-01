@@ -44,7 +44,7 @@ const RoomHotelsList: React.FC = () => {
                     imageUrl={roomhotel.imageUrl}
                     nameroom={roomhotel.nameroom}
                     explanation={roomhotel.explanation}
-                    price={roomhotel.price}
+                    priceroom={roomhotel.price}
                 />
             ))}
         </div>

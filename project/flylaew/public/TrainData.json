@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "trainprice": 450,
+    "trainduration": "3 ชั่วโมง 30 นาที",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "08:00",
+    "landingtime": "11:30"
+  },
+  {
+    "id": "2",
+    "trainprice": 550,
+    "trainduration": "4 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "09:00",
+    "landingtime": "13:00"
+  }
+]

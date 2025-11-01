@@ -8,6 +8,8 @@ import Flights from "./pages-client/Flights";
 import Login from "./pages-client/Login";
 import Trains from "./pages-client/Trains";
 import Combo from "./pages-client/Combo";
+import Register from "./pages-client/Register";
+import Information from "./pages-client/information/Information";
 
 function App() {
   return (
@@ -15,9 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
         <Route path="/hotels" element={<HotelPage />} />
         <Route path="/hotels/:id" element={<RoomHotels />} />
+        <Route path="/information/:id" element={<Information />} />
         <Route path="/flights" element={<Flights />} />
         <Route path="/trains" element={<Trains />} />
         <Route path="/combo" element={<Combo />} />

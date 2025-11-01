@@ -7,7 +7,7 @@ interface RoomHotelsCardProps {
     imageUrl: string; //รูปห้อง
     nameroom: string; //ชื่อห้อง
     explanation: string; //คําอธิบาย
-    price: string; //ราคา
+    priceroom: string; //ราคา
 
 }
 
@@ -16,7 +16,7 @@ const RoomHotelsCard: React.FC<RoomHotelsCardProps> = ({
     imageUrl,
     nameroom,
     explanation,
-    price,
+    priceroom,
 }) => {
     return (
        <div className="bg-gradient-to-b from-yellow-100    to-yellow-50 border  border-yellow-100  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
@@ -39,9 +39,9 @@ const RoomHotelsCard: React.FC<RoomHotelsCardProps> = ({
             
             <div className="flex items-center md:gap-4 gap-3">
                 <p className="text-black font-medium ml-8 text-[20px] sm:text-[22px]   ">
-                    {price}฿
+                    {priceroom}฿
                 </p>
-                <Link to={`/hotels/${id}`}>
+                <Link to={`/information/${id}`}>
                 <button className=" w-full py-2 rounded-full   text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  transition-all duration-300 shadow-md hover:shadow-lg font-medium text-[14px] sm:text-[16px]">
                     เลือก
                 </button>

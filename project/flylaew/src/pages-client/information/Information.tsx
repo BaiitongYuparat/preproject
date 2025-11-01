@@ -1,40 +1,82 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Navbar from "../../components/Navbar";
+import InformationCard from "../../components/hotels/InformationCard";
+
+interface Hotels {
+    id: string;
+    imageUrl: string;
+    thaiName: string;
+    location: string;
+    score: string;
+    comments: string;
+}
+
+interface RoomHotels {
+    id: string;
+    imageUrl: string;
+    nameroom: string;
+    explanation: string;
+    price: string;
+}
+
 const Information = () => {
+    const { id } = useParams<{ id: string }>();
+    const [hotel, setHotel] = useState<Hotels | null>(null);
+    const [room, setRoom] = useState<RoomHotels | null>(null);
+    const [showPopup, setShowPopup] = useState(false);
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
+    // ฟังก์ชันตรวจสอบข้อมูล
+    const handleBooking = () => {
+        if (!firstName || !lastName || !email || !phone) {
+            alert("กรุณากรอกข้อมูลให้ครบทุกช่องก่อนจอง");
+            return;
+        }
+        setShowPopup(true);
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // ดึงข้อมูลโรงแรม
+                const hotelRes = await axios.get<Hotels[]>("/HotelsData.json");
+                const foundHotel = hotelRes.data.find((h) => h.id === id);
+                setHotel(foundHotel || null);
+
+                // ดึงข้อมูลห้อง
+                const roomRes = await axios.get<RoomHotels[]>("/RoomHotelsData.json");
+                const foundRoom = roomRes.data.find((r) => r.id === id);
+                setRoom(foundRoom || null);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, [id]);
+
+    if (!hotel || !room) {
+        return (
+            <p className="text-center text-gray-500 mt-20">
+                กำลังโหลดข้อมูลห้องพัก...
+            </p>
+        );
+    }
+
     return (
         <div>
             {/* Navbar */}
-            <nav className="fixed top-0 left-0 right-0 w-full shadow-xl flex items-center justify-between bg-yellow-50 py-4 z-50">
-                {/* โลโก้ */}
-                <div className="flex items-center space-x-3 pl-6">
-                    <img
-                        src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
-                        alt="logo"
-                        className="w-40 h-auto object-contain"
-                    />
-
-                    <div className="flex items-center space-x-3 pl-6">
-                        <p className="text-yellow-400 hover:text-yellow-600 transition">
-                            เลือกโรงแรม
-                        </p>
-                        <p className="text-gray-400 transition">/</p>
-                        <p className="text-black hover:text-gray-300 underline transition">
-                            กรอกรายละเอียด
-                        </p>
-                    </div>
-                </div>
-
-                {/* เมนูด้านขวา */}
-                <div className="flex items-center space-x-6 pr-6">
-                    <p className="text-black hover:text-yellow-500 transition">
-                        ช่วยเหลือ
-                    </p>
-                    <button className="text-white bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-md font-medium transition">
-                        Baiitong
-                    </button>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* เนื้อหา */}
             <div className="flex justify-between w-[1300px] mt-32 mx-auto space-x-6">
+
                 {/* ฝั่งซ้าย - ฟอร์ม */}
                 <div className="flex flex-col w-[55%] space-y-6">
                     {/* ข้อมูลผู้เข้าพัก */}
@@ -42,7 +84,6 @@ const Information = () => {
                         <h2 className="text-lg text-left font-medium mb-4 text-gray-800">
                             ข้อมูลผู้เข้าพัก
                         </h2>
-
                         <p className="text-left text-gray-500 text-[13px] mb-4">
                             ชื่อผู้เข้าพักต้องตรงกับเอกสารประจำตัวที่ใช้เมื่อเช็คอิน
                         </p>
@@ -50,11 +91,15 @@ const Information = () => {
                             <input
                                 type="text"
                                 placeholder="ชื่อ"
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
                                 className="border border-black rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
                             />
                             <input
                                 type="text"
                                 placeholder="นามสกุล"
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
                                 className="border border-black rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
                             />
                         </div>
@@ -69,11 +114,15 @@ const Information = () => {
                             <input
                                 type="text"
                                 placeholder="อีเมล"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="border border-black rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
                             />
                             <input
                                 type="text"
                                 placeholder="เบอร์โทรศัพท์"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                                 className="border border-black rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
                             />
                         </div>
@@ -103,10 +152,12 @@ const Information = () => {
                         <div className="space-y-3">
                             {/* บัตรเครดิต/เดบิต */}
                             <label className="flex items-center space-x-2 text-gray-700">
-                                <input type="radio"
+                                <input
+                                    type="radio"
                                     name="payment"
                                     className="accent-yellow-500"
-                                    defaultChecked />
+                                    defaultChecked
+                                />
                                 <span>บัตรเครดิต/เดบิต</span>
                             </label>
 
@@ -154,7 +205,7 @@ const Information = () => {
                                         className="h-10 w-10 object-contain rounded-lg shadow-sm"
                                     />
                                     <img
-                                        src="https://cdn.marketingoops.com/wp-content/uploads/2018/10/Logo-new-K-PLUS.jpg"
+                                        src="https://www.dpa.or.th/storage/uploads/bank/dpa_bank_kbank@2x.png"
                                         alt="kplus"
                                         className="h-10 w-10 object-contain rounded-lg shadow-sm"
                                     />
@@ -169,96 +220,63 @@ const Information = () => {
                     </div>
                 </div>
 
-                {/* ฝั่งขวา - สรุป */}
-                <div className="flex flex-col w-[60%] space-y-5">
-                    <div className="bg-white border border-yellow-200 rounded-xl p-4">
-                        <div className="flex space-x-4">
-                            <img
-                                src="https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
-                                alt="hotel"
-                                className="w-80 h-50 object-cover rounded-lg"
-                            />
-                            <div className="flex flex-col text-left justify-center">
-                                <div className="flex items-center justify-normal">
-                                    <h2 className="font-medium text-[20px] text-black ">
-                                        โรงแรมเวลาดี อุดรธานี
-                                    </h2>
-                                </div>
-                                <div className="flex items-center justify-normal">
-                                    <img src="https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-location-icon-for-your-project-png-image_1905058.jpg" alt="location" className="w-7 h-7" />
-                                    <p className="font-mediu text-[14px] text-gray-500">
-                                        ใกล้ UDON Day & Night Bar Complex
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                {/* ข้อมูลโรงแรมที่เลือก */}
+                <div className="w-[50%]">
+                    <InformationCard
+                        id={hotel.id}
+                        imageUrl={room.imageUrl || hotel.imageUrl}
+                        thaiName={hotel.thaiName}
+                        location={hotel.location}
+                        price={room.price}
+                        nameroom={room.nameroom}
+                        score={hotel.score}
+                        comments={hotel.comments}
+                        explanation={room.explanation}
+                    />
 
-                        <p className="mt-7 border-t border-gray-200 pt-2 text-sm text-left font-medium text-gray-700">
-                            ห้องซูพีเรียร์ 2 เตียง (เตียงเดี่ยว 2 เตียง กว้าง 1.07 ม.)
-                        </p>
-                        <p className=" text-sm text-left font-medium text-gray-700">
-                            (เตียงเดี่ยว 2 เตียง กว้าง 1.07 ม.)
-                        </p>
-                    </div>
-
-                    {/* วันที่ */}
-                    <div className="bg-white border border-yellow-200 rounded-xl p-4">
-                        <p className="font-medium text-gray-800">
-                            ส. 27 ก.ย. — อ. 28 ก.ย.
-                        </p>
-                        <p className="text-sm text-gray-600 mt-5">
-                            เช็คอิน: 14:00 - 06:00
-                            <br />
-                            เช็คเอาท์: ก่อน 12:00
-                        </p>
-                    </div>
-
-                    {/* รายละเอียดราคา */}
-                    <div className="bg-white border border-yellow-200 rounded-xl p-4">
-                        <h4 className="font-semibold text-gray-800 mb-2">รายละเอียดราคา</h4>
-                        <div className="space-y-1 text-sm pt-4 text-gray-700">
-                            <div className="flex justify-between">
-                                <span>1 ห้อง × 1 คืน</span>
-                                <span> ฿ 900</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>ราคารวมก่อนภาษี</span>
-                                <span>฿ 2,490</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span>ภาษีและค่าธรรมเนียม</span>
-                                <span>98.13</span>
-                            </div>
-                            <div className="border-t border-gray-200 pt-10 flex justify-between text-[18px] font-semibold text-black">
-                                <span>ทั้งหมด</span>
-                                <span>฿ 998.13</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* จอง */}
+                    {/* ปุ่มจอง */}
                     <div className="w-full mt-6">
                         <button
-                            className="w-full bg-yellow-400 hover:bg-yellow-500 text-white   font-medium py-4  rounded-xl shadow-lg  ">
+                            onClick={handleBooking}
+                            className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-medium py-4 rounded-xl shadow-lg"
+                        >
                             จองตอนนี้
                         </button>
                     </div>
 
+                    {/* ป๊อบอัพ QR Code */}
+                    {showPopup && (
+                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+                            <div className="bg-white p-6 rounded-xl relative">
+                                <img src="https://res.cloudinary.com/dimvnxngp/image/upload/v1762008630/3c5nAS_qrcode_1_oprgqq.png"
+                                    alt="QR Code"
+                                    className="w-80 h-80" />
+                                <button
+                                    onClick={() => setShowPopup(false)}
+                                    className="mt-4  text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  px-4 py-2 rounded-full  transition "
+                                >
+                                    ปิด
+                                </button>
+
+                            </div>
+                        </div>
+                    )}
+
+
 
                     {/* นโยบายการยกเลิก */}
-                    <div className="bg-white border border-yellow-200 rounded-xl p-4 text-sm text-gray-700 leading-relaxed">
+                    <div className="bg-white border border-yellow-200 rounded-xl p-4 text-sm text-gray-700 leading-relaxed mt-4">
                         <p className="font-semibold text-red-600 mb-2">นโยบายการยกเลิก</p>
                         <p>
                             ค่าธรรมเนียมการยกเลิก: 652.55 บาท <br />
                             ได้รับเงินคืนหากคุณยกเลิกก่อนวันที่เช็คอิน
                         </p>
                     </div>
-
-
                 </div>
             </div>
-        </div>
-    )
-}
+        </div >
+    );
+};
 
-export default Information
+export default Information;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
 import HeadRoomCard from "../../components/hotels/HeadRoomCard";
 import RoomHotelsCard from "../../components/hotels/RoomHotelsCard";
 
@@ -39,9 +38,11 @@ const RoomHotels: React.FC = () => {
         const hotel = headResponse.data.find((h) => h.id === id);
         setHeadRoomCard(hotel || null);
 
-        // โหลดข้อมูล
+        // โหลดข้อมูลที่มีห้องหมายเลขเดียวกัน
         const roomResponse = await axios.get<RoomHotelsData[]>("/RoomHotelsData.json");
-        setRoomHotels(roomResponse.data);
+        const roomsForThisHotel = roomResponse.data.filter(r => r.id === id);
+        setRoomHotels(roomsForThisHotel);
+
       } catch (error) {
         console.error("Error fetching hotel data:", error);
       }
@@ -56,7 +57,7 @@ const RoomHotels: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-6">
       <HeadRoomCard
         key={headroomcard.id}
         imageUrl={headroomcard.imageUrl}
@@ -71,14 +72,14 @@ const RoomHotels: React.FC = () => {
       />
 
       {roomhotels.length > 0 ? (
-        roomhotels.map((room) => (
+        roomhotels.map(room => (
           <RoomHotelsCard
             key={room.id}
             id={room.id}
             imageUrl={room.imageUrl}
             nameroom={room.nameroom}
             explanation={room.explanation}
-            price={room.price}
+            priceroom={room.price}
           />
         ))
       ) : (
