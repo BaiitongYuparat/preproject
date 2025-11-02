@@ -7,9 +7,8 @@ import RoomHotels from "./pages-client/roomhotels/RoomHotelsPage";
 import Flights from "./pages-client/Flights";
 import Login from "./pages-client/Login";
 import Trains from "./pages-client/Trains";
-import Combo from "./pages-client/Combo";
 import Register from "./pages-client/Register";
-import Information from "./pages-client/information/Information";
+import Information from "./pages-client/information/InformationHotel";
 import FlighChoosethefareCardList from "./components/fligh/FlighChoosethefareCardList";
 import TrainsChoosethefareCardList from "./components/trains/TrainsChoosethefareCardList";
 
@@ -27,7 +26,7 @@ function App() {
         <Route path="/flighchoosethefare/:id" element={<FlighChoosethefareCardList />} />
         <Route path="/trains" element={<Trains />} />
         <Route path="/trainschoosethefare/:id" element={<TrainsChoosethefareCardList />} />
-        <Route path="/combo" element={<Combo />} />
+
 
       </Routes>
     </>

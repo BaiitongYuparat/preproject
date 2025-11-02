@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
-import InformationCard from "../../components/hotels/InformationCard";
+import InformationCard from "../../components/hotels/InformationCardHotels";
 
 interface Hotels {
     id: string;

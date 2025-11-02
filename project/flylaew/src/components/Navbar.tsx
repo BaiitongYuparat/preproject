@@ -10,9 +10,13 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
 
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
+    const adminStatus = localStorage.getItem("isAdmin");
     if (storedUser) setUsername(storedUser);
+    if (adminStatus === "true") setIsAdmin(true);
   }, []);
 
   const handleLogout = () => {
@@ -25,32 +29,37 @@ export default function Navbar() {
     { path: "/hotels", label: "โรงแรม" },
     { path: "/flights", label: "เที่ยวบิน" },
     { path: "/trains", label: "รถไฟ" },
-    { path: "/combo", label: "เที่ยวบิน+โรงแรม" },
+    ...(isAdmin ? [{ path: "/admin", label: "แอดมิน" }] : []),
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-yellow-50 shadow-xl z-50">
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
-        {/* โลโก้ */}
-        <Link to="/" className="flex items-center space-x-2">
-          <img
-            src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
-            alt="logo"
-            className="w-36 md:w-44 h-auto object-contain cursor-pointer"
-          />
-        </Link>
+        {/* โลโก้ + เมนูหลัก (รวมไว้ฝั่งซ้าย) */}
+        <div className="flex items-center">
+          <Link to="/" className="flex items-center">
+            <img
+              src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
+              alt="logo"
+              className="w-36 md:w-44 h-auto object-contain cursor-pointer"
+            />
+          </Link>
 
-        {/* เมนูหลัก (Desktop) */}
-        <div className="hidden md:flex items-center space-x-8">
-          {menuItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="text-yellow-500 hover:text-amber-600 font-medium transition-colors duration-300 hover:underline"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {/* เมนูหลัก (Desktop) */}
+          <div className="hidden md:flex items-center space-x-8 ml-2">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="text-yellow-500 hover:text-amber-600 font-medium transition-colors duration-300 hover:underline"
+
+                
+                
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* เมนูด้านขวา (Desktop) */}
@@ -75,7 +84,7 @@ export default function Navbar() {
               <span className="text-yellow-400 font-semibold tracking-wide">{username}</span>
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-4 py-1.5 rounded-full font-medium shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300"
+                className="flex items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-4 py-1.5 rounded-full font-medium shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 ออกจากระบบ
               </button>

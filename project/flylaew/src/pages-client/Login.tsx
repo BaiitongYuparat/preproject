@@ -17,6 +17,8 @@ const Login: React.FC = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
+        
+
         const savedUser = localStorage.getItem("registeredUser"); //ดึงข้อมูลที่เก็บไว้ใน localStorage ของเบราว์เซอร์
         if (!savedUser) {
             alert("No registered user found! Please register first."); //ยังไม่มีผู้ใช้ใน localStorage จะเด้งว่ายังไม่มี
@@ -25,13 +27,34 @@ const Login: React.FC = () => {
 
         const user = JSON.parse(savedUser);
 
-        if (inputs.email === user.email && inputs.password === user.password) { //เช็คว่า email และ password ตรงกันหรือไม่
+        //Admin
+        if (inputs.email === user.email && inputs.password === user.password) {
+            localStorage.setItem("username", user.firstName);
+
+            if (inputs.email === "admin@example.com") {
+                localStorage.setItem("isAdmin", "true");
+            } else {
+                localStorage.removeItem("isAdmin");
+            }
+
+            navigate("/");
+        } else {
+            alert("Invalid email or password");
+        }
+
+
+        //เช็คว่า email และ password ตรงกันหรือไม่
+        if (inputs.email === user.email && inputs.password === user.password) { 
             localStorage.setItem("username", user.firstName);
             navigate("/");
         } else {
             alert("Invalid email or password"); //เด้งมือรหัสหรืออีเมลไม่๔ูกต้อง
         }
+
+
+        
     };
+    
 
     return (
         <div className="flex items-center justify-center min-h-screen">
