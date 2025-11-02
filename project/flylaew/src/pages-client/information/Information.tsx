@@ -18,7 +18,7 @@ interface RoomHotels {
     imageUrl: string;
     nameroom: string;
     explanation: string;
-    price: string;
+    price: number;
 }
 
 const Information = () => {

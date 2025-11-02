@@ -6,7 +6,7 @@ interface InformationCardProps {
     imageUrl: string;
     thaiName: string;
     location: string;
-    price: string;
+    price: number;
     nameroom: string;
     score: string;
     comments: string;
@@ -70,7 +70,7 @@ const InformationCard: React.FC<InformationCardProps> = ({
             <div className="flex justify-between items-center w-full mt-2 px-7">
                 <p className="text-black font-medium text-[20px] sm:text-[22px]">ราคา</p>
                 <p className="text-black font-medium text-[20px] sm:text-[22px]">
-                    {price}฿
+                    {price.toLocaleString()}฿
                 </p>
             </div>
         </div>

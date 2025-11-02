@@ -4,21 +4,21 @@
         "imageUrl": "https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_R_600_400_R5.jpg",
         "nameroom":"ห้องซูพีเรียร์ เตียงคิง",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "809"
+        "price": 809
      },
       {
         "id": "1",
         "imageUrl": "https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_R_600_400_R5.jpg",
         "nameroom":"ห้องซูพีเรียร์ เตียงคิง",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "809"
+        "price": 809
      },
      {
         "id":"2",
         "imageUrl":"https://ak-d.tripcdn.com/images/0220112000dju7li0F1A9_W_1280_853_R5.webp",
         "nameroom":"ห้องสวีทแบบหนึ่งห้องนอน",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "1,060"
+        "price": 1060
 
      },
      {
@@ -26,14 +26,14 @@
         "imageUrl":"https://ak-d.tripcdn.com/images/1mc6j12000f0d83te027F_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
         "nameroom":"ห้องดีลักซ์ ทริปเปิ้ล",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "704"
+        "price": 704
      },
      {
         "id":"3",
         "imageUrl":"https://ak-d.tripcdn.com/images/1mc2212000f0d7x277144_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
         "nameroom":"ห้องสวีทสำหรับครอบครัว",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "1,109"
+        "price": 1109
 
      },
      {
@@ -41,21 +41,21 @@
         "imageUrl":"https://ak-d.tripcdn.com/images/1mc1w12000f0d7zb68BAA_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
         "nameroom":"ห้องสวีท",
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": "906"
+        "price": 906
      },
      {
         "id":"4",
         "imageUrl":"https://ak-d.tripcdn.com/images/0223t12000kyz5xxlE400_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
         "nameroom":"ห้องสแตนดาร์ด เตียงคิงไซส์",
         "explanation":"ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
-        "price": "584"
+        "price": 584
      },
      {
         "id":"4",
         "imageUrl":"https://ak-d.tripcdn.com/images/0221912000l0l9wpk521F_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
         "nameroom":"ห้องดีลักซ์ เตียงใหญ่ 1 เตียง",
         "explanation":"ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
-        "price": "677"
+        "price": 677
      }
 ]
 

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 interface FlighChoosethefareCardProps {
-    id: string;
     flightimgeurl: string;
     flightid: string;
-    flightprice: string;
+    flightprice: number;
     flightfrom: string;
     flightto: string;
     departuretime: string;
@@ -16,7 +15,6 @@ interface FlighChoosethefareCardProps {
 }
 
 const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
-    id,
     flightimgeurl,
     flightid,
     flightprice,
@@ -24,13 +22,14 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
     flightto,
     departuretime,
     landingtime,
-    returndeparture,
-    returnlanding,
+    // returndeparture,
+    // returnlanding,
     luggage
 }) => {
 
     const [selectedClass, setSelectedClass] = useState<"normal" | "baggage" | null>(null);
     const [price, setPrice] = useState<number>(Number(flightprice));
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleSelectClass = (cls: "normal" | "baggage") => {
         setSelectedClass(cls);
@@ -71,7 +70,7 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             </div>
 
             {/* ขากลับ */}
-            <div className="font-medium text-left text-[16px] sm:text-[22px] text-black border-t border-yellow-300 pt-4 mt-4 gap-3">
+            {/* <div className="font-medium text-left text-[16px] sm:text-[22px] text-black border-t border-yellow-300 pt-4 mt-4 gap-3">
                 {flightto} - {flightfrom}
             </div>
 
@@ -94,17 +93,16 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* เลือกชั้นโดยสาร */}
             <div className="grid md:grid-cols-2 border-t border-yellow-100 pt-4 mt-4 gap-3">
                 <div
                     onClick={() => handleSelectClass("normal")}
-                    className={`p-4 border rounded-xl cursor-pointer transition-all ${
-                        selectedClass === "normal"
-                            ? "border-yellow-300 bg-amber-50"
-                            : "border-gray-200 hover:border-yellow-300"
-                    }`}
+                    className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "normal"
+                        ? "border-yellow-300 bg-amber-50"
+                        : "border-gray-200 hover:border-yellow-300"
+                        }`}
                 >
                     <h3 className="font-semibold text-gray-800 mb-2">ชั้นประหยัด</h3>
                     <p className="text-sm text-gray-700">สัมภาระ: {luggage}</p>
@@ -115,11 +113,10 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
 
                 <div
                     onClick={() => handleSelectClass("baggage")}
-                    className={`p-4 border rounded-xl cursor-pointer transition-all ${
-                        selectedClass === "baggage"
-                            ? "border-yellow-300 bg-amber-50"
-                            : "border-gray-200 hover:border-yellow-300"
-                    }`}
+                    className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "baggage"
+                        ? "border-yellow-300 bg-amber-50"
+                        : "border-gray-200 hover:border-yellow-300"
+                        }`}
                 >
                     <h3 className="font-semibold text-gray-800 mb-2">ชั้นประหยัด (มีสัมภาระ 20KG)</h3>
                     <p className="text-sm text-gray-700">สัมภาระ: {luggage}</p>
@@ -133,30 +130,45 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             <div className="flex justify-end items-center border-t border-yellow-300 pt-4 mt-4 gap-3">
                 <div>
                     <p className="text-sm text-gray-600">ไป - กลับ</p>
-                    <p className="text-2xl font-bold text-blue-700">{price}฿</p>
+                    <p className="text-2xl font-bold text-blue-700">{price.toLocaleString()}฿</p>
                 </div>
 
-                <Link
-                    to={
-                        selectedClass
-                            ? `/checkout/${id}?class=${selectedClass}&price=${price}`
-                            : "#"
-                    }
+                <button
                     onClick={(e) => {
+                        e.preventDefault();
                         if (!selectedClass) {
-                            e.preventDefault();
-                            alert("กรุณาเลือกชั้นโดยสารก่อนดำเนินการต่อ ✈️");
+                            alert("กรุณาเลือกชั้นโดยสารก่อนดำเนินการต่อ");
+                        } else {
+                            setShowPopup(true);
                         }
                     }}
-                    className={`${
-                        selectedClass
-                            ? "bg-amber-500 hover:bg-yellow-300"
-                            : "bg-gray-400 cursor-not-allowed"
-                    } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
+                    className={`${selectedClass
+                        ? " bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
+                        : "bg-gray-400 cursor-not-allowed"
+                        } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
                 >
                     ดำเนินการต่อ
-                </Link>
+                </button>
             </div>
+
+            {/* ป๊อบอัพ QR Code */}
+            {showPopup && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded-xl relative">
+                        <img
+                            src="https://res.cloudinary.com/dimvnxngp/image/upload/v1762008630/3c5nAS_qrcode_1_oprgqq.png"
+                            alt="QR Code"
+                            className="w-80 h-80"
+                        />
+                        <button
+                            onClick={() => setShowPopup(false)}
+                            className="mt-4 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 px-4 py-2 rounded-full transition"
+                        >
+                            ปิด
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {/* วิธีชำระเงิน */}
             <div className="mt-4">

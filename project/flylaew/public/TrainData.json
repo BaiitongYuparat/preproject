@@ -1,20 +1,74 @@
 [
   {
     "id": "1",
-    "trainprice": 450,
-    "trainduration": "3 ชั่วโมง 30 นาที",
+    "trainprice": 700,
+    "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
-    "departuretime": "08:00",
-    "landingtime": "11:30"
+    "departuretime": "06:00",
+    "landingtime": "15:00"
   },
   {
     "id": "2",
-    "trainprice": 550,
-    "trainduration": "4 ชั่วโมง",
-    "trainfrom": "เชียงใหม่",
+    "trainprice": 750,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
-    "departuretime": "09:00",
-    "landingtime": "13:00"
+    "departuretime": "08:00",
+    "landingtime": "17:00"
+  },
+  {
+    "id": "3",
+    "trainprice": 720,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "10:00",
+    "landingtime": "19:00"
+  },
+  {
+    "id": "4",
+    "trainprice": 710,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "12:00",
+    "landingtime": "21:00"
+  },
+  {
+    "id": "5",
+    "trainprice": 730,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "14:00",
+    "landingtime": "23:00"
+  },
+  {
+    "id": "6",
+    "trainprice": 740,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "16:00",
+    "landingtime": "01:00"
+  },
+  {
+    "id": "7",
+    "trainprice": 760,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "18:00",
+    "landingtime": "03:00"
+  },
+  {
+    "id": "8",
+    "trainprice": 780,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "อุดรธานี",
+    "trainto": "กรุงเทพ",
+    "departuretime": "20:00",
+    "landingtime": "05:00"
   }
 ]

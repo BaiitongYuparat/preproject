@@ -10,6 +10,8 @@ import Trains from "./pages-client/Trains";
 import Combo from "./pages-client/Combo";
 import Register from "./pages-client/Register";
 import Information from "./pages-client/information/Information";
+import FlighChoosethefareCardList from "./components/fligh/FlighChoosethefareCardList";
+import TrainsChoosethefareCardList from "./components/trains/TrainsChoosethefareCardList";
 
 function App() {
   return (
@@ -22,24 +24,12 @@ function App() {
         <Route path="/hotels/:id" element={<RoomHotels />} />
         <Route path="/information/:id" element={<Information />} />
         <Route path="/flights" element={<Flights />} />
+        <Route path="/flighchoosethefare/:id" element={<FlighChoosethefareCardList />} />
         <Route path="/trains" element={<Trains />} />
+        <Route path="/trainschoosethefare/:id" element={<TrainsChoosethefareCardList />} />
         <Route path="/combo" element={<Combo />} />
 
       </Routes>
-
-      {/* <ChoosethefareCard
-        id="1"
-        flightimgeurl="https://play-lh.googleusercontent.com/-3Ip-GZtF5T18egow7h0QcdiRlR9Wrwntj49_i7klvyi9toLUTPNAsVV8XbL5G88Lg"
-        flightid="FD3630"
-        flightprice="4,000"
-        flightfrom="อุดรธานี (UTH)"
-        flightto="กรุงเทพฯ (DMK)"
-        departuretime="10:00"
-        landingtime="11:05"
-        returndeparture="12:00"
-        returnlanding="13:05"
-        luggage="1 ชิ้น (carry-on)"
-      /> */}
     </>
   );
 }

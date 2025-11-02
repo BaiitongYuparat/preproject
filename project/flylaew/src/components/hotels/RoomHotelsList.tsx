@@ -7,7 +7,7 @@ interface RoomHotels {
     imageUrl: string; //รูปห้อง
     nameroom: string; //ชื่อห้อง
     explanation: string; //คําอธิบาย
-    price: string; //ราคา
+    price: number; //ราคา
 }
 
 const RoomHotelsList: React.FC = () => {

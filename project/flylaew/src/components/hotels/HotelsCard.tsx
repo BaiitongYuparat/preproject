@@ -72,7 +72,7 @@ const HotelsCard: React.FC<HotelCardProps> = ({
 
                 {/* ส่วนล่าง (ราคา + ปุ่ม) */}
                 <div className="mt-4 text-right  items-center">
-                    <p className="text-xl font-semibold text-black">{price}฿ </p>
+                    <p className="text-xl font-semibold text-black">{price.toLocaleString()}฿ </p>
                     <p className="text-gray-500 text-sm">
                         ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax}฿
                     </p>

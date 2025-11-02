@@ -22,7 +22,7 @@ interface RoomHotelsData {
   imageUrl: string;
   nameroom: string;
   explanation: string;
-  price: string;
+  price: number;
 }
 
 const RoomHotels: React.FC = () => {

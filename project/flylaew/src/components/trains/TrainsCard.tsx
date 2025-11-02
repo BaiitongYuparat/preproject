@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface TrainsCardProps {
-
+id: string
     trainprice: number // ราคาต่อคน
     trainduration: string // เวลาในการเดินทาง
     trainfrom: string // จาก
@@ -11,6 +12,7 @@ interface TrainsCardProps {
 }
 
 const TrainsCard: React.FC<TrainsCardProps> = ({
+    id,
     trainprice,
     trainduration,
     trainfrom,
@@ -20,7 +22,7 @@ const TrainsCard: React.FC<TrainsCardProps> = ({
 }) => {
 
     return(
-        <div className="bg-white w-full  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
+        <div className="bg-gradient-to-b from-white to-yellow-50  w-full  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg   border border-yellow-200  hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out  ">
              {/* เวลา รถไฟไปและถึง */}
             <div className="flex items-center sm:flex-row flex-col  text-center  md:mr-10   sm:gap-6  mb-4 md:mb-0 gap-3">
                 <div>
@@ -46,11 +48,14 @@ const TrainsCard: React.FC<TrainsCardProps> = ({
             {/* ราคา */}
             <div className="flex items-center md:gap-4 gap-3">
                 <p className="text-black font-medium ml-2 text-[18px] sm:text-[20px]   ">
-                    {trainprice.toLocaleString()} ฿
+                    {trainprice.toLocaleString()}฿
                 </p>
-                <button className=" bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-md font-medium text-[14px] sm:text-[16px]">
+                <Link to={`/trainschoosethefare/${id}`}>
+               <button className=" w-full py-2 rounded-full   text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  transition-all duration-300 shadow-md hover:shadow-lg font-medium text-[14px] sm:text-[16px]">
                     เลือก
                 </button>
+                </Link>
+                
             </div>
         </div>
     )
