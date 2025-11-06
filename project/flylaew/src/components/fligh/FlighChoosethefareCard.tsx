@@ -35,8 +35,6 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
     flightto,
     departuretime,
     landingtime,
-    // returndeparture,
-    // returnlanding,
     luggage,
     flightname
 
@@ -52,12 +50,12 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    const [bookings, setBookings] = useState<Booking[]>(() => {
+    const [bookings, setBookings] = useState<Booking[]>(() => { // โหลดข้อมูลการจอง
         const saved = localStorage.getItem("bookings");
         return saved ? JSON.parse(saved) : [];
     });
 
-    const saveBookings = (newBookings: Booking[]) => {
+    const saveBookings = (newBookings: Booking[]) => { // บันทึกการจอง
         setBookings(newBookings);
         localStorage.setItem("bookings", JSON.stringify(newBookings));
     };
@@ -75,8 +73,8 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
 
         const totalPrice = price;
 
-        const confirmBooking = window.confirm(
-      ` ชื่อ: ${firstName} ${lastName}
+        const confirmBooking = window.confirm(`
+        ชื่อ: ${firstName} ${lastName}
         อีเมล: ${email}
         เบอร์โทรศัพท์: ${phone}
         จาก: ${flightfrom} - ถึง: ${flightto}
@@ -114,6 +112,8 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
 
     return (
         <div className="bg-white w-full max-w-6xl mx-auto mt-6 rounded-2xl border border-yellow-300 shadow-md flex flex-col hover:shadow-xl transition-all duration-300 p-5">
+           
+           
             <p className="text-left text-gray-500 text-[13px] mb-2 ">
                 ชื่อผู้จองต้องตรงกับเอกสารประจำตัว
             </p>
@@ -180,7 +180,7 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             {/* เลือกชั้นโดยสาร */}
             <div className="grid md:grid-cols-2 border-t border-yellow-200 pt-4 mt-4 gap-3">
                 <div
-                    onClick={() => handleSelectClass("normal")}
+                    onClick={() => handleSelectClass("normal")} //ปกติ
                     className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "normal"
                         ? "border-yellow-300 bg-amber-50"
                         : "border-gray-200 hover:border-yellow-300"
@@ -194,7 +194,7 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                 </div>
 
                 <div
-                    onClick={() => handleSelectClass("baggage")}
+                    onClick={() => handleSelectClass("baggage")} //สัมภาระ
                     className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "baggage"
                         ? "border-yellow-300 bg-amber-50"
                         : "border-gray-200 hover:border-yellow-300"
