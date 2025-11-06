@@ -15,6 +15,8 @@ interface ChoosethefareCardData {
     returndeparture: string;
     returnlanding: string;
     luggage: string;
+    flightname: string;
+    
 }
 
 const FlighChoosethefareCardList: React.FC = () => {
@@ -58,6 +60,7 @@ const FlighChoosethefareCardList: React.FC = () => {
                     returndeparture={flight.returndeparture}
                     returnlanding={flight.returnlanding}
                     luggage={flight.luggage}
+                    flightname={flight.flightname}
                 />
             ))}
         </div>

@@ -6,7 +6,10 @@ import { useParams } from "react-router-dom";
 interface TrainFareData {
     id: string;
     trainprice: number;
+    trainto: string
+    trainfrom: string
 }
+
 
 const TrainsChoosethefareCardList: React.FC = () => {
     const [trains, setTrains] = useState<TrainFareData[]>([]);
@@ -37,6 +40,8 @@ const TrainsChoosethefareCardList: React.FC = () => {
             {trains.map((train) => (
                 <TrainsChoosethefareCard
                     key={train.id}
+                    trainfrom={train.trainfrom}
+                    trainto={train.trainto}
                     trainprice={train.trainprice}
                 />
             ))}

@@ -12,6 +12,19 @@ interface FlighChoosethefareCardProps {
     returndeparture: string;
     returnlanding: string;
     luggage: string;
+    flightname: string
+}
+
+interface Booking {
+    id: string;
+    createdAt: string;
+    type: "hotel" | "flight" | "train";
+    name: string;
+    price: number;
+    details: string;
+    contact: string;
+    email: string;
+    phone: string;
 }
 
 const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
@@ -24,26 +37,121 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
     landingtime,
     // returndeparture,
     // returnlanding,
-    luggage
+    luggage,
+    flightname
+
 }) => {
+
 
     const [selectedClass, setSelectedClass] = useState<"normal" | "baggage" | null>(null);
     const [price, setPrice] = useState<number>(Number(flightprice));
-    const [showPopup, setShowPopup] = useState(false);
 
-    const handleSelectClass = (cls: "normal" | "baggage") => {
-        setSelectedClass(cls);
-        if (cls === "baggage") {
-            setPrice(Number(flightprice) + 1000);
-        } else {
-            setPrice(Number(flightprice));
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+
+    const [bookings, setBookings] = useState<Booking[]>(() => {
+        const saved = localStorage.getItem("bookings");
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    const saveBookings = (newBookings: Booking[]) => {
+        setBookings(newBookings);
+        localStorage.setItem("bookings", JSON.stringify(newBookings));
+    };
+
+    const handleBooking = () => {
+        if (!firstName || !lastName || !email || !phone) {
+            alert("กรุณากรอกข้อมูลให้ครบทุกช่องก่อนจอง");
+            return;
+        }
+
+        if (!selectedClass) {
+            alert("กรุณาเลือกชั้นโดยสารก่อนจอง");
+            return;
+        }
+
+        const totalPrice = price;
+
+        const confirmBooking = window.confirm(
+      ` ชื่อ: ${firstName} ${lastName}
+        อีเมล: ${email}
+        เบอร์โทรศัพท์: ${phone}
+        จาก: ${flightfrom} - ถึง: ${flightto}
+        ชั้นโดยสาร: ${selectedClass === "baggage" ? "มีสัมภาระ 20KG" : "ชั้นประหยัด"}
+        ราคา: ${totalPrice.toLocaleString()} บาท
+
+         ต้องการยืนยันการจองหรือไม่? `
+        
+        );
+
+        if (confirmBooking) {
+            const newBooking: Booking = {
+                id: Date.now().toString(),
+                createdAt: new Date().toLocaleString(),
+                type: "flight",
+                name: `${firstName} ${lastName}`,
+                price: totalPrice,
+                details: `${flightfrom} - ${flightto}`,
+                contact: flightname,
+                email,
+                phone,
+            };
+
+            const updated = [...bookings, newBooking];
+            saveBookings(updated);
+            alert(" จองตั๋วเครื่องบินสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
         }
     };
 
+    const handleSelectClass = (cls: "normal" | "baggage") => {
+        setSelectedClass(cls);
+        setPrice(cls === "baggage" ? Number(flightprice) + 1000 : Number(flightprice));
+    };
+
+
     return (
         <div className="bg-white w-full max-w-6xl mx-auto mt-6 rounded-2xl border border-yellow-300 shadow-md flex flex-col hover:shadow-xl transition-all duration-300 p-5">
+            <p className="text-left text-gray-500 text-[13px] mb-2 ">
+                ชื่อผู้จองต้องตรงกับเอกสารประจำตัว
+            </p>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+                <input
+                    type="text"
+                    placeholder="ชื่อ"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+                />
+                <input
+                    type="text"
+                    placeholder="นามสกุล"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+                />
+            </div>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+                <input
+                    type="text"
+                    placeholder="อีเมล"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+                />
+                <input
+                    type="text"
+                    placeholder="เบอร์โทรศัพท์"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+                />
+            </div>
+
             {/* จาก - ถึง */}
-            <div className="font-medium text-left text-[16px] sm:text-[22px] text-black">
+            <div className="font-medium text-left text-[16px] border-t border-yellow-200 sm:text-[22px] text-black">
                 {flightfrom} - {flightto}
             </div>
 
@@ -69,34 +177,8 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                 </div>
             </div>
 
-            {/* ขากลับ */}
-            {/* <div className="font-medium text-left text-[16px] sm:text-[22px] text-black border-t border-yellow-300 pt-4 mt-4 gap-3">
-                {flightto} - {flightfrom}
-            </div>
-
-            <div className="flex flex-col text-left md:flex-col justify-between items-start md:items-center">
-                <div className="items-center flex gap-3">
-                    <img
-                        src={flightimgeurl}
-                        alt="flightImage"
-                        className="w-[45px] h-[45px] sm:h-[50px] sm:w-[50px] object-cover rounded-full"
-                    />
-                    <div>
-                        <p className="text-[16px] md:text-[20px] font-medium text-black">
-                            {returndeparture} {flightfrom}
-                        </p>
-                        <p className="text-[14px] md:text-[18px] text-left font-medium text-gray-600">
-                            {flightid}
-                        </p>
-                        <p className="text-[16px] md:text-[20px] font-medium text-black">
-                            {returnlanding} {flightto}
-                        </p>
-                    </div>
-                </div>
-            </div> */}
-
             {/* เลือกชั้นโดยสาร */}
-            <div className="grid md:grid-cols-2 border-t border-yellow-100 pt-4 mt-4 gap-3">
+            <div className="grid md:grid-cols-2 border-t border-yellow-200 pt-4 mt-4 gap-3">
                 <div
                     onClick={() => handleSelectClass("normal")}
                     className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "normal"
@@ -130,20 +212,15 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             <div className="flex justify-end items-center border-t border-yellow-300 pt-4 mt-4 gap-3">
                 <div>
                     <p className="text-sm text-gray-600">ไป - กลับ</p>
-                    <p className="text-2xl font-bold text-blue-700">{price.toLocaleString()}฿</p>
+                    <p className="text-2xl font-bold text-blue-700">
+                        {price.toLocaleString()}฿
+                    </p>
                 </div>
 
                 <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        if (!selectedClass) {
-                            alert("กรุณาเลือกชั้นโดยสารก่อนดำเนินการต่อ");
-                        } else {
-                            setShowPopup(true);
-                        }
-                    }}
+                    onClick={handleBooking}
                     className={`${selectedClass
-                        ? " bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
+                        ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
                         : "bg-gray-400 cursor-not-allowed"
                         } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
                 >
@@ -151,24 +228,6 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                 </button>
             </div>
 
-            {/* ป๊อบอัพ QR Code */}
-            {showPopup && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div className="bg-white p-6 rounded-xl relative">
-                        <img
-                            src="https://res.cloudinary.com/dimvnxngp/image/upload/v1762008630/3c5nAS_qrcode_1_oprgqq.png"
-                            alt="QR Code"
-                            className="w-80 h-80"
-                        />
-                        <button
-                            onClick={() => setShowPopup(false)}
-                            className="mt-4 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 px-4 py-2 rounded-full transition"
-                        >
-                            ปิด
-                        </button>
-                    </div>
-                </div>
-            )}
 
             {/* วิธีชำระเงิน */}
             <div className="mt-4">
@@ -176,6 +235,7 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                     วิธีการชำระเงิน: <span className="font-medium">PromptPay</span>
                 </p>
             </div>
+
         </div>
     );
 };

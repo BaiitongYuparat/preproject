@@ -21,11 +21,33 @@ interface RoomHotels {
     price: number;
 }
 
+interface Booking { 
+    id: string;
+    createdAt: string;
+    type: "hotel" | "flight" | "train";
+    name: string;
+    price: number;
+    details: string;
+    contact: string;
+    email: string;
+    phone: string;
+}
+
+
 const Information = () => {
     const { id } = useParams<{ id: string }>();
     const [hotel, setHotel] = useState<Hotels | null>(null);
     const [room, setRoom] = useState<RoomHotels | null>(null);
-    const [showPopup, setShowPopup] = useState(false);
+
+    const [bookings, setBookings] = useState<Booking[]>(() => {
+        const saved = localStorage.getItem("bookings");
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    const saveBookings = (newBookings: Booking[]) => {
+        setBookings(newBookings);
+        localStorage.setItem("bookings", JSON.stringify(newBookings));
+    };
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -38,7 +60,36 @@ const Information = () => {
             alert("กรุณากรอกข้อมูลให้ครบทุกช่องก่อนจอง");
             return;
         }
-        setShowPopup(true);
+
+        const confirmBooking = window.confirm(`
+        ชื่อ: ${firstName}
+        นามสกุล: ${lastName}
+        อีเมล: ${email}
+        เบอร์โทรศัพท์: ${phone}
+        ที่พัก: ${hotel?.thaiName}
+        ห้อง: ${room?.nameroom}
+
+        ต้องการยืนยันการจองหรือไม่?
+    `);
+
+        if (confirmBooking && hotel && room) {
+            const newBooking: Booking = {
+                id: Date.now().toString(),
+                createdAt: new Date().toLocaleString(),
+                type: "hotel",
+                name: `${firstName} ${lastName}`,
+                price: room.price,
+                details: hotel.thaiName,
+                contact: room.nameroom,
+                email: email,
+                phone: phone
+                
+            };
+
+            const updated = [...bookings, newBooking];
+            saveBookings(updated);
+            alert(" จองห้องพักสําเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
+        }
     };
 
     useEffect(() => {
@@ -235,33 +286,12 @@ const Information = () => {
                     />
 
                     {/* ปุ่มจอง */}
-                    <div className="w-full mt-6">
-                        <button
-                            onClick={handleBooking}
-                            className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-medium py-4 rounded-xl shadow-lg"
-                        >
-                            จองตอนนี้
-                        </button>
-                    </div>
-
-                    {/* ป๊อบอัพ QR Code */}
-                    {showPopup && (
-                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-
-                            <div className="bg-white p-6 rounded-xl relative">
-                                <img src="https://res.cloudinary.com/dimvnxngp/image/upload/v1762008630/3c5nAS_qrcode_1_oprgqq.png"
-                                    alt="QR Code"
-                                    className="w-80 h-80" />
-                                <button
-                                    onClick={() => setShowPopup(false)}
-                                    className="mt-4  text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400  px-4 py-2 rounded-full  transition "
-                                >
-                                    ปิด
-                                </button>
-
-                            </div>
-                        </div>
-                    )}
+                    <button
+                        onClick={handleBooking}
+                        className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-medium py-4 rounded-xl shadow-lg mt-4"
+                    >
+                        จองตอนนี้
+                    </button>
 
 
 

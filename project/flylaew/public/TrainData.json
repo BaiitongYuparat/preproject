@@ -70,5 +70,14 @@
     "trainto": "กรุงเทพ",
     "departuretime": "20:00",
     "landingtime": "05:00"
+  },
+  {
+    "id": "9",
+    "trainprice": 900,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "22:00",
+    "landingtime": "09:00"
   }
 ]

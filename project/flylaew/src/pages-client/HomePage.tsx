@@ -33,10 +33,7 @@ const Home = () => {
       navigate("/flights", { state: form });
     } else if (bookingType === "trains") {
       navigate("/trains", { state: form });
-    } else if (bookingType === "combo") {
-      navigate("/combo", { state: form });
-    }
-
+    } 
   };
 
   
@@ -77,7 +74,7 @@ const Home = () => {
               <option value="hotels">โรงแรม</option>
               <option value="flights">เที่ยวบิน</option>
               <option value="trains">รถไฟ</option>
-              <option value="combo">โรงแรม + เที่ยวบิน</option>
+
             </select>
 
             <select className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">

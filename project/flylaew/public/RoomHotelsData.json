@@ -6,13 +6,6 @@
         "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
         "price": 809
      },
-      {
-        "id": "1",
-        "imageUrl": "https://ak-d.tripcdn.com/images/0201l12000882c0cv7888_R_600_400_R5.jpg",
-        "nameroom":"ห้องซูพีเรียร์ เตียงคิง",
-        "explanation":"ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-        "price": 809
-     },
      {
         "id":"2",
         "imageUrl":"https://ak-d.tripcdn.com/images/0220112000dju7li0F1A9_W_1280_853_R5.webp",

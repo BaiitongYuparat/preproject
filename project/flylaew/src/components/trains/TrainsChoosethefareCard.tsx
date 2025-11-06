@@ -1,15 +1,99 @@
 import React, { useState } from "react";
 
 interface TrainsChoosethefareCardProps {
-  trainprice: number; 
+  trainprice: number;
+ trainfrom: string
+ trainto: string 
+
 }
+
+interface Booking { 
+    id: string;
+    createdAt: string;
+    type: "hotel" | "flight" | "train";
+    name: string;
+    price: number;
+    details: string;
+    contact: string;
+    email: string;
+    phone: string;
+}
+
 
 const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
   trainprice,
+  trainfrom,
+  trainto
 }) => {
   const [selectedClass, setSelectedClass] = useState<string>("");
-  const [showPopup, setShowPopup] = useState(false);
   const basePrice = trainprice;
+
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState<string>(""); 
+
+  const [bookings, setBookings] = useState<Booking[]>(() => {
+    const saved = localStorage.getItem("bookings");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const saveBookings = (newBookings: Booking[]) => {
+    setBookings(newBookings);
+    localStorage.setItem("bookings", JSON.stringify(newBookings));
+  };
+
+  const handleBooking = () => {
+    if (!firstName || !lastName || !email || !phone) {
+      alert("กรุณากรอกข้อมูลให้ครบทุกช่องก่อนจอง");
+      return;
+    }
+
+    if (!selectedClass) {
+      alert("กรุณาเลือกชั้นโดยสารก่อนจอง");
+      return;
+    }
+
+    const className =
+      selectedClass === "class1"
+        ? "ชั้นหนึ่ง"
+        : selectedClass === "class2"
+          ? "ชั้นสอง"
+          : "ชั้นสาม";
+
+    const totalPrice = getPrice();
+
+    const confirmBooking = window.confirm(`
+      ชื่อ: ${firstName}
+      นามสกุล: ${lastName}
+      อีเมล: ${email}
+      เบอร์โทรศัพท์: ${phone}
+      จาก: ${trainfrom} - ถึง: ${trainto}
+      ชั้นโดยสาร: ${className}
+      ราคา: ${totalPrice.toLocaleString()} บาท
+
+      ต้องการยืนยันการจองหรือไม่?
+    `);
+
+    if (confirmBooking) {
+      const newBooking: Booking = {
+        id: Date.now().toString(),
+        createdAt: new Date().toLocaleString(),
+        type: "train",
+        name: `${firstName} ${lastName}`,
+        price: totalPrice,
+        details: `  ${trainfrom} -  ${trainto}`,
+        contact: `ชั้นโดยสาร${className}`,
+        email: email,
+        phone: phone
+      };
+
+      const updated = [...bookings, newBooking];
+      saveBookings(updated);
+
+      alert(" จองตั๋วรถไฟสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
+    }
+  };
 
   const getPrice = () => {
     switch (selectedClass) {
@@ -48,9 +132,52 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
     },
   ];
 
+
   return (
     <div className="bg-white w-full max-w-6xl mx-auto mt-6 rounded-2xl border border-yellow-300 shadow-md p-6">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">เลือกชั้นโดยสาร</h2>
+
+      <h1 className="text-left text-black font-medium text-[20px] sm:text-[24px] mb-3">
+        {trainfrom} - {trainto}
+      </h1>
+      <p className="text-left text-gray-500 text-[13px] mb-2 ">
+        ชื่อผู้จองต้องตรงกับเอกสารประจำตัว
+      </p>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <input
+          type="text"
+          placeholder="ชื่อ"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+        />
+        <input
+          type="text"
+          placeholder="นามสกุล"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+        />
+      </div>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <input
+          type="text"
+          placeholder="อีเมล"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+        />
+        <input
+          type="text"
+          placeholder="เบอร์โทรศัพท์"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="border border-gray-300 hover:border-yellow-400 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
+        />
+      </div>
+
+      <h2 className="text-xl font-bold mb-4 text-gray-800 ">เลือกชั้นโดยสาร</h2>
+      
+
 
       {/* ส่วนแสดงชั้นต่าง ๆ */}
       <div className="grid md:grid-cols-3 gap-4">
@@ -59,10 +186,9 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
             key={cls.id}
             onClick={() => setSelectedClass(cls.id)}
             className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between
-              ${
-                selectedClass === cls.id
-                  ? "border-yellow-400 bg-amber-50 shadow-md"
-                  : "border-gray-200 hover:border-yellow-300"
+              ${selectedClass === cls.id
+                ? "border-yellow-400 bg-amber-50 shadow-md"
+                : "border-gray-200 hover:border-yellow-300"
               }`}
           >
             <div>
@@ -81,9 +207,8 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
                 {cls.price.toLocaleString()} ฿
               </p>
               <p
-                className={`mt-1 text-sm ${
-                  selectedClass === cls.id ? "text-amber-600 font-medium" : ""
-                }`}
+                className={`mt-1 text-sm ${selectedClass === cls.id ? "text-amber-600 font-medium" : ""
+                  }`}
               >
                 {selectedClass === cls.id ? "เลือกแล้ว" : "คลิกเพื่อเลือก"}
               </p>
@@ -102,42 +227,16 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
         </div>
 
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (!selectedClass) {
-              alert("กรุณาเลือกชั้นโดยสารก่อนดำเนินการต่อ");
-            } else {
-              setShowPopup(true);
-            }
-          }}
-          className={`${
-            selectedClass
-              ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
-              : "bg-gray-400 cursor-not-allowed"
-          } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
+          onClick={handleBooking}
+          className={`${selectedClass
+            ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
+            : "bg-gray-400 cursor-not-allowed"
+            } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
         >
           ดำเนินการต่อ
         </button>
       </div>
 
-      {/* ป๊อบอัพ QR Code */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-xl relative text-center">
-            <img
-              src="https://res.cloudinary.com/dimvnxngp/image/upload/v1762008630/3c5nAS_qrcode_1_oprgqq.png"
-              alt="QR Code"
-              className="w-80 h-80 mx-auto"
-            />
-            <button
-              onClick={() => setShowPopup(false)}
-              className="mt-4 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 px-4 py-2 rounded-full transition"
-            >
-              ปิด
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

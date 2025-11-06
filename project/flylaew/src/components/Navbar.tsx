@@ -10,13 +10,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
 
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
-
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
-    const adminStatus = localStorage.getItem("isAdmin");
     if (storedUser) setUsername(storedUser);
-    if (adminStatus === "true") setIsAdmin(true);
   }, []);
 
   const handleLogout = () => {
@@ -25,17 +21,15 @@ export default function Navbar() {
   };
 
   const menuItems = [
-    { path: "/", label: "หน้าหลัก" },
     { path: "/hotels", label: "โรงแรม" },
     { path: "/flights", label: "เที่ยวบิน" },
     { path: "/trains", label: "รถไฟ" },
-    ...(isAdmin ? [{ path: "/admin", label: "แอดมิน" }] : []),
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-yellow-50 shadow-xl z-50">
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
-        {/* โลโก้ + เมนูหลัก (รวมไว้ฝั่งซ้าย) */}
+        {/* โลโก้ + เมนูหลัก (Desktop) */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img
@@ -45,16 +39,12 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* เมนูหลัก (Desktop) */}
           <div className="hidden md:flex items-center space-x-8 ml-2">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className="text-yellow-500 hover:text-amber-600 font-medium transition-colors duration-300 hover:underline"
-
-                
-                
               >
                 {item.label}
               </Link>
