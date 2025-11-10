@@ -121,15 +121,15 @@ const Information = () => {
     }
 
     return (
-        <div>
+        <div >
             {/* Navbar */}
             <Navbar />
 
             {/* เนื้อหา */}
-            <div className="flex justify-between w-[1300px] mt-32 mx-auto space-x-6">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 mt-20 flex flex-col lg:flex-row gap-6 ">
 
-                {/* ฝั่งซ้าย - ฟอร์ม */}
-                <div className="flex flex-col w-[55%] space-y-6">
+                {/* ฟอร์ม */}
+                <div className="flex-1 space-y-4">
                     {/* ข้อมูลผู้เข้าพัก */}
                     <div className="bg-white border border-yellow-200 rounded-xl p-6">
                         <h2 className="text-lg text-left font-medium mb-4 text-gray-800">
@@ -138,7 +138,7 @@ const Information = () => {
                         <p className="text-left text-gray-500 text-[13px] mb-4">
                             ชื่อผู้เข้าพักต้องตรงกับเอกสารประจำตัวที่ใช้เมื่อเช็คอิน
                         </p>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input
                                 type="text"
                                 placeholder="ชื่อ"
@@ -161,7 +161,7 @@ const Information = () => {
                         <h2 className="text-lg text-left font-medium mb-4 text-gray-800">
                             ข้อมูลติดต่อ
                         </h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input
                                 type="text"
                                 placeholder="อีเมล"
@@ -212,7 +212,7 @@ const Information = () => {
                                 <span>บัตรเครดิต/เดบิต</span>
                             </label>
 
-                            <div className="grid grid-cols-2 gap-4 pl-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-6">
                                 <input
                                     type="text"
                                     placeholder="หมายเลขบัตร"
@@ -249,7 +249,7 @@ const Information = () => {
                                     <span className="font-medium">วิธีการชำระเงินอื่นๆ</span>
                                 </label>
 
-                                <div className="flex items-center space-x-3 mt-3 pl-8">
+                                <div className="flex flex-wrap items-center gap-3 mt-3 pl-8">
                                     <img
                                         src="https://contents.bu.ac.th/contents/images/mous/a23671bb-79fb-4d40-bc00-fc3060fce6d0.jpg"
                                         alt="promptpay"
@@ -272,7 +272,7 @@ const Information = () => {
                 </div>
 
                 {/* ข้อมูลโรงแรมที่เลือก */}
-                <div className="w-[50%]">
+                <div className="flex-1">
                     <InformationCard
                         id={hotel.id}
                         imageUrl={room.imageUrl || hotel.imageUrl}

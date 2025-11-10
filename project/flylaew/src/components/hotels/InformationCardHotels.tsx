@@ -31,19 +31,19 @@ const InformationCard: React.FC<InformationCardProps> = ({
                 <img
                     src={imageUrl}
                     alt="hotelImage"
-                    className=" w-[220px] h-[220px] sm:h-[240px] sm:w-[240px] object-cover rounded-md "
+                    className=" w-[150px] h-[150px] sm:h-[240px] sm:w-[240px] object-cover rounded-md "
                 />
 
                 <div className="flex flex-col text-left justify-between">
                     <div>
-                        <h2 className="text-[18px] sm:text-[20px] text-black font-medium">{thaiName}</h2>
+                        <h2 className="text-[16px] sm:text-[20px] text-black font-medium">{thaiName}</h2>
                         <div className="flex items-center gap-2 mt-1">
-                            <span className="bg-yellow-300 text-gray-800 px-2 py-1 rounded-full font-medium text-[12px] sm:text-[16px]">
+                            <span className="bg-yellow-300 text-gray-800 px-2 py-1 rounded-full font-medium text-[8px] sm:text-[16px]">
                                 {score}
                             </span>
-                            <span className="text-lg text-gray-700 font-medium text-[10px] sm:text-[16px] ">{comments}</span>
+                            <span className="text-lg text-gray-700 font-medium  text-[8px] sm:text-[16px] ">{comments}</span>
                         </div>
-                        <div className="flex items-center text-gray-600 mt-2 font-medium text-[14px] sm:text-[16px]">
+                        <div className="flex items-center text-gray-600 mt-2 font-medium text-[9px] sm:text-[16px]">
                             <LuMapPin />
                             <p>{location}</p>
                         </div>
@@ -55,11 +55,11 @@ const InformationCard: React.FC<InformationCardProps> = ({
 
             {/* ข้อมูลห้องพัก */}
             <div className=" mt-5 text-left px-1">
-                <h3 className="text-black font-medium text-[18px] sm:text-[20px] ">{nameroom}</h3>
+                <h3 className="text-black font-medium text-[14px] sm:text-[20px] ">{nameroom}</h3>
                 <p className="text-gray-700 mt-1">
 
                 </p>
-                <p className="text-gray-500 ">
+                <p className="text-gray-500 text-[12px] sm:text-[20px]">
                     {explanation}
                 </p>
             </div>

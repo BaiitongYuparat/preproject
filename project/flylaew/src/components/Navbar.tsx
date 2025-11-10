@@ -129,7 +129,6 @@ export default function Navbar() {
             </Link>
           ) : (
             <div className="flex flex-col items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl shadow-md border border-yellow-400/40">
-              <span className="text-yellow-400 font-semibold tracking-wide">{username}</span>
               <button
                 onClick={handleLogout}
                 className="flex items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-4 py-1.5 rounded-full font-medium shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300"

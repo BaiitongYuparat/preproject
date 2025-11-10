@@ -26,7 +26,7 @@ const Home = () => {
     if (!bookingType) return;
     
 
-    // ส่งค่า form ไปหน้าเป้าหมาย
+    // เลือกการจอง
     if (bookingType === "hotels") {
       navigate("/hotels", { state: form });
     } else if (bookingType === "flights") {
@@ -40,13 +40,12 @@ const Home = () => {
 
   return (
     <div className="bg-yellow-50 min-h-screen flex flex-col items-center">
-      {/* Navbar */}
       <Navbar />
 
       {/* ส่วนปก */}
       <div className="relative w-full max-w-[1200px] h-[700px] sm:h-[800px] md:h-[600px] lg:h-[700px] flex items-center justify-center mx-auto mt-20 px-4">
         <img
-          src="https://i.pinimg.com/1200x/cf/1d/b8/cf1db89fc8b650f69258258cb3423655.jpg"
+          src="https://i.pinimg.com/1200x/90/ff/b9/90ffb9b1b163b494575538e05a209f21.jpg"
           alt="hero"
           className="w-full h-full object-cover shadow-lg rounded-2xl"
         />
@@ -78,8 +77,8 @@ const Home = () => {
             </select>
 
             <select className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
-              <option>ไป - กลับ</option>
               <option>เที่ยวเดียว</option>
+              <option>ไป - กลับ</option>
             </select>
 
             <select className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">

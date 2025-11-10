@@ -38,7 +38,7 @@ const Logins: React.FC = () => {
             (user) => user.email === email && user.password === password // หา user ที่มี email และ password ตรงกับข้อมูลที่กรอก
         );
 
-        console.log("🔍 foundUser:", foundUser);
+        console.log("foundUser:", foundUser);
 
         if (foundUser) {
             setError("");
