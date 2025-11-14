@@ -38,6 +38,7 @@ const Information = () => {
     const { id } = useParams<{ id: string }>();
     const [hotel, setHotel] = useState<Hotels | null>(null);
     const [room, setRoom] = useState<RoomHotels | null>(null);
+    
 
     const [bookings, setBookings] = useState<Booking[]>(() => {
         const saved = localStorage.getItem("bookings");
@@ -194,51 +195,11 @@ const Information = () => {
                         />
                     </div>
 
-                    {/* วิธีการชำระเงิน */}
+                    {/* วิธีการชำระเงิน
                     <div className="bg-white border border-yellow-200 rounded-xl p-6">
                         <h2 className="text-lg text-left font-semibold mb-4 text-gray-800">
-                            คุณต้องการชำระเงินด้วยวิธีใด?
+                            วิธีการชําระเงิน
                         </h2>
-
-                        <div className="space-y-3">
-                            {/* บัตรเครดิต/เดบิต */}
-                            <label className="flex items-center space-x-2 text-gray-700">
-                                <input
-                                    type="radio"
-                                    name="payment"
-                                    className="accent-yellow-500"
-                                    defaultChecked
-                                />
-                                <span>บัตรเครดิต/เดบิต</span>
-                            </label>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-6">
-                                <input
-                                    type="text"
-                                    placeholder="หมายเลขบัตร"
-                                    className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="ชื่อบนบัตร"
-                                    className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
-                                />
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4 pl-6 mt-3">
-                                <input
-                                    type="text"
-                                    placeholder="วันหมดอายุ (MM/YY)"
-                                    className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="CVV"
-                                    className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-yellow-400"
-                                />
-                            </div>
-
-                            {/* วิธีการชำระเงินอื่นๆ */}
                             <div className="mt-4">
                                 <label className="flex items-center space-x-2 text-gray-700">
                                     <input
@@ -267,8 +228,7 @@ const Information = () => {
                                     />
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
                 </div>
 
                 {/* ข้อมูลโรงแรมที่เลือก */}

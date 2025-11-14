@@ -32,17 +32,12 @@ const HotelsCard: React.FC<HotelCardProps> = ({
     return (
 
        <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 mx-3  my-5  rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-
-
-
             <img
                 src={imageUrl || "/placeholder.jpg"}
                 alt={name}
                 className="w-[300px] h-[250px] sm:h-[280px] sm:w-[280px] object-cover rounded-md hover:scale-105 transition-transform duration-500"
             />
 
-
-            {/* รายละเอียดโรงแรม */}
             <div className=" flex-1 md:ml-1  mt-4 md:mt-0 w-full text-left   flex flex-col justify-between ">
                 <div className="  flex  flex-wrap items-center justify-between mt-3 md:justify-start">
                     <a
@@ -70,11 +65,10 @@ const HotelsCard: React.FC<HotelCardProps> = ({
                     <p className="text-gray-600 ml-2 font-medium text-[14px] sm:text-[16px] ">{location}</p>
                 </div>
 
-                {/* ส่วนล่าง (ราคา + ปุ่ม) */}
                 <div className="mt-4 text-right  items-center">
                     <p className="text-xl font-semibold text-black">{price.toLocaleString()}฿ </p>
                     <p className="text-gray-500 text-sm">
-                        ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax}฿
+                        ทั้งหมด (รวมภาษีและค่าธรรมเนียม) {totaltax.toLocaleString()}฿
                     </p>
 
                     <Link to={`/hotels/${id}`}>
@@ -88,9 +82,6 @@ const HotelsCard: React.FC<HotelCardProps> = ({
                 </div>
             </div>
         </div>
-
-
-
 
     )
 }

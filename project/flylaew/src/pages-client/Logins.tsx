@@ -5,6 +5,7 @@ import axios from "axios";
 
 interface User {
     id: string;
+    name: string;
     email: string;
     password: string;
 }
@@ -42,6 +43,7 @@ const Logins: React.FC = () => {
 
         if (foundUser) {
             setError("");
+            localStorage.setItem("username",foundUser.name);
             navigate("/");
         } else {
             setError("Invalid email or password.");

@@ -52,14 +52,11 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
           className="w-full h-[300px] sm:h-[450px] object-cover rounded-md "
         />
         <div className="grid grid-cols-1 gap-4  mt-3 w-full lg:w-[40%]">
-          {/** รูปโรงแรม */}
           <img
             src={room1}
             alt="room1"
             className="w-full h-[200px] sm:h-[220px]  object-cover rounded-md "
           />
-
-          {/** รูปโรงแรม */}
           <img
             src={room2}
             alt="room2"
@@ -70,9 +67,7 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
 
       {/** ตําแหน่งโรงแรม */}
       <div className="flex items-center gap-2  ">
-
         <LuMapPin />
-
         <a
           href={`https://www.google.com/maps/search/${encodeURIComponent(location)}`}
           target="_blank"
@@ -94,7 +89,6 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
               ➟ {item}
             </p>
           ))}
-
         </div>
       </div>
     </div>

@@ -7,8 +7,8 @@
         "score": "9.3/10",
         "comments": "ดีมาก",
         "location": "ใกล้ UDON Day & Night Bar Complex",
-        "price": "809",
-        "totaltax": "1,000",
+        "price": 809,
+        "totaltax": 1000,
         "imageUrl": "https://ak-d.tripcdn.com/images/0202b1200086mc6owF222_R_600_600_R5_D.jpg_.webp"
     },
     {
@@ -19,8 +19,8 @@
         "score": "9.3/10",
         "comments": "ดีมาก",
         "location": "ใกล้Centara Udon Thani ",
-        "price": "1201",
-        "totaltax": "1,454",
+        "price": 1201,
+        "totaltax": 1454,
         "imageUrl": "https://ak-d.tripcdn.com/images/0225k12000lr0iddyCBB5_R_600_600_R5_D.jpg_.webp"
     },
     {
@@ -31,8 +31,8 @@
         "score": "8.9/10",
         "comments": "ดีมาก",
         "location": "ใกล้ท่าอากาศยานนานาชาติอุดรธานี",
-        "price": "998",
-        "totaltax": "1,202",
+        "price": 998,
+        "totaltax": 1202,
         "imageUrl": "https://ak-d.tripcdn.com/images/1mc3912000f1eubjv3C6A_R_600_600_R5_D.jpg_.webp"
     },
     {
@@ -43,8 +43,70 @@
         "score": "8.7/10",
         "comments": "ดีมาก",
         "location": "ใกล้ UDON Day & Night Bar Complex",
-        "price": "899",
-        "totaltax": "1,019",
+        "price": 899,
+        "totaltax": 1019,
         "imageUrl": "https://ak-d.tripcdn.com/images/0200r120008hdepay240E_W_1280_853_R5.jpg?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F"
+    },
+    {
+        "id": "5",
+        "name": "The Pannarai Hotel",
+        "thaiName": "โรงแรมเดอะ ปันนารายณ์",
+        "rating": "★★★★",
+        "score": "9.0/10",
+        "comments": "ดีเยี่ยม",
+        "location": "ใกล้ศูนย์การค้าเซ็นทรัลพลาซ่า อุดรธานี",
+        "price": 1150,
+        "totaltax": 1380,
+        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/f66a4e2225df713fc20e907715aace467cdd2615.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Brown House Hotel",
+        "thaiName": "โรงแรมบราวน์เฮ้าส์",
+        "rating": "★★★★",
+        "score": "8.8/10",
+        "comments": "อบอุ่นและน่าพัก",
+        "location": "ใกล้หนองประจักษ์ศิลปาคม",
+        "price": 990,
+        "totaltax": 1180,
+        "imageUrl": "https://img.wongnai.com/p/1920x0/2018/03/20/46d53aca2f8849be99c3195b7ec56e63.jpg"
+    },
+    {
+        "id": "7",
+        "name": "De Princess Hotel Udonthani",
+        "thaiName": "โรงแรมดีปรินเซส อุดรธานี",
+        "rating": "★★★★★",
+        "score": "9.4/10",
+        "comments": "ยอดเยี่ยมมาก",
+        "location": "ใกล้ศูนย์การค้าเซ็นทรัลพลาซ่า อุดรธานี",
+        "price": 1500,
+        "totaltax": 1780,
+        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/4f5b8e7dabe1f9486164ce4806a05cafb8140a83.jpg"
+    },
+    {
+        "id": "8",
+        "name": "UD Residence",
+        "thaiName": "ยูดี เรสซิเดนซ์",
+        "rating": "★★★",
+        "score": "8.5/10",
+        "comments": "คุ้มค่ากับราคา",
+        "location": "ใกล้สถานีรถไฟอุดรธานี",
+        "price": 650,
+        "totaltax": 780,
+        "imageUrl": "https://pix10.agoda.net/hotelImages/487094/0/18cdf6a5091f88c08235f9810150386c.jpeg?ce=0&s=414x232"
+    },
+    {
+        "id": "9",
+        "name": "Napalai Hotel",
+        "thaiName": "โรงแรมนภาลัย อุดรธานี",
+        "rating": "★★★",
+        "score": "8.3/10",
+        "comments": "เงียบสงบและสะดวกสบาย",
+        "location": "ใกล้มหาวิทยาลัยราชภัฏอุดรธานี",
+        "price": 780,
+        "totaltax": 920,
+        "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/292456897.jpg?k=75810cfae46f15b280578c7f1f2df3fc85bb303f39cdcad5e6e6b5ed583d5c4d&o="
     }
+
+
 ]

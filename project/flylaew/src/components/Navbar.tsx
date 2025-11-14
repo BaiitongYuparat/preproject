@@ -39,6 +39,8 @@ export default function Navbar() {
             />
           </Link>
 
+
+         {/** mac */}
           <div className="hidden md:flex items-center space-x-8 ml-2">
             {menuItems.map((item) => (
               <Link
@@ -52,7 +54,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* เมนูด้านขวา (Desktop) */}
         <div className="hidden md:flex items-center space-x-6">
           <p
             onClick={() => setShowPopup(true)}
@@ -82,7 +83,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile */}
+        {/* โทรสัพ */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
@@ -94,7 +95,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* เมนู Mobile */}
       {menuOpen && (
         <div className="md:hidden bg-yellow-100 border-t border-yellow-200 shadow-inner flex flex-col space-y-3 py-4 px-6 text-center">
           {menuItems.map((item) => (

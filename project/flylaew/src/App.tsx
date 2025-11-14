@@ -7,7 +7,7 @@ import RoomHotels from "./pages-client/roomhotels/RoomHotelsPage";
 import Flights from "./pages-client/Flights";
 import Logins from "./pages-client/Logins";
 import Trains from "./pages-client/Trains";
-// import Register from "./pages-client/Register";
+import Register from "./pages-client/Register";
 import Information from "./pages-client/information/InformationHotel";
 import FlighChoosethefareCardList from "./components/fligh/FlighChoosethefareCardList";
 import TrainsChoosethefareCardList from "./components/trains/TrainsChoosethefareCardList";
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Logins />} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
         <Route path="/hotels" element={<HotelPage />} />
         <Route path="/hotels/:id" element={<RoomHotels />} />
         <Route path="/information/:id" element={<Information />} />

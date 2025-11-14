@@ -78,5 +78,106 @@
             "ฟิตเนส"
         ]
 
+    },
+    {
+        "id": "5",
+        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/f66a4e2225df713fc20e907715aace467cdd2615.jpg",
+        "room1": "https://www.chillpainai.com/src/wewakeup/scoop/images/2d91f2e2bc4ca4273b5ced695e3135a08f3dd81b.jpg",
+        "room2": "https://www.chillpainai.com/src/wewakeup/scoop/images/42a063a3fc2fa3ff2fa2e16838793951f96b9db9.jpg",
+        "hotelname": "The Pannarai Hotel",
+        "rating": "★★★★",
+        "score": "9.0/10",
+        "comments": "ดีเยี่ยม",
+        "location": "19/8 ถ.แปดศอก ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "สระว่ายน้ำกลางแจ้ง",
+            "ฟิตเนส",
+            "ร้านอาหาร",
+            "ที่จอดรถฟรี",
+            "บริการซักรีด",
+            "ห้องประชุม"
+        ]
+    },
+    {
+        "id": "6",
+        "imageUrl": "https://img.wongnai.com/p/1920x0/2018/03/20/46d53aca2f8849be99c3195b7ec56e63.jpg",
+        "room1": "https://s.isanook.com/tr/0/ui/280/1400461/pool2_1473241059.jpg",
+        "room2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/663805139.jpg?k=ea5e6725b52e0dd736219bea3992c301843eeae6054265416363a2dfc6e59de3&o=",
+        "hotelname": "Brown House Hotel",
+        "rating": "★★★★",
+        "score": "8.8/10",
+        "comments": "อบอุ่นและน่าพัก",
+        "location": "234/1 ถ.โพศรี ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "สระว่ายน้ำกลางแจ้ง",
+            "ร้านอาหาร",
+            "ที่จอดรถ",
+            "จักรยานให้เช่า",
+            "บริการซักรีด",
+            "ห้องประชุม"
+        ]
+    },
+    {
+        "id": "7",
+        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/4f5b8e7dabe1f9486164ce4806a05cafb8140a83.jpg",
+        "room1": "https://www.chillpainai.com/src/wewakeup/scoop/images/e47178bf46d03ca2ac920294f6565c941678d870.jpg",
+        "room2": "https://www.chillpainai.com/src/wewakeup/scoop/images/7bbb12166b34486871d0b7c33e7b0df06c3c531b.jpg",
+        "hotelname": "De Princess Hotel Udonthani",
+        "rating": "★★★★★",
+        "score": "9.4/10",
+        "comments": "ยอดเยี่ยมมาก",
+        "location": "135/135 หมู่ 14 ถ.ประจักษ์ศิลปาคม ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "สระว่ายน้ำ",
+            "ฟิตเนส",
+            "ร้านอาหาร",
+            "บริการรับส่งสนามบิน",
+            "รูมเซอร์วิส 24 ชั่วโมง",
+            "บาร์"
+        ]
+    },
+    {
+        "id": "8",
+        "imageUrl": "https://pix8.agoda.net/hotelImages/487094/-1/e46cf29a9e6668b7c02a8c9cd25b6506.jpg?ca=6&ce=1&s=1024x",
+        "room1": "https://pix8.agoda.net/hotelImages/487094/-1/2fbcf981abad94307197f581d92fa63a.jpg?ca=6&ce=1&s=1024x",
+        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/182671707.jpg?k=6667c7aed7563f62168a581548853421e35d2d4417d83cb19ac406179edd6e9e&o=&s=1024x",
+        "hotelname": "UD Residence",
+        "rating": "★★★",
+        "score": "8.5/10",
+        "comments": "คุ้มค่ากับราคา",
+        "location": "333/22 ถ.ทองใหญ่ ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "ที่จอดรถฟรี",
+            "บริการซักรีด",
+            "ลิฟต์",
+            "ห้องปลอดบุหรี่",
+            "แผนกต้อนรับ 24 ชั่วโมง"
+        ]
+    },
+    {
+        "id": "9",
+        "imageUrl": "https://static51.com-hotel.com/uploads/hotel/69027/photo/napalai-hotel_15213713801.jpg",
+        "room1": "https://q-xx.bstatic.com/xdata/images/hotel/max500/292456943.jpg?k=e1c347eec4d4decabb40c402d71881c8da20aee0eb7e1909fcbeb525c8bc45c9&o=",
+        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max500/292456908.jpg?k=953a49af6b442f8e4ebeae8c8162504ee31f2a3903945a0f1db9ddb77f97f4ad&o=",
+        "hotelname": "Napalai Hotel",
+        "rating": "★★★",
+        "score": "8.3/10",
+        "comments": "เงียบสงบและสะดวกสบาย",
+        "location": "572 ถ.โพศรี ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "facilities": [
+            "WiFi",
+            "สระว่ายน้ำ",
+            "ฟิตเนส",
+            "ร้านอาหาร",
+            "ห้องประชุม",
+            "ที่จอดรถ",
+            "บริการซักรีด"
+        ]
     }
+
+
 ]
