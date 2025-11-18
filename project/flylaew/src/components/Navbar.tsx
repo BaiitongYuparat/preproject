@@ -20,40 +20,20 @@ export default function Navbar() {
     setUsername(null);
   };
 
-  const menuItems = [
-    { path: "/hotels", label: "โรงแรม" },
-    { path: "/flights", label: "เที่ยวบิน" },
-    { path: "/trains", label: "รถไฟ" },
-  ];
-
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-yellow-50 shadow-xl z-50">
       <div className="flex justify-between items-center py-4 px-6 md:px-10">
-        {/* โลโก้ + เมนูหลัก (Desktop) */}
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <img
-              src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
-              alt="logo"
-              className="w-36 md:w-44 h-auto object-contain cursor-pointer"
-            />
-          </Link>
 
+        {/* โลโก้ */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="https://res.cloudinary.com/de1g7yto1/image/upload/v1760603561/logo_bpu1i9.png"
+            alt="logo"
+            className="w-36 md:w-44 h-auto object-contain cursor-pointer"
+          />
+        </Link>
 
-         {/** mac */}
-          <div className="hidden md:flex items-center space-x-8 ml-2">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="text-yellow-500 hover:text-amber-600 font-medium transition-colors duration-300 hover:underline"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-
+        {/* ปุ่มช่วยเหลือ + Login */}
         <div className="hidden md:flex items-center space-x-6">
           <p
             onClick={() => setShowPopup(true)}
@@ -83,7 +63,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* โทรสัพ */}
+        {/* ปุ่มมือถือ */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? (
@@ -95,20 +75,9 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* เมนูมือถือ */}
       {menuOpen && (
         <div className="md:hidden bg-yellow-100 border-t border-yellow-200 shadow-inner flex flex-col space-y-3 py-4 px-6 text-center">
-          {menuItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="text-yellow-700 hover:text-amber-600 font-medium transition-colors duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <hr className="border-yellow-300 my-2" />
 
           <p
             onClick={() => {
@@ -122,20 +91,18 @@ export default function Navbar() {
 
           {!username ? (
             <Link to="/login" onClick={() => setMenuOpen(false)}>
-              <button className="w-full flex justify-center items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-5 py-2.5 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105 active:scale-95">
+              <button className="w-full flex justify-center items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-5 py-2.5 rounded-full font-medium transition-all duration-300">
                 <VscAccount />
                 <span>ลงทะเบียน / เข้าสู่ระบบ</span>
               </button>
             </Link>
           ) : (
-            <div className="flex flex-col items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl shadow-md border border-yellow-400/40">
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-4 py-1.5 rounded-full font-medium shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300"
-              >
-                ออกจากระบบ
-              </button>
-            </div>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 px-4 py-1.5 rounded-full font-medium transition-all duration-300 justify-center"
+            >
+              ออกจากระบบ
+            </button>
           )}
         </div>
       )}
@@ -143,17 +110,19 @@ export default function Navbar() {
       {/* Popup ช่วยเหลือ */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-80 text-center relative">
-            <h2 className="text-lg font-semibold text-gray-800 mb-3">ติดต่อเรา</h2>
+          <div className="bg-white rounded-2xl shadow-xl p-6 w-80 text-center">
+            <h2 className="text-lg font-semibold text-gray-800 mb-3">
+              ติดต่อเรา
+            </h2>
             <p className="text-gray-600 flex items-center justify-center gap-2 mb-2">
               <LuPhoneCall className="text-yellow-500" />
-              <a href="tel:0999999999" className="text-gray-600 hover:text-black hover:underline">
+              <a href="tel:0999999999" className="hover:text-amber-500  hover:underline text-yellow-500 ">
                 099-999-9999
               </a>
             </p>
             <p className="text-gray-600 flex items-center justify-center gap-2">
               <MdOutlineMailOutline className="text-yellow-500" />
-              <a href="mailto:flylaew@exmile.com" className="text-gray-600 hover:text-black hover:underline">
+              <a href="mailto:flylaew@exmile.com" className="hover:text-amber-500  hover:underline text-yellow-500 ">
                 flylaew@exmile.com
               </a>
             </p>

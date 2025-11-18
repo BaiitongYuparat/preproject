@@ -50,79 +50,136 @@
    },
    {
       "id": "5",
-      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/271342462.jpg?k=17efae06db341eeb57410de1df565ae3f35dd374b6762c3be2642377062cf921&o=",
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/11799956.jpg?k=daf41ef813bd83153f4855d3b2a32e896ab5fb517a43338c4a67c92855d1e3be&o=",
       "nameroom": "ห้องดีลักซ์ เตียงใหญ่ 1 เตียง",
       "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
-      "price": 1150
+      "price": 7887
    },
    {
       "id": "5",
-      "imageUrl": "https://www.thepannaraihotel.com/wp-content/uploads/2020/01/room02.jpg",
-      "nameroom": "ห้องดีลักซ์ ",
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/274115573.jpg?k=578bcda45e444a049d5cfa8bc5f5f878f928e5154539408dde3eb588afe48bdb&o=",
+      "nameroom": "Club Two Bedroom Corner Suite",
       "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
-      "price": 899
+      "price": 8004
    },
    {
       "id": "6",
-      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/544680160.jpg?k=779b02c6b1be2d327af7dee0be33976b23a374b7f6a5ad9e48b70d18ff94015c&o=",
-      "nameroom": "ห้องสำหรับครอบครัว",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 1678
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/557427849.jpg?k=47b2269a1ee78f61758adaa7c287eb22696d8b3b83fb775df00b2671cbfcfc57&o=",
+      "nameroom": "ห้องสุพีเรียร์เตียงใหญ่หรือเตียงแฝด",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 6897
    },
    {
       "id": "6",
-      "imageUrl": "https://img.wongnai.com/p/400x0/2022/01/29/1d36b59815224f8d92c92178636b1203.jpg",
-      "nameroom": "ห้องซูพีเรียร์ เตียงคิง",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 990
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/557265273.jpg?k=9688a85cce366a38f6297f96ff45337dc907a6596b8f23f66fa629024d176310&o=",
+      "nameroom": "Superior Sky Mahanakhon Room",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 8915
    },
    {
       "id": "7",
-      "imageUrl": "https://q-xx.bstatic.com/xdata/images/hotel/max500/162134895.jpg?k=7fe06dc629c3cadc74579e9ff45836d0e341510973887c07bd88b609a07b8294&o=",
-      "nameroom": "ดีลักซ์ คิง",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 1500
+      "imageUrl": "https://q-xx.bstatic.com/xdata/images/hotel/840x460/749630281.jpg?k=20a8e697f099bb99d42ae5c28cf1eec0247fe6c51aaa26cecdc91052451c94b9&o=&s=1024x",
+      "nameroom": "ห้องแกรนด์สวีท (Grand Suite Room)",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 4200
    },
    {
       "id": "7",
-      "imageUrl": "https://pix8.agoda.net/hotelImages/497/4972298/4972298_18092309110068114877.jpg?ca=7&ce=1&s=1024x",
-      "nameroom": "แซฟไฟร์ สวีท เตียงคิงไซส์",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 1796
+      "imageUrl": "https://pix8.agoda.net/hotelImages/286830/12603236/5b3d0202521ea630ce19b017cc2f8398.jpg?ce=2&s=1024x",
+      "nameroom": "แกรนด์ ดีลักซ์ สำหรับ 3 คน (Grand Deluxe Triple)",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 5800
    },
-   {
+    {
       "id": "7",
-      "imageUrl": "https://pix8.agoda.net/property/76171593/1183071298/b4614e5bbf8728e21a9d8ae420d1d362.jpeg?ce=2&s=1024x",
-      "nameroom": "เพนต์เฮาส์ 2 ห้องนอน",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 2200
+      "imageUrl": "https://q-xx.bstatic.com/xdata/images/hotel/840x460/749192695.jpg?k=29d16beac754f1169eb877cd259e53e120ace819e48ea64aaece53062ded5eb1&o=&s=1024x",
+      "nameroom": "ดีลักซ์ พรีเมียม (Deluxe Premium Room)",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 4661
    },
    {
       "id": "8",
-      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/182413665.jpg?k=6377e0fd77920a3ff727cd17c29f00a1c4c71e122bd0176838f89a4c1615dcd5&o=",
-      "nameroom": "ห้องดีลักซ์ ",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 650
+      "imageUrl": "https://ak-d.tripcdn.com/images/0223l120008erxy73D96B_W_1280_853_R5.webp",
+      "nameroom": "ห้องดีลักซ์ เตียงใหญ่ 1 เตียง",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 4767
    },
    {
       "id": "8",
-      "imageUrl": " https://cf.bstatic.com/xdata/images/hotel/max1024x768/186123373.jpg?k=0177b8d90e843e5f3eef414e2811b1bd9237ea90117e41a9153b610e519f6d16&o=",
-      "nameroom": "ห้องดีลักซ์ ทริปเปิ้ล",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 890
+      "imageUrl": "https://ak-d.tripcdn.com/images/02234120009c3qjm752D1_W_1280_853_R5.webp",
+      "nameroom": "ห้องแฟมิลี่สวีท",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 8300
+   },
+   {
+      "id": "8",
+      "imageUrl": "https://ak-d.tripcdn.com/images/0226y120009c3qk12937A_W_1280_853_R5.webp",
+      "nameroom": "ห้องเอ็กเซ็กคิวทีฟสวีท",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 8300
    },
    {
       "id": "9",
-      "imageUrl": " https://pix8.agoda.net/hotelImages/247582/213723858/497357ded07e5f2c01394c5731727e39.jpg?ce=2&s=1024x",
-      "nameroom": "ซูพีเรีย คิง",
-      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 780
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/90447790.jpg?k=a93d293f04762fa55e838e3f7d9629022d40fdb5c6c62b5c41bf21f6a2d883bd&o=",
+      "nameroom": "ห้องพรีเมี่ยมดีลักซ์ (ใช้บริการห้องได้เป็นเวลา 24 ชั่วโมง)",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 4200
    },
    {
       "id": "9",
-      "imageUrl": "https://q-xx.bstatic.com/xdata/images/hotel/max500/738022341.jpg?k=a9694c2fc939d97b49ad60fbbba57ed01244d49ad8e1b643aba057c68a716749&o=&s=1024x",
-      "nameroom": "ดีลักซ์ คิง พร้อมอ่างอาบน้ำ",
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/90447643.jpg?k=25d3965ad7adefe32aac1a47c9c5a9dd0b5d2e3b34c12b75dc64293471628bb7&o=",
+      "nameroom": "ห้องสวีทสำหรับครอบครัวแบบหนึ่งห้องนอน (ใช้บริการห้องได้เป็นเวลา 24 ชั่วโมง)",
+      "explanation": "ห้องพักประเภทนี้สามารถเพิ่มเตียงเสริมได้ โปรดติดต่อโรงแรมสำหรับรายละเอียดเกี่ยวกับนโยบายเตียงเด็กอ่อน",
+      "price": 5500
+   },
+   {
+      "id": "10",
+      "imageUrl": "https://pix8.agoda.net/hotelImages/48444/-1/d8b8260b24545d97f8cb942bcd478e4c.jpg?ca=13&ce=1&s=1024x",
+      "nameroom": "ดีลักซ์ วิวสวน (Deluxe Garden View Room)",
       "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
-      "price": 1020
+      "price": 6500
+   },
+   {
+      "id": "10",
+      "imageUrl": "https://pix8.agoda.net/hotelImages/48444/-1/774d8ff1a01c54c78a0a995f1cd07e5b.jpg?ca=13&ce=1&s=1024x",
+      "nameroom": "กษรา สวีท (Kasara Suite)",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 7000
+   },
+   {
+      "id": "10",
+      "imageUrl": "https://pix8.agoda.net/hotelImages/48444/-1/39817e09769c787a3d895f99d3371b76.jpg?ca=13&ce=1&s=1024x",   
+      "nameroom": "ห้องสวีทพร้อมวิว Kasara River (Kasara River View Suite)",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 7500
+   },
+   {
+      "id": "11",
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/259216373.jpg?k=849f6fbf74c1a8f526b97a44b4cf80ae1778c769f0b42acf6d40f580778e3e26&o=",   
+      "nameroom": "ห้องสุพีเรียร์เตียงใหญ่หรือเตียงแฝด",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 2100
+   },
+   {
+      "id": "11",
+      "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/259203933.jpg?k=262e511e661d654d684ab81a7de2063b4f93e4a0bc31d8a63afd4ef466e0506d&o=",   
+      "nameroom": "ห้อง Superior Double หรือห้องเตียงเดี่ยวสองเตียง-เฉพาะห้องพัก",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 2250
+   },
+   {
+      "id": "12",
+      "imageUrl": "https://pix8.agoda.net/property/4214910/603499763/c388aae77f47d3610ee461a600697d00.jpeg?s=1024x",   
+      "nameroom": "ห้องมาตรฐาน (Standard Room)",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 1700
+   },
+   {
+      "id": "12",
+      "imageUrl": "https://pix8.agoda.net/hotelImages/55663861/-1/acb8f34382809a5f6bbde897b3f1ab50.jpg?ce=0&s=1024x",   
+      "nameroom": "ห้องสำหรับครอบครัว 4 คน (Family 4 People)",
+      "explanation": "ห้องพักประเภทนี้ไม่มีบริการเตียงเสริมและเตียงเด็กอ่อน",
+      "price": 1815
    }
+   
 ]

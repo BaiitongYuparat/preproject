@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 interface FlighChoosethefareCardProps {
     flightimgeurl: string;
@@ -12,7 +12,7 @@ interface FlighChoosethefareCardProps {
     returndeparture: string;
     returnlanding: string;
     luggage: string;
-    flightname: string
+    flightname: string;
 }
 
 interface Booking {
@@ -36,26 +36,24 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
     departuretime,
     landingtime,
     luggage,
-    flightname
-
+    flightname,
 }) => {
-
+    const navigate = useNavigate();
 
     const [selectedClass, setSelectedClass] = useState<"normal" | "baggage" | null>(null);
     const [price, setPrice] = useState<number>(Number(flightprice));
-
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    const [bookings, setBookings] = useState<Booking[]>(() => { // โหลดข้อมูลการจอง
+    const [bookings, setBookings] = useState<Booking[]>(() => {
         const saved = localStorage.getItem("bookings");
         return saved ? JSON.parse(saved) : [];
     });
 
-    const saveBookings = (newBookings: Booking[]) => { // บันทึกการจอง
+    const saveBookings = (newBookings: Booking[]) => {
         setBookings(newBookings);
         localStorage.setItem("bookings", JSON.stringify(newBookings));
     };
@@ -74,34 +72,37 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
         const totalPrice = price;
 
         const confirmBooking = window.confirm(`
-        ชื่อ: ${firstName} ${lastName}
-        อีเมล: ${email}
-        เบอร์โทรศัพท์: ${phone}
-        จาก: ${flightfrom} - ถึง: ${flightto}
-        ชั้นโดยสาร: ${selectedClass === "baggage" ? "มีสัมภาระ 20KG" : "ชั้นประหยัด"}
-        ราคา: ${totalPrice.toLocaleString()} บาท
+ชื่อ: ${firstName} ${lastName}
+อีเมล: ${email}
+เบอร์โทรศัพท์: ${phone}
+จาก: ${flightfrom} - ถึง: ${flightto}
+ชั้นโดยสาร: ${selectedClass === "baggage" ? "มีสัมภาระ 20KG" : "ชั้นประหยัด"}
+ราคา: ${totalPrice.toLocaleString()} บาท
 
-         ต้องการยืนยันการจองหรือไม่? `
-        
-        );
+ต้องการยืนยันการจองหรือไม่?
+        `);
 
-        if (confirmBooking) {
-            const newBooking: Booking = {
-                id: Date.now().toString(),
-                createdAt: new Date().toLocaleString(),
-                type: "flight",
-                name: `${firstName} ${lastName}`,
-                price: totalPrice,
-                details: `${flightfrom} - ${flightto}`,
-                contact: flightname,
-                email,
-                phone,
-            };
+        if (!confirmBooking) return;
 
-            const updated = [...bookings, newBooking];
-            saveBookings(updated);
-            alert(" จองตั๋วเครื่องบินสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
-        }
+        const newBooking: Booking = {
+            id: Date.now().toString(),
+            createdAt: new Date().toLocaleString(),
+            type: "flight",
+            name: `${firstName} ${lastName}`,
+            price: totalPrice,
+            details: `${flightfrom} - ${flightto} (${departuretime}-${landingtime})`,
+            contact: `${flightname} (${flightid})`,
+            email,
+            phone,
+        };
+
+        const updated = [...bookings, newBooking];
+        saveBookings(updated);
+
+        alert("จองตั๋วเครื่องบินสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว\nกรุณาชำระเงินต่อ");
+
+        // 🔥 ไปหน้า Payment
+        navigate(`/payment/${newBooking.id}`);
     };
 
     const handleSelectClass = (cls: "normal" | "baggage") => {
@@ -109,14 +110,13 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
         setPrice(cls === "baggage" ? Number(flightprice) + 1000 : Number(flightprice));
     };
 
-
     return (
         <div className="bg-white w-full max-w-6xl mx-auto mt-6 rounded-2xl border border-yellow-300 shadow-md flex flex-col hover:shadow-xl transition-all duration-300 p-5">
-           
-           
             <p className="text-left text-gray-500 text-[13px] mb-2 ">
                 ชื่อผู้จองต้องตรงกับเอกสารประจำตัว
             </p>
+
+            {/* ฟอร์มผู้โดยสาร */}
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <input
                     type="text"
@@ -180,10 +180,10 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
             {/* เลือกชั้นโดยสาร */}
             <div className="grid md:grid-cols-2 border-t border-yellow-200 pt-4 mt-4 gap-3">
                 <div
-                    onClick={() => handleSelectClass("normal")} //ปกติ
+                    onClick={() => handleSelectClass("normal")}
                     className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "normal"
-                        ? "border-yellow-300 bg-amber-50"
-                        : "border-gray-200 hover:border-yellow-300"
+                            ? "border-yellow-300 bg-amber-50"
+                            : "border-gray-200 hover:border-yellow-300"
                         }`}
                 >
                     <h3 className="font-semibold text-gray-800 mb-2">ชั้นประหยัด</h3>
@@ -194,13 +194,15 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                 </div>
 
                 <div
-                    onClick={() => handleSelectClass("baggage")} //สัมภาระ
+                    onClick={() => handleSelectClass("baggage")}
                     className={`p-4 border rounded-xl cursor-pointer transition-all ${selectedClass === "baggage"
-                        ? "border-yellow-300 bg-amber-50"
-                        : "border-gray-200 hover:border-yellow-300"
+                            ? "border-yellow-300 bg-amber-50"
+                            : "border-gray-200 hover:border-yellow-300"
                         }`}
                 >
-                    <h3 className="font-semibold text-gray-800 mb-2">ชั้นประหยัด (มีสัมภาระ 20KG)</h3>
+                    <h3 className="font-semibold text-gray-800 mb-2">
+                        ชั้นประหยัด (มีสัมภาระ 20KG)
+                    </h3>
                     <p className="text-sm text-gray-700">สัมภาระ: {luggage}</p>
                     <p className="text-sm text-gray-700">สัมภาระใต้ท้องเครื่อง: 20 KG</p>
                     <p className="text-sm text-gray-700">ค่าธรรมเนียมเปลี่ยนแปลง: เริ่มต้น 1,275</p>
@@ -220,14 +222,13 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                 <button
                     onClick={handleBooking}
                     className={`${selectedClass
-                        ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
-                        : "bg-gray-400 cursor-not-allowed"
+                            ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
+                            : "bg-gray-400 cursor-not-allowed"
                         } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
                 >
                     ดำเนินการต่อ
                 </button>
             </div>
-
 
             {/* วิธีชำระเงิน */}
             <div className="mt-4">
@@ -235,7 +236,6 @@ const FlighChoosethefareCard: React.FC<FlighChoosethefareCardProps> = ({
                     วิธีการชำระเงิน: <span className="font-medium">PromptPay</span>
                 </p>
             </div>
-
         </div>
     );
 };

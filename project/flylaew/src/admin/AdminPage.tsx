@@ -1,4 +1,3 @@
-// src/pages-client/admin/AdminPage.tsx
 import React, { useEffect, useState } from "react";
 
 type TabType = "hotels" | "flights" | "trains" | "bookings";
@@ -56,6 +55,7 @@ interface Booking {
 
 const AdminPage: React.FC = () => {
     const [isLogin, setIsLogin] = useState(false);
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const [tab, setTab] = useState<TabType>("hotels");
@@ -147,11 +147,11 @@ const AdminPage: React.FC = () => {
 
     const handleLoginSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (password === "123") {
+        if (username === "admin" && password === "123") {
             setIsLogin(true);
             localStorage.setItem("adminLoggedIn", "true");
         } else {
-            alert("รหัสผิด");
+            alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
         }
     };
 
@@ -331,6 +331,18 @@ const AdminPage: React.FC = () => {
                         เข้าสู่ระบบ <span className="text-yellow-500">Admin</span>
                     </h1>
                     <form onSubmit={handleLoginSubmit} className="space-y-5">
+                        <div>
+                            <label className="block text-sm font-medium mb-2 text-gray-600">
+                                ชื่อผู้ใช้
+                            </label>
+                            <input
+                                type="text"
+                                className="w-full border border-gray-300 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 rounded-lg px-3 py-2 text-gray-700 transition-all outline-none"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                placeholder="admin"
+                            />
+                        </div>
                         <div>
                             <label className="block text-sm font-medium mb-2 text-gray-600">
                                 รหัสผ่าน

@@ -12,6 +12,7 @@ import Information from "./pages-client/information/InformationHotel";
 import FlighChoosethefareCardList from "./components/fligh/FlighChoosethefareCardList";
 import TrainsChoosethefareCardList from "./components/trains/TrainsChoosethefareCardList";
 import AdminPage from "./admin/AdminPage";
+import PaymentPage from "./pages-client/payment/PaymentPage";
 
 function App() {
   return (
@@ -25,10 +26,10 @@ function App() {
         <Route path="/information/:id" element={<Information />} />
         <Route path="/flights" element={<Flights />} />
         <Route path="/flighchoosethefare/:id" element={<FlighChoosethefareCardList />} />
+        <Route path="/payment/:bookingId" element={<PaymentPage />} />
         <Route path="/trains" element={<Trains />} />
         <Route path="/trainschoosethefare/:id" element={<TrainsChoosethefareCardList />} />
         <Route path="/admin" element={<AdminPage />} />
-
       </Routes>
     </>
   );

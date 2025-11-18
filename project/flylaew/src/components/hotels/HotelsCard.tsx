@@ -28,10 +28,11 @@ const HotelsCard: React.FC<HotelCardProps> = ({
     totaltax,
 }) => {
 
+    
 
     return (
 
-       <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 mx-3  my-5  rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
+      <div className="bg-gradient-to-b from-white to-yellow-100 border border-yellow-100 w-[350px] h-full mt-3 mx-3  my-5  rounded-3xl shadow-md flex flex-col justify-between px-5 sm:px-8 py-5 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform duration-300 ease-in-out">
             <img
                 src={imageUrl || "/placeholder.jpg"}
                 alt={name}
@@ -82,6 +83,7 @@ const HotelsCard: React.FC<HotelCardProps> = ({
                 </div>
             </div>
         </div>
+
 
     )
 }

@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "trainprice": 700,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
@@ -9,8 +9,8 @@
     "landingtime": "15:00"
   },
   {
-    "id": "2",
-    "trainprice": 750,
+    "id": 2,
+    "trainprice": 720,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -18,8 +18,8 @@
     "landingtime": "17:00"
   },
   {
-    "id": "3",
-    "trainprice": 720,
+    "id": 3,
+    "trainprice": 710,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -27,8 +27,8 @@
     "landingtime": "19:00"
   },
   {
-    "id": "4",
-    "trainprice": 710,
+    "id": 4,
+    "trainprice": 730,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -36,8 +36,8 @@
     "landingtime": "21:00"
   },
   {
-    "id": "5",
-    "trainprice": 730,
+    "id": 5,
+    "trainprice": 750,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -45,8 +45,8 @@
     "landingtime": "23:00"
   },
   {
-    "id": "6",
-    "trainprice": 740,
+    "id": 6,
+    "trainprice": 760,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -54,8 +54,8 @@
     "landingtime": "01:00"
   },
   {
-    "id": "7",
-    "trainprice": 760,
+    "id": 7,
+    "trainprice": 770,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
     "trainto": "กรุงเทพ",
@@ -63,7 +63,7 @@
     "landingtime": "03:00"
   },
   {
-    "id": "8",
+    "id": 8,
     "trainprice": 780,
     "trainduration": "9 ชั่วโมง",
     "trainfrom": "อุดรธานี",
@@ -71,13 +71,223 @@
     "departuretime": "20:00",
     "landingtime": "05:00"
   },
+
   {
-    "id": "9",
+    "id": 9,
+    "trainprice": 690,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "06:00",
+    "landingtime": "15:00"
+  },
+  {
+    "id": 10,
+    "trainprice": 700,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "08:00",
+    "landingtime": "17:00"
+  },
+  {
+    "id": 11,
+    "trainprice": 710,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "10:00",
+    "landingtime": "19:00"
+  },
+  {
+    "id": 12,
+    "trainprice": 720,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "12:00",
+    "landingtime": "21:00"
+  },
+  {
+    "id": 13,
+    "trainprice": 730,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "14:00",
+    "landingtime": "23:00"
+  },
+  {
+    "id": 14,
+    "trainprice": 740,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "16:00",
+    "landingtime": "01:00"
+  },
+  {
+    "id": 15,
+    "trainprice": 750,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "18:00",
+    "landingtime": "03:00"
+  },
+  {
+    "id": 16,
+    "trainprice": 760,
+    "trainduration": "9 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "อุดรธานี",
+    "departuretime": "20:00",
+    "landingtime": "05:00"
+  },
+
+  {
+    "id": 17,
     "trainprice": 900,
     "trainduration": "12 ชั่วโมง",
     "trainfrom": "เชียงใหม่",
     "trainto": "กรุงเทพ",
-    "departuretime": "22:00",
-    "landingtime": "09:00"
+    "departuretime": "06:00",
+    "landingtime": "18:00"
+  },
+  {
+    "id": 18,
+    "trainprice": 920,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "08:00",
+    "landingtime": "20:00"
+  },
+  {
+    "id": 19,
+    "trainprice": 930,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "10:00",
+    "landingtime": "22:00"
+  },
+  {
+    "id": 20,
+    "trainprice": 940,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "12:00",
+    "landingtime": "00:00"
+  },
+  {
+    "id": 21,
+    "trainprice": 950,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "14:00",
+    "landingtime": "02:00"
+  },
+  {
+    "id": 22,
+    "trainprice": 960,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "16:00",
+    "landingtime": "04:00"
+  },
+  {
+    "id": 23,
+    "trainprice": 970,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "18:00",
+    "landingtime": "06:00"
+  },
+  {
+    "id": 24,
+    "trainprice": 980,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "เชียงใหม่",
+    "trainto": "กรุงเทพ",
+    "departuretime": "20:00",
+    "landingtime": "08:00"
+  },
+
+  {
+    "id": 25,
+    "trainprice": 900,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "06:00",
+    "landingtime": "18:00"
+  },
+  {
+    "id": 26,
+    "trainprice": 920,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "08:00",
+    "landingtime": "20:00"
+  },
+  {
+    "id": 27,
+    "trainprice": 930,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "10:00",
+    "landingtime": "22:00"
+  },
+  {
+    "id": 28,
+    "trainprice": 940,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "12:00",
+    "landingtime": "00:00"
+  },
+  {
+    "id": 29,
+    "trainprice": 950,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "14:00",
+    "landingtime": "02:00"
+  },
+  {
+    "id": 30,
+    "trainprice": 960,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "16:00",
+    "landingtime": "04:00"
+  },
+  {
+    "id": 31,
+    "trainprice": 970,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "18:00",
+    "landingtime": "06:00"
+  },
+  {
+    "id": 32,
+    "trainprice": 980,
+    "trainduration": "12 ชั่วโมง",
+    "trainfrom": "กรุงเทพ",
+    "trainto": "เชียงใหม่",
+    "departuretime": "20:00",
+    "landingtime": "08:00"
   }
 ]

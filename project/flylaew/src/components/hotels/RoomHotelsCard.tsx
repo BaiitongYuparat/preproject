@@ -19,7 +19,7 @@ const RoomHotelsCard: React.FC<RoomHotelsCardProps> = ({
     priceroom,
 }) => {
     return (
-       <div className="bg-gradient-to-b from-yellow-100    to-yellow-50 border  border-yellow-100  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
+        <div className="bg-gradient-to-b from-yellow-100    to-yellow-50 border  border-yellow-100  mt-3 rounded-3xl shadow-md flex  flex-col md:flex-row items-start md:items-center justify-between px-5 sm:px-8  py-5  hover:shadow-lg  transition-all duration-300">
 
             <img
                 src={imageUrl}

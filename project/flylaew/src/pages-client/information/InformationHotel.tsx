@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
 import InformationCard from "../../components/hotels/InformationCardHotels";
@@ -21,7 +21,7 @@ interface RoomHotels {
     price: number;
 }
 
-interface Booking { 
+interface Booking {
     id: string;
     createdAt: string;
     type: "hotel" | "flight" | "train";
@@ -33,12 +33,11 @@ interface Booking {
     phone: string;
 }
 
-
 const Information = () => {
-    const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
+    const { id } = useParams();
     const [hotel, setHotel] = useState<Hotels | null>(null);
     const [room, setRoom] = useState<RoomHotels | null>(null);
-    
 
     const [bookings, setBookings] = useState<Booking[]>(() => {
         const saved = localStorage.getItem("bookings");
@@ -55,42 +54,52 @@ const Information = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    // ฟังก์ชันตรวจสอบข้อมูล
+    // ฟังก์ชันตรวจสอบข้อมูล + บันทึก Booking แล้วไปหน้า Payment
     const handleBooking = () => {
+        // เช็คว่ากรอกข้อมูลครบ
         if (!firstName || !lastName || !email || !phone) {
             alert("กรุณากรอกข้อมูลให้ครบทุกช่องก่อนจอง");
             return;
         }
 
-        const confirmBooking = window.confirm(`
-        ชื่อ: ${firstName}
-        นามสกุล: ${lastName}
-        อีเมล: ${email}
-        เบอร์โทรศัพท์: ${phone}
-        ที่พัก: ${hotel?.thaiName}
-        ห้อง: ${room?.nameroom}
-
-        ต้องการยืนยันการจองหรือไม่?
-    `);
-
-        if (confirmBooking && hotel && room) {
-            const newBooking: Booking = {
-                id: Date.now().toString(),
-                createdAt: new Date().toLocaleString(),
-                type: "hotel",
-                name: `${firstName} ${lastName}`,
-                price: room.price,
-                details: hotel.thaiName,
-                contact: room.nameroom,
-                email: email,
-                phone: phone
-                
-            };
-
-            const updated = [...bookings, newBooking];
-            saveBookings(updated);
-            alert(" จองห้องพักสําเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
+        // เช็คว่าโหลดข้อมูลโรงแรม/ห้องเรียบร้อย
+        if (!hotel || !room) {
+            alert("ไม่พบข้อมูลห้องพัก กรุณาลองใหม่อีกครั้ง");
+            return;
         }
+
+        const confirmBooking = window.confirm(`
+ชื่อ: ${firstName}
+นามสกุล: ${lastName}
+อีเมล: ${email}
+เบอร์โทรศัพท์: ${phone}
+ที่พัก: ${hotel.thaiName}
+ห้อง: ${room.nameroom}
+
+ต้องการยืนยันการจองหรือไม่?
+        `);
+
+        if (!confirmBooking) return;
+
+        const newBooking: Booking = {
+            id: Date.now().toString(),
+            createdAt: new Date().toLocaleString(),
+            type: "hotel",
+            name: `${firstName} ${lastName}`,
+            price: room.price,
+            details: hotel.thaiName,
+            contact: room.nameroom,
+            email: email,
+            phone: phone,
+        };
+
+        const updated = [...bookings, newBooking];
+        saveBookings(updated);
+
+        alert("จองห้องพักสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว\nกรุณาชำระเงินต่อ");
+
+        // ไปหน้า Payment
+        navigate(`/payment/${newBooking.id}`);
     };
 
     useEffect(() => {
@@ -122,13 +131,11 @@ const Information = () => {
     }
 
     return (
-        <div >
-            {/* Navbar */}
+        <div>
             <Navbar />
 
             {/* เนื้อหา */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 mt-20 flex flex-col lg:flex-row gap-6 ">
-
                 {/* ฟอร์ม */}
                 <div className="flex-1 space-y-4">
                     {/* ข้อมูลผู้เข้าพัก */}
@@ -194,41 +201,6 @@ const Information = () => {
                             className="border border-black rounded-md px-3 py-2 w-full focus:outline-none focus:border-yellow-400"
                         />
                     </div>
-
-                    {/* วิธีการชำระเงิน
-                    <div className="bg-white border border-yellow-200 rounded-xl p-6">
-                        <h2 className="text-lg text-left font-semibold mb-4 text-gray-800">
-                            วิธีการชําระเงิน
-                        </h2>
-                            <div className="mt-4">
-                                <label className="flex items-center space-x-2 text-gray-700">
-                                    <input
-                                        type="radio"
-                                        name="payment"
-                                        className="accent-yellow-500"
-                                    />
-                                    <span className="font-medium">วิธีการชำระเงินอื่นๆ</span>
-                                </label>
-
-                                <div className="flex flex-wrap items-center gap-3 mt-3 pl-8">
-                                    <img
-                                        src="https://contents.bu.ac.th/contents/images/mous/a23671bb-79fb-4d40-bc00-fc3060fce6d0.jpg"
-                                        alt="promptpay"
-                                        className="h-10 w-10 object-contain rounded-lg shadow-sm"
-                                    />
-                                    <img
-                                        src="https://www.dpa.or.th/storage/uploads/bank/dpa_bank_kbank@2x.png"
-                                        alt="kplus"
-                                        className="h-10 w-10 object-contain rounded-lg shadow-sm"
-                                    />
-                                    <img
-                                        src="https://cdn.prod.website-files.com/65e210a414fae2cb8054a9b4/6789cc7973863d34426baf54_678316f2a65ae45dd6a22f9f_678303b39e0a1b2f05c23bc4_673ac03613ce1d036f897c16_thaiqr_logosimbolo.png"
-                                        alt="thaiqr"
-                                        className="h-10 w-10 object-contain rounded-lg shadow-sm"
-                                    />
-                                </div>
-                            </div>
-                        </div> */}
                 </div>
 
                 {/* ข้อมูลโรงแรมที่เลือก */}
@@ -253,8 +225,6 @@ const Information = () => {
                         จองตอนนี้
                     </button>
 
-
-
                     {/* นโยบายการยกเลิก */}
                     <div className="bg-white border border-yellow-200 rounded-xl p-4 text-sm text-gray-700 leading-relaxed mt-4">
                         <p className="font-semibold text-red-600 mb-2">นโยบายการยกเลิก</p>
@@ -265,7 +235,7 @@ const Information = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

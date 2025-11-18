@@ -24,7 +24,7 @@ const InformationCard: React.FC<InformationCardProps> = ({
     explanation
 }) => {
     return (
-        <div className="bg-gradient-to-b from-yellow-50 to-yellow-100 border border-yellow-300 mt-3 rounded-3xl shadow-md flex flex-col items-start justify-between px-5 sm:px-8 py-5 hover:shadow-lg transition-all duration-300  ">
+          <div className="bg-gradient-to-b from-yellow-50 to-yellow-100 border border-yellow-300 mt-3 rounded-3xl shadow-md flex flex-col items-start justify-between px-5 sm:px-8 py-5 hover:shadow-lg transition-all duration-300  ">
 
             {/* รูปและชื่อโรงแรม */}
             <div className="flex items-start gap-4">

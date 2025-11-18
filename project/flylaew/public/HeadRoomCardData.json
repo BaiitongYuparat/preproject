@@ -80,104 +80,156 @@
 
     },
     {
-        "id": "5",
-        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/f66a4e2225df713fc20e907715aace467cdd2615.jpg",
-        "room1": "https://www.chillpainai.com/src/wewakeup/scoop/images/2d91f2e2bc4ca4273b5ced695e3135a08f3dd81b.jpg",
-        "room2": "https://www.chillpainai.com/src/wewakeup/scoop/images/42a063a3fc2fa3ff2fa2e16838793951f96b9db9.jpg",
-        "hotelname": "The Pannarai Hotel",
+         "id": "5",
+        "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/354416692.jpg?k=baa932c9a524d4d4c90301cc4c750a30ad2ef9878fc9b19b803c004636b5cce2&o=",
+        "room1": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/537631474.jpg?k=6b06183ca90d833e46fac4559825d2390f6efd813e4aa3f631e99d3b909f816a&o=",
+        "room2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/537632027.jpg?k=12d8981a3dac772993e337c048e03f5765debfb2ea110bcda5cd8cdbc4e08994&o=",
+        "hotelname": "Amari Watergate Bangkok",
         "rating": "★★★★",
-        "score": "9.0/10",
-        "comments": "ดีเยี่ยม",
-        "location": "19/8 ถ.แปดศอก ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "score": "8.9/10",
+        "comments": "ดี",
+        "location": "847 Petchburi Road, Rajthevi, Pratunam, Phayathai, ประตูน้ำ, กรุงเทพมหานคร",
         "facilities": [
-            "WiFi",
             "สระว่ายน้ำกลางแจ้ง",
-            "ฟิตเนส",
-            "ร้านอาหาร",
+            "รวมบริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ฟรี",
+            "รถรับส่งสนามบิน",
             "ที่จอดรถฟรี",
-            "บริการซักรีด",
-            "ห้องประชุม"
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
         ]
     },
-    {
-        "id": "6",
-        "imageUrl": "https://img.wongnai.com/p/1920x0/2018/03/20/46d53aca2f8849be99c3195b7ec56e63.jpg",
-        "room1": "https://s.isanook.com/tr/0/ui/280/1400461/pool2_1473241059.jpg",
-        "room2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/663805139.jpg?k=ea5e6725b52e0dd736219bea3992c301843eeae6054265416363a2dfc6e59de3&o=",
-        "hotelname": "Brown House Hotel",
-        "rating": "★★★★",
-        "score": "8.8/10",
-        "comments": "อบอุ่นและน่าพัก",
-        "location": "234/1 ถ.โพศรี ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
-        "facilities": [
-            "WiFi",
-            "สระว่ายน้ำกลางแจ้ง",
-            "ร้านอาหาร",
-            "ที่จอดรถ",
-            "จักรยานให้เช่า",
-            "บริการซักรีด",
-            "ห้องประชุม"
-        ]
-    },
-    {
-        "id": "7",
-        "imageUrl": "https://www.chillpainai.com/src/wewakeup/scoop/images/4f5b8e7dabe1f9486164ce4806a05cafb8140a83.jpg",
-        "room1": "https://www.chillpainai.com/src/wewakeup/scoop/images/e47178bf46d03ca2ac920294f6565c941678d870.jpg",
-        "room2": "https://www.chillpainai.com/src/wewakeup/scoop/images/7bbb12166b34486871d0b7c33e7b0df06c3c531b.jpg",
-        "hotelname": "De Princess Hotel Udonthani",
+     {
+         "id": "6",
+        "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/538696663.jpg?k=8708e09514b1e12e5d6d5943501f73c9ef4042dcc33f5537affd9b5b9c568740&o=",
+        "room1": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/557432803.jpg?k=e27895ac0e671befcbb938c0559984609acdccf553e6f388e6104d24c9b727bc&o=",
+        "room2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/305414979.jpg?k=2ee4422a9b6f733d6d38b92f842e7b8516d273ab231d0c01a83084e8d5d077ac&o=",
+        "hotelname": "Eastin Grand Hotel Sathorn",
         "rating": "★★★★★",
-        "score": "9.4/10",
-        "comments": "ยอดเยี่ยมมาก",
-        "location": "135/135 หมู่ 14 ถ.ประจักษ์ศิลปาคม ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "score": "9.8/10",
+        "comments": "ดีมาก",
+        "location": "33/1 South Sathorn Road, Yanawa, Sathorn , สาทร, กรุงเทพมหานคร",
         "facilities": [
-            "WiFi",
-            "สระว่ายน้ำ",
-            "ฟิตเนส",
-            "ร้านอาหาร",
-            "บริการรับส่งสนามบิน",
-            "รูมเซอร์วิส 24 ชั่วโมง",
-            "บาร์"
+            "บริการรูมเซอร์วิส",
+            "รวมบริการอินเทอร์เน็ตไร้สาย (Wi-Fi) ฟรี",
+            "รถรับส่งสนามบิน",
+            "ที่จอดรถฟรี",
+            "ห้องพัก/สิ่งอำนวยความสะดวกสำหรับผู้พิการ",
+            "สปาและศูนย์สุขภาพ"
+        ]
+    },
+    {
+         "id": "7",
+        "imageUrl": "https://pix8.agoda.net/hotelImages/286830/0/42e50c467f31a4bffc89b2b2cb87865c.jpg?ce=2&s=1024x",
+        "room1": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/377757466.jpg?k=b6aa5df886b91fe455cccf9e9fec1110257e06b4c1af823cef2b15a585af8010&o=&s=1024x",
+        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/332984937.jpg?k=3d3eb882253e11f8faaa2747c500fb114fcd58b57ab2cb50a6e17dd7867c7247&o=&s=1024x",
+        "hotelname": "Grande Centre Point Terminal 21",
+        "rating": "★★★★",
+        "score": "9.3/10",
+        "comments": "ดี",
+        "location": "2 ซอย สุขุมวิท 19 แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพมหานคร 10110",
+        "facilities": [
+            "สระว่ายน้ำพร้อมวิว",
+            "สปา",
+            "ห้องอาหาร",
+            "ที่จอดรถฟรี",
+            "ห้องพัก/สิ่งอำนวยความสะดวกสำหรับผู้พิการ",
+            "สนามมินิกอล์ฟ"
         ]
     },
     {
         "id": "8",
-        "imageUrl": "https://pix8.agoda.net/hotelImages/487094/-1/e46cf29a9e6668b7c02a8c9cd25b6506.jpg?ca=6&ce=1&s=1024x",
-        "room1": "https://pix8.agoda.net/hotelImages/487094/-1/2fbcf981abad94307197f581d92fa63a.jpg?ca=6&ce=1&s=1024x",
-        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/182671707.jpg?k=6667c7aed7563f62168a581548853421e35d2d4417d83cb19ac406179edd6e9e&o=&s=1024x",
-        "hotelname": "UD Residence",
-        "rating": "★★★",
-        "score": "8.5/10",
-        "comments": "คุ้มค่ากับราคา",
-        "location": "333/22 ถ.ทองใหญ่ ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "imageUrl": "https://ak-d.tripcdn.com/images/220811000000qbjqmF99E_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
+        "room1": "https://ak-d.tripcdn.com/images/1mc4v12000devzwngC42D_W_1280_853_R5.webp?proc=watermark/image_trip1,l_ne,x_16,y_16,w_67,h_16;digimark/t_image,logo_tripbinary;ignoredefaultwm,1A8F",
+        "room2": "https://ak-d.tripcdn.com/images/220d0u000000j9usq88F1_R_600_400_R5.webp",
+        "hotelname": "Novotel Bangkok Sukhumvit 20",
+        "rating": "★★★★",
+        "score": "9.1/10",
+        "comments": "ดี",
+        "location": "19/9 ซ. สุขุมวิท 20 แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110",
         "facilities": [
-            "WiFi",
-            "ที่จอดรถฟรี",
-            "บริการซักรีด",
-            "ลิฟต์",
-            "ห้องปลอดบุหรี่",
-            "แผนกต้อนรับ 24 ชั่วโมง"
+            "สระว่ายน้ำกลางแจ้ง",
+            "ที่จอดรถสาธารณะ",
+            "บริการรับที่สนามบินแบบด่วน",
+            "ไนท์คลับ",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
         ]
     },
     {
         "id": "9",
-        "imageUrl": "https://static51.com-hotel.com/uploads/hotel/69027/photo/napalai-hotel_15213713801.jpg",
-        "room1": "https://q-xx.bstatic.com/xdata/images/hotel/max500/292456943.jpg?k=e1c347eec4d4decabb40c402d71881c8da20aee0eb7e1909fcbeb525c8bc45c9&o=",
-        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max500/292456908.jpg?k=953a49af6b442f8e4ebeae8c8162504ee31f2a3903945a0f1db9ddb77f97f4ad&o=",
-        "hotelname": "Napalai Hotel",
+        "imageUrl": "https://q-xx.bstatic.com/xdata/images/hotel/max500/89612582.jpg?k=fcf4d84c22e012d2c953c71376b812be2d063ca01cecbee6cf048981eba3962e&o=",
+        "room1": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/89612579.jpg?k=2eca3337c84c4e8bfa155dc1e07cd91cde6777083cd46bd5bd6b5176bc2c5a1c&o=",
+        "room2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/90382092.jpg?k=ab0fe558b89e550f7966b0530d2188dff40ad10f759bcb0fb12b431f9c3e94d0&o=",
+        "hotelname": "U Nimman Chiang Mai",
+        "rating": "★★★★",
+        "score": "9.2/10",
+        "comments": "ดี",
+        "location": "1 Nimmanhaemin Road, Tambon Suthep, Ampoe Muang, นิมมานเหมินทร์, เชียงใหม่",
+        "facilities": [
+            "สระว่ายน้ำกลางแจ้ง",
+            "บริการรูมเซอร์วิส",
+            "บริการรับที่สนามบินแบบด่วน",
+            "ห้องอาหาร/ภัตตาคาร",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
+        ]
+    },
+    {
+        "id": "10",
+        "imageUrl": "https://assets.anantara.com/image/upload/q_auto,f_auto/media/minor/anantara/images/anantara-chiang-mai-resort/offers/anantara_chiang_mai_stay_longer_558x744.jpg",
+        "room1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToct0BvHJ2-NICD3CNMJvcJUGf7MxuZKJ-Sg&s",
+        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max500/126765964.jpg?k=7da4e53d9d3c9fb0699b7a57750be748e8bdda8c286597efd42351e0945f677f&o=",
+        "hotelname": "Anantara Chiang Mai Resort",
+        "rating": "★★★★★",
+        "score": "9.6/10",
+        "comments": "ดีมาก",
+        "location": "123, 1 ถนน เจริญประเทศ ตำบลช้างคลาน อำเภอเมืองเชียงใหม่ เชียงใหม่ 50100",
+        "facilities": [
+            "Wi-Fi ฟรี",
+            "บริการรูมเซอร์วิส",
+            "สปา",
+            "ห้องอาหาร",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
+        ]
+    },
+    {
+        "id": "11",
+        "imageUrl": "https://assets.anantara.com/image/upload/q_auto,f_auto/media/minor/anantara/images/anantara-chiang-mai-resort/offers/anantara_chiang_mai_stay_longer_558x744.jpg",
+        "room1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToct0BvHJ2-NICD3CNMJvcJUGf7MxuZKJ-Sg&s",
+        "room2": "https://q-xx.bstatic.com/xdata/images/hotel/max500/126765964.jpg?k=7da4e53d9d3c9fb0699b7a57750be748e8bdda8c286597efd42351e0945f677f&o=",
+        "hotelname": "Hotel M Chiang Mai",
         "rating": "★★★",
         "score": "8.3/10",
-        "comments": "เงียบสงบและสะดวกสบาย",
-        "location": "572 ถ.โพศรี ตำบลหมากแข้ง อำเภอเมือง จังหวัดอุดรธานี, 41000",
+        "comments": "ดี",
+        "location": "2, 6 ถนน ราชดำเนิน ตำบลศรีภูมิ อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200",
         "facilities": [
-            "WiFi",
-            "สระว่ายน้ำ",
-            "ฟิตเนส",
-            "ร้านอาหาร",
-            "ห้องประชุม",
-            "ที่จอดรถ",
-            "บริการซักรีด"
+            "Wi-Fi ฟรี",
+            "บริการซักรีด",
+            "รถรับส่งสนามบิน",
+            "ห้องอาหาร",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
+        ]
+    },
+    {
+        "id": "12",
+        "imageUrl": "https://pix10.agoda.net/hotelImages/4168248/-1/18623955feccad00b072b245574e4fff.jpg?ce=0&s=1024x768",
+        "room1": "https://pix10.agoda.net/hotelImages/4168248/-1/40add22fc986ba007d20c9ed4493652c.jpg?ce=0&s=414x232",
+        "room2": "https://istyhotelchiangmai.com/img/b46a263c9e86360d.webp",
+        "hotelname": "Hotel M Chiang Mai",
+        "rating": "★★★★",
+        "score": "9.0/10",
+        "comments": "ดีมาก",
+        "location": "41 Changphuak soi 4 Chang phueak road, Sri phum, Muaeng, เชียงใหม่ 50200",
+        "facilities": [
+            "Wi-Fi ฟรี",
+            "บริการรับฝากสัมภาระ",
+            "ที่จอดรถฟรี ",
+            "ห้องอาหาร",
+            "แผนกต้อนรับ 24 ชั่วโมง",
+            "ฟิตเนส"
         ]
     }
-
 
 ]

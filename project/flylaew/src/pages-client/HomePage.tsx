@@ -4,9 +4,10 @@ import Navbar from "../components/Navbar";
 import { VscSearch } from "react-icons/vsc";
 
 
+
 const Home = () => {
   const navigate = useNavigate();
-
+  const [tripType, setTripType] = useState("oneway");
 
   const [bookingType, setBookingType] = useState('');
   const [form, setForm] = useState({
@@ -23,23 +24,27 @@ const Home = () => {
       alert("กรุณาเลือกประเภทการจองก่อน");
       return;
     }
-    if (!bookingType) return;
-    
-
-    // เลือกการจอง
-    if (bookingType === "hotels") {
-      navigate("/hotels", { state: form });
-    } else if (bookingType === "flights") {
-      navigate("/flights", { state: form });
-    } else if (bookingType === "trains") {
-      navigate("/trains", { state: form });
-    } 
-  };
-
   
 
+    if (bookingType === "hotels") {
+      navigate("/hotels", { state: form });
+      return;
+    }
+
+    if (bookingType === "trains") {
+      navigate("/trains", { state: form });
+      return;
+    }
+
+    if (bookingType === "flights") {
+      navigate("/flights", { state: form });
+      return;
+    }
+  };
+
+
   return (
-    <div className="bg-yellow-50 min-h-screen flex flex-col items-center">
+     <div className="bg-yellow-50 min-h-screen flex flex-col items-center">
       <Navbar />
 
       {/* ส่วนปก */}
@@ -60,7 +65,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* กล่องค้นหา */}
+
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-3rem] backdrop-blur-lg bg-white/50 md:w-4/5 shadow-2xl w-[95%] rounded-3xl p-8 flex flex-col space-y-4 z-20 text-center border border-yellow-100">
           {/* แถว select */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -76,9 +81,12 @@ const Home = () => {
 
             </select>
 
-            <select className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
-              <option>เที่ยวเดียว</option>
-              <option>ไป - กลับ</option>
+            <select
+              value={tripType}
+              onChange={(e) => setTripType(e.target.value)}
+              className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              <option value="oneway">เที่ยวเดียว</option>
+              <option value="roundtrip">ไป - กลับ</option>
             </select>
 
             <select className="bg-yellow-200 text-black px-4 py-2 rounded-full font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
@@ -88,7 +96,6 @@ const Home = () => {
             </select>
           </div>
 
-          {/* แถว input */}
           <div className="grid grid-cols-1 md:grid-cols-6 gap-3 items-center">
             {/* ต้นทาง */}
             <div className="flex flex-col col-span-1 md:col-span-2">
@@ -100,6 +107,8 @@ const Home = () => {
               >
                 <option value="">เลือกต้นทาง</option>
                 <option value="อุดรธานี">อุดรธานี</option>
+                <option value="กรุงเทพ">กรุงเทพ</option>
+                <option value="เชียงใหม่">เชียงใหม่</option>
               </select>
             </div>
 
@@ -113,6 +122,8 @@ const Home = () => {
               >
                 <option value="">เลือกปลายทาง</option>
                 <option value="กรุงเทพ">กรุงเทพ</option>
+                <option value="อุดรธานี">อุดรธานี</option>
+                <option value="เชียงใหม่">เชียงใหม่</option>
               </select>
             </div>
 
@@ -121,7 +132,7 @@ const Home = () => {
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนผู้โดยสาร</p>
               <select className="bg-yellow-100 text-black px-4 py-2 rounded-full  font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                {Array.from({ length: 100 }, (_, i) => (
+                {Array.from({ length: 10 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>{i + 1}</option>
                 ))}
               </select>
@@ -131,7 +142,7 @@ const Home = () => {
             <div className="flex flex-col col-span-1 md:col-span-2">
               <p className="text-gray-500 text-sm mb-1 text-left">จำนวนห้อง</p>
               <select className="bg-yellow-100 text-black px-4 py-2 rounded-full  font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                {Array.from({ length: 100 }, (_, i) => (
+                {Array.from({ length: 10 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>{i + 1}</option>
                 ))}
               </select>
@@ -174,6 +185,53 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+      <p className="font-medium text-black mt-40 text-[20px] sm:text-[24px] ">
+        สถานที่ท่องเที่ยวแนะนำ
+      </p>
+
+      <div className="w-full max-w-[1020px] grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 ">
+        <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer">
+          <img
+            src="https://q-xx.bstatic.com/xdata/images/hotel/max500/571234848.jpg?k=c8a6f535b487067871c5ac6021009857f855bb48196aca1c5e6c7c2736aeff39&o="
+            alt="krabe"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h1 className="text-lg font-bold">หาดอ่าวนาง</h1>
+            <h2 className="text-gray-600 mt-1">กระบี่</h2>
+          </div>
+        </div>
+
+
+        <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer">
+          <img
+            src="https://www.charnveeresortkhaoyai.com/wp-content/uploads/2022/12/Rancho-Aug-1-3.jpg.webp"
+            alt="mai"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h1 className="text-lg font-bold">อุทยานแห่งชาติดอยสุเทพ-ปุย</h1>
+            <h2 className="text-gray-600 mt-1">เชียงใหม่</h2>
+          </div>
+        </div>
+
+
+        <div className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer">
+          <img
+            src="https://www.charnveeresortkhaoyai.com/wp-content/uploads/2022/12/Rancho-Aug-1-7.jpg.webp"
+            alt="kan"
+            className="w-full h-48 object-cover"
+          />
+          <div className="p-4">
+            <h1 className="text-lg font-bold">ภูทับเบิก</h1>
+            <h2 className="text-gray-600 mt-1">จังหวัดเพชรบูรณ์ </h2>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   );
 };

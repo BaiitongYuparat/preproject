@@ -11,8 +11,8 @@ interface RoomHotels {
 }
 
 const RoomHotelsList: React.FC = () => {
-    const [roomhotels, setroomHotels] = useState<RoomHotels[]>([]); 
-    const [loading, setLoading] = useState(true); 
+    const [roomhotels, setroomHotels] = useState<RoomHotels[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchroomHotels = async () => {
@@ -37,9 +37,9 @@ const RoomHotelsList: React.FC = () => {
 
     return (
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 justify-items-center">
-            {roomhotels.map((roomhotel) => (
+            {roomhotels.map((roomhotel, index) => (
                 <RoomHotelsCard
-                    key={roomhotel.id}
+                    key={`${roomhotel.id}-${index}`}   // ← ทำให้ไม่ซ้ำแน่นอน
                     id={roomhotel.id}
                     imageUrl={roomhotel.imageUrl}
                     nameroom={roomhotel.nameroom}
@@ -47,6 +47,7 @@ const RoomHotelsList: React.FC = () => {
                     priceroom={roomhotel.price}
                 />
             ))}
+
         </div>
     );
 };

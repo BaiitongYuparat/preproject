@@ -93,7 +93,6 @@ const HeadRoomCard: React.FC<HeadRoomCardProps> = ({
       </div>
     </div>
 
-
   )
 
 }

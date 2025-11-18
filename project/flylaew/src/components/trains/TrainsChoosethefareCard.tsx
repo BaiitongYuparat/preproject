@@ -1,37 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface TrainsChoosethefareCardProps {
   trainprice: number;
- trainfrom: string
- trainto: string 
-
+  trainfrom: string;
+  trainto: string;
 }
 
 interface Booking { 
-    id: string;
-    createdAt: string;
-    type: "hotel" | "flight" | "train";
-    name: string;
-    price: number;
-    details: string;
-    contact: string;
-    email: string;
-    phone: string;
+  id: string;
+  createdAt: string;
+  type: "hotel" | "flight" | "train";
+  name: string;
+  price: number;
+  details: string;
+  contact: string;
+  email: string;
+  phone: string;
 }
-
 
 const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
   trainprice,
   trainfrom,
-  trainto
+  trainto,
 }) => {
+  const navigate = useNavigate();
+
   const [selectedClass, setSelectedClass] = useState<string>("");
   const basePrice = trainprice;
 
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState<string>(""); 
+  const [phone, setPhone] = useState<string>("");
 
   const [bookings, setBookings] = useState<Booking[]>(() => {
     const saved = localStorage.getItem("bookings");
@@ -41,6 +42,19 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
   const saveBookings = (newBookings: Booking[]) => {
     setBookings(newBookings);
     localStorage.setItem("bookings", JSON.stringify(newBookings));
+  };
+
+  const getPrice = () => {
+    switch (selectedClass) {
+      case "class1":
+        return basePrice + 400;
+      case "class2":
+        return basePrice + 200;
+      case "class3":
+        return basePrice;
+      default:
+        return 0;
+    }
   };
 
   const handleBooking = () => {
@@ -58,59 +72,48 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
       selectedClass === "class1"
         ? "ชั้นหนึ่ง"
         : selectedClass === "class2"
-          ? "ชั้นสอง"
-          : "ชั้นสาม";
+        ? "ชั้นสอง"
+        : "ชั้นสาม";
 
     const totalPrice = getPrice();
 
     const confirmBooking = window.confirm(`
-      ชื่อ: ${firstName}
-      นามสกุล: ${lastName}
-      อีเมล: ${email}
-      เบอร์โทรศัพท์: ${phone}
-      จาก: ${trainfrom} - ถึง: ${trainto}
-      ชั้นโดยสาร: ${className}
-      ราคา: ${totalPrice.toLocaleString()} บาท
+ชื่อ: ${firstName}
+นามสกุล: ${lastName}
+อีเมล: ${email}
+เบอร์โทรศัพท์: ${phone}
+จาก: ${trainfrom} - ถึง: ${trainto}
+ชั้นโดยสาร: ${className}
+ราคา: ${totalPrice.toLocaleString()} บาท
 
-      ต้องการยืนยันการจองหรือไม่?
+ต้องการยืนยันการจองหรือไม่?
     `);
 
-    if (confirmBooking) {
-      const newBooking: Booking = {
-        id: Date.now().toString(),
-        createdAt: new Date().toLocaleString(),
-        type: "train",
-        name: `${firstName} ${lastName}`,
-        price: totalPrice,
-        details: `  ${trainfrom} -  ${trainto}`,
-        contact: `ชั้นโดยสาร${className}`,
-        email: email,
-        phone: phone
-      };
+    if (!confirmBooking) return;
 
-      const updated = [...bookings, newBooking];
-      saveBookings(updated);
+    const newBooking: Booking = {
+      id: Date.now().toString(),
+      createdAt: new Date().toLocaleString(),
+      type: "train",
+      name: `${firstName} ${lastName}`,
+      price: totalPrice,
+      details: `${trainfrom} - ${trainto}`,
+      contact: `ชั้นโดยสาร${className}`,
+      email,
+      phone,
+    };
 
-      alert(" จองตั๋วรถไฟสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว");
-    }
-  };
+    const updated = [...bookings, newBooking];
+    saveBookings(updated);
 
-  const getPrice = () => {
-    switch (selectedClass) {
-      case "class1":
-        return basePrice + 400;
-      case "class2":
-        return basePrice + 200;
-      case "class3":
-        return basePrice;
-      default:
-        return 0;
-    }
+    alert("จองตั๋วรถไฟสำเร็จ! ระบบได้บันทึกข้อมูลของคุณแล้ว\nกรุณาชำระเงินต่อ");
+
+    // ไปหน้า Payment
+    navigate(`/payment/${newBooking.id}`);
   };
 
   const totalPrice = getPrice();
 
-  // ข้อมูลชั้นโดยสาร
   const trainClasses = [
     {
       id: "class1",
@@ -132,16 +135,17 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
     },
   ];
 
-
   return (
     <div className="bg-white w-full max-w-6xl mx-auto mt-6 rounded-2xl border border-yellow-300 shadow-md p-6">
-
-      <h1 className="text-left text-black font-medium text-[20px] sm:text-[24px] mb-3">
+      <h2 className="text-2xl font-semibold mb-4">
         {trainfrom} - {trainto}
-      </h1>
+      </h2>
+        
       <p className="text-left text-gray-500 text-[13px] mb-2 ">
         ชื่อผู้จองต้องตรงกับเอกสารประจำตัว
       </p>
+
+      {/* ฟอร์มข้อมูลผู้โดยสาร */}
       <div className="grid grid-cols-2 gap-4 mb-4">
         <input
           type="text"
@@ -175,20 +179,18 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
         />
       </div>
 
-      <h2 className="text-xl font-bold mb-4 text-gray-800 ">เลือกชั้นโดยสาร</h2>
-      
+      <h2 className="text-xl font-bold mb-4 text-gray-800">เลือกชั้นโดยสาร</h2>
 
-
-      {/* ส่วนแสดงชั้นต่าง ๆ */}
       <div className="grid md:grid-cols-3 gap-4">
         {trainClasses.map((cls) => (
           <div
             key={cls.id}
             onClick={() => setSelectedClass(cls.id)}
             className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between
-              ${selectedClass === cls.id
-                ? "border-yellow-400 bg-amber-50 shadow-md"
-                : "border-gray-200 hover:border-yellow-300"
+              ${
+                selectedClass === cls.id
+                  ? "border-yellow-400 bg-amber-50 shadow-md"
+                  : "border-gray-200 hover:border-yellow-300"
               }`}
           >
             <div>
@@ -207,8 +209,9 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
                 {cls.price.toLocaleString()} ฿
               </p>
               <p
-                className={`mt-1 text-sm ${selectedClass === cls.id ? "text-amber-600 font-medium" : ""
-                  }`}
+                className={`mt-1 text-sm ${
+                  selectedClass === cls.id ? "text-amber-600 font-medium" : ""
+                }`}
               >
                 {selectedClass === cls.id ? "เลือกแล้ว" : "คลิกเพื่อเลือก"}
               </p>
@@ -228,15 +231,15 @@ const TrainsChoosethefareCard: React.FC<TrainsChoosethefareCardProps> = ({
 
         <button
           onClick={handleBooking}
-          className={`${selectedClass
-            ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
-            : "bg-gray-400 cursor-not-allowed"
-            } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
+          className={`${
+            selectedClass
+              ? "bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400"
+              : "bg-gray-400 cursor-not-allowed"
+          } text-white font-medium px-6 py-2 rounded-xl shadow transition-all`}
         >
           ดำเนินการต่อ
         </button>
       </div>
-
     </div>
   );
 };

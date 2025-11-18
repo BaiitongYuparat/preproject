@@ -28,17 +28,15 @@ interface RoomHotelsData {
 const RoomHotels: React.FC = () => {
   const [headroomcard, setHeadRoomCard] = useState<HeadRoomCardData | null>(null);
   const [roomhotels, setRoomHotels] = useState<RoomHotelsData[]>([]);
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id?: string }>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // โหลดข้อมูล 
         const headResponse = await axios.get<HeadRoomCardData[]>("/HeadRoomCardData.json");
         const hotel = headResponse.data.find((h) => h.id === id);
         setHeadRoomCard(hotel || null);
 
-        // โหลดข้อมูลที่มีห้องหมายเลขเดียวกัน
         const roomResponse = await axios.get<RoomHotelsData[]>("/RoomHotelsData.json");
         const roomsForThisHotel = roomResponse.data.filter(r => r.id === id);
         setRoomHotels(roomsForThisHotel);
@@ -51,13 +49,13 @@ const RoomHotels: React.FC = () => {
     fetchData();
   }, [id]);
 
-  // กรณีโหลดไม่สำเร็จหรือยังไม่มีข้อมูล
   if (!headroomcard) {
     return <p className="text-center text-gray-500 mt-10">ไม่พบข้อมูลโรงแรม</p>;
   }
 
   return (
     <div className="flex flex-col space-y-6">
+
       <HeadRoomCard
         key={headroomcard.id}
         imageUrl={headroomcard.imageUrl}
@@ -72,9 +70,9 @@ const RoomHotels: React.FC = () => {
       />
 
       {roomhotels.length > 0 ? (
-        roomhotels.map(room => (
+        roomhotels.map((room, index) => (
           <RoomHotelsCard
-            key={room.id}
+            key={`${room.id}-${index}`} 
             id={room.id}
             imageUrl={room.imageUrl}
             nameroom={room.nameroom}

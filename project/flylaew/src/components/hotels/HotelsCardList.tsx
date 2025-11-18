@@ -2,13 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import HotelsCard from "./HotelsCard";
 
+interface HotelsCardListProps {
+    from: string;
+}
 
 interface Hotels {
     id: string;
     imageUrl: string; // รูปโรงแรม
     name: string; // ชื่อโรงแรมภาษาอังกฤษ
     thaiName: string; // ชื่อโรงแรมภาษาไทย
-    location: string;  // ที่ตั้งโรงแรม
+    location: string;  // ที่ตั้งโรงแรม (ใช้สำหรับการกรอง)
+    city: string;  // จังหวัด
     price: number; // ราคาโรงแรม
     rating: string; // คะแนนโรงแรมแบบดาว
     score: string; // คะแนนโรงแรมแบบตัวเลข
@@ -16,10 +20,11 @@ interface Hotels {
     totaltax: number; // ราคารวมภาษี
 }
 
-const HotelsList: React.FC = () => {
 
-    const [hotels, setHotels] = useState<Hotels[]>([]); 
-    const [loading, setLoading] = useState(true); //สถานะการโหลดข้อมูล
+const HotelsList: React.FC<HotelsCardListProps> = ({ from }) => {
+
+    const [hotels, setHotels] = useState<Hotels[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchHotels = async () => {
@@ -30,7 +35,7 @@ const HotelsList: React.FC = () => {
                 setHotels(response.data);
             }
             catch (error: unknown) {
-                console.log("Error fetching hotels:", error);
+                console.error("Error fetching hotels:", error);
             }
             finally {
                 setLoading(false);
@@ -38,6 +43,11 @@ const HotelsList: React.FC = () => {
         };
         fetchHotels();
     }, []);
+
+    const filteredHotels = hotels.filter(hotel =>
+        hotel.city === from
+    );
+
 
     if (loading) {
         return (
@@ -47,9 +57,18 @@ const HotelsList: React.FC = () => {
         );
     }
 
+    if (!from) {
+        return <p className="text-center mt-10 text-gray-500">กรุณาระบุสถานที่ปลายทางเพื่อค้นหาโรงแรม</p>;
+    }
+
+    if (filteredHotels.length === 0) {
+        return <p className="text-center mt-10 text-gray-500">ไม่พบโรงแรมใน **{from}**</p>;
+    }
+
+
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  p-4 justify-items-center ">
-            {hotels.map((hotel) => (
+            {filteredHotels.map((hotel) => (
                 <HotelsCard
                     key={hotel.id}
                     id={hotel.id}
