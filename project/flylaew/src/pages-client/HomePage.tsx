@@ -3,8 +3,6 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { VscSearch } from "react-icons/vsc";
 
-
-
 const Home = () => {
   const navigate = useNavigate();
   const [tripType, setTripType] = useState("oneway");
